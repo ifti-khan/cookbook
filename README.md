@@ -63,6 +63,15 @@ My users for this project are people seeking new cooking recipes for their break
 
 * As a user, I want to access the web application on different device sizes, so that I can view the website on the go.
 
+# Design 
+# Design 
+The design choice for my project overall is to create a user friendly website, which will have a sleek modern design and easy to read. 
+To make these design choices happen I have made the following decisions below. 
+
+## Framework
+The Materialize framework has been chosen for the project, the reason for this is that for the last two projects I have used the Bootstrap framework. 
+So for this project I would like to utilize the Materialize framework and gain some exposure to it.
+
 # Wireframes
 
 ## All Pages Web Browser -> [View PDF](#) -> [View Image](#)
