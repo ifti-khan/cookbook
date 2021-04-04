@@ -18,11 +18,21 @@ going be Python and its libraries, as well as the Materialize Framework instead 
 
 # UX – User Experience
 
-## The who?
+## The Who? 
+The project will be aimed at users who want to share their cooking recipes with other cooking enthusiast who are looking for new and exciting recipe ideas to cook. 
 
-## The what?
+## The What?
+The project will connect users from different backgrounds, cultures and countries and allow them to share their cooking recipes through this 
+online web application and a place where they can digitally store them.  
 
-## The how?
+## The How?
+I will be using a variety of different technologies to create this project, with the first and for most being the Python programming language. 
+I will also be utilising the Materialize Framework and the MongoDB database program to store user information and cooking recipes. 
+
+The web application will allow non registered users to view other users shared recipes, but will not have full access, 
+but will be given the option to register to get full access. Registered users will have full access and once logged in to the web application and they 
+can create their own recipes and share them with others, as well as update and delete their created recipes. Registered users will also be allowed to 
+update their username and password. An Admin will also be created to manage the application and oversee any user issues.
 
 # User Stories
 
