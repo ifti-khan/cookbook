@@ -1,12 +1,20 @@
-# Ifti Khan Milestone Project 3 - Backend Development
+# Ifti Khan Milestone Project 3 - Backend Development Project
 
-[Click Here To Visit My Deployed Project Site](#)
+[Click Here To Visit My Deployed Project Site](https://iftikhan-milestone-3-project.herokuapp.com/)
 
 ![Image of Project](#)
 
-## Project Title
+## Project Title - Share, Cook, Enjoy Online Cookbook
 
 ### Introduction
+This repository is showcasing my third milestone project for The Code Institute
+ 
+Share, Cook, Enjoy is a simple way for online user to view, create, share and store their favourite recipes. 
+For this backend development project I am going to create a web application that allows users to create, read, update and delete (CRUD) recipes stored within a database. 
+
+The reason I have chosen to pursue this as my third milestone project is that it will allow me to showcase the new skills that 
+I have learnt from The Code Institute and previous skill learnt from other projects. The primary skills being showcased here is 
+going be Python and its libraries, as well as the Materialize Framework instead of the Bootstrap Framework.  
 
 # UX – User Experience
 
