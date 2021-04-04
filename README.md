@@ -35,6 +35,33 @@ can create their own recipes and share them with others, as well as update and d
 update their username and password. An Admin will also be created to manage the application and oversee any user issues.
 
 # User Stories
+My users for this project are people seeking new cooking recipes for their breakfast, lunch, dinners and more. It is also aimed at users who are willing to share their cooking recipes with others, but it also a way for them to store their cooking recipes online, so they can be accessed via a laptop, tablet or even a smartphone anywhere in the world. 
+
+* As a user, I want to be able to register to the website, so that I can login and have full access to the web application.
+
+* As a user, I want to be able to view my account profile, so that I can change my username and password.
+
+* As a user, I want to be able to logout of my account from any page. 
+
+* As a user, I want to be able to login, so that I can create my own recipes.
+
+* As a user, I want to add new recipes, so that I can store and share my recipes. 
+
+* As a user, I want a detailed recipe form, so that I can create a well detailed recipe instructions for another user to follow. 
+
+* As a user, I want to be able to view all recipe details, so that I can follow the detailed instructions on how to cook the food dish. 
+
+* As a user, I want to be able to edit my recipes, so that I can fix mistakes or update them. 
+
+* As a user, I want to be able to delete my recipes added to the database.
+
+* As a user, I want to able to view my recipes only, so that I can see how many recipes I have created.
+
+* As a user, I want to be able to view all recipes without registering, so that I do not have to create an account or log in.
+
+* As a user, I want to be able to contact the website administrator, so that if have any question or issues they can be addressed. 
+
+* As a user, I want to access the web application on different device sizes, so that I can view the website on the go.
 
 # Wireframes
 
