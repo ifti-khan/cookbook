@@ -95,10 +95,43 @@ from the [Font Awesome CDN]( https://cdnjs.com/libraries/font-awesome).
 ## All Pages Smartphone -> [View PDF](#) -> [View Image](#)
 
 # Features
+Here is a list of features that will be implemented and utilized within my project. There will also be a list for future features that I would like to add to the project and will revisit at a later date to implement. 
 
-### Existing Features
+## Existing Features 
 
-### Future Features To Implement
+### Different navigation bars for different users
+* A non-registered will only be able to see the homepage navigation link, login navigation link, registration navigation link, contact navigation link and all recipe navigation links. 
+
+* For a registered they will have full access and will be able to see the homepage navigation link, logout navigation link, registration navigation link, contact navigation link and all recipe navigation links and the account navigation link. 
+
+### Registration form
+* This feature will only be available to non-registered and will be located in the top navigation for non-registered to see and will be prompted on the homepage to register to get full access to create, share and store recipes.  
+
+### Login form
+* This feature will be available to all users allowing them to login into the web application, but once the user is logged in, the login button will disappear and the logout button will appear.   
+
+### Contact form
+* 
+
+### User account page
+* 
+
+### Add recipe
+*
+
+### Update recipe
+*
+
+### Delete recipe
+*
+
+### Social links in footer
+*
+
+### Error pages 
+*
+
+## Future Features To Implement
 
 ## Technologies Used
 
