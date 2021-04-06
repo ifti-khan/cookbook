@@ -64,13 +64,27 @@ My users for this project are people seeking new cooking recipes for their break
 * As a user, I want to access the web application on different device sizes, so that I can view the website on the go.
 
 # Design 
-# Design 
-The design choice for my project overall is to create a user friendly website, which will have a sleek modern design and easy to read. 
-To make these design choices happen I have made the following decisions below. 
-
 ## Framework
 The Materialize framework has been chosen for the project, the reason for this is that for the last two projects I have used the Bootstrap framework. 
 So for this project I would like to utilize the Materialize framework and gain some exposure to it.
+
+## Colour Scheme
+The colour scheme that I have chosen will be easy on the eyes and easy for users to read the cooking recipes. 
+The buttons and flash messages will stand out from the rest of the content so they can be noticed. All colour chosen will 
+be validated beforehand using the WebAIM online contrast checker to make sure they meet accessibility standards. 
+
+## Typography 
+For this project I have chosen two fonts from Google Fonts, the first font I have chosen is 
+called [Source Code Pro](https://fonts.google.com/specimen/Source+Code+Pro?preview.text_type=custom). 
+This font will used in my navigation bar, headings, flash messages and button. 
+
+The second font I have chosen is also from Google Fonts and it is called [Baloo 2]( https://fonts.google.com/specimen/Baloo+2?preview.text_type=custom). 
+This font will be used the main content of the project as well as displaying the main recipe cooking instructions. 
+
+## Imagery
+The images that will be used for this project will be some of my personal images that I have taken of the wife’s cooking. 
+The other images will be taken from Google and referenced in my media section of the write up.  The icons used within this project will be utilised 
+from the [Font Awesome CDN]( https://cdnjs.com/libraries/font-awesome). 
 
 # Wireframes
 
