@@ -95,41 +95,57 @@ from the [Font Awesome CDN]( https://cdnjs.com/libraries/font-awesome).
 ## All Pages Smartphone -> [View PDF](#) -> [View Image](#)
 
 # Features
-Here is a list of features that will be implemented and utilized within my project. There will also be a list for future features that I would like to add to the project and will revisit at a later date to implement. 
+Here is a list of features that will be implemented and utilized within my project. 
+There will also be a list for future features that I would like to add to the project 
+and will revisit at a later date to implement. 
 
 ## Existing Features 
 
 ### Different navigation bars for different users
-* A non-registered will only be able to see the homepage navigation link, login navigation link, registration navigation link, contact navigation link and all recipe navigation links. 
+* A non-registered will only be able to see the homepage navigation link, login navigation link, 
+registration navigation link, contact navigation link and all recipe navigation links. 
 
-* For a registered they will have full access and will be able to see the homepage navigation link, logout navigation link, registration navigation link, contact navigation link and all recipe navigation links and the account navigation link. 
+* For a registered they will have full access and will be able to see the homepage navigation link, 
+logout navigation link, registration navigation link, contact navigation link and all recipe navigation links 
+and the account navigation link. 
 
 ### Registration form
-* This feature will only be available to non-registered and will be located in the top navigation for non-registered to see and will be prompted on the homepage to register to get full access to create, share and store recipes.  
+* This feature will only be available to non-registered and will be located in the top navigation bar for non-registered 
+to see and will be prompted on the homepage to register to get full access to create, share and store recipes.  
 
 ### Login form
-* This feature will be available to all users allowing them to login into the web application, but once the user is logged in, the login button will disappear and the logout button will appear.   
+* This feature will be available to all users allowing them to login into the web application, but once the user is logged in, 
+the login navigation link will disappear and the logout navigation link will appear.   
 
 ### Contact form
-* 
+* A contact form feature will be created for users to get in contact with the site admin to help with
+any issues e.g. login issues like forgotten username and passwords. 
 
 ### User account page
-* 
+* This will allow user to change their username and password as well as displaying their created recipes, 
+so this acts like a recipe storage page for the user. 
 
-### Add recipe
-*
+### Add recipe form
+* This feature will provide a detailed recipe input form for users to create their recipes to store and share. 
 
 ### Update recipe
-*
+* This feature will be found in the user account page and will be a button located next to their created recipes. 
+Once clicked it take them to a detailed form like the add recipe form, but this form will allow users to update a created recipe. 
+
 
 ### Delete recipe
-*
+* This feature will be found in the user account page of the web application and will be a button that 
+will allow users to delete their own created recipes.
 
 ### Social links in footer
-*
+* This feature will be available for all users and will contain social media logo links like 
+Facebook, Twitter, Instagram, GitHub, and LinkedIn within the footer of the web application. 
 
 ### Error pages 
-*
+* A 404 Error html page will be created, a 404 error indicates that the resource requested cannot be found.
+
+* A 500 Error html page will be created, a 500 error indicates that the server has encountered 
+an issue and cannot perform the request made by the user. 
 
 ## Future Features To Implement
 
