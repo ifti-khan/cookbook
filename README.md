@@ -149,6 +149,19 @@ an issue and cannot perform the request made by the user.
 
 ## Future Features To Implement
 
+### Allowing users to upload images
+* This feature is to allow users to upload their own images of their own recipes when they are creating a recipe.  
+
+### Users can save their favourite recipes 
+* This feature will allow users to save recipes they come across when browsing through the recipe section and will save to their user account profile page under a favourite recipe section.
+
+### Email verification when users register 
+* This feature will work alongside the registration form, so when a user inputs an email address, this feature would then send a verification email to make sure the email address provided is valid and active.
+
+### Forgotten password 
+* This feature will allow users to reset their own password if they forget it, instead of a user getting in contact with the admin of the web application. 
+
+
 ## Technologies Used
 
 ### Programming Languages
