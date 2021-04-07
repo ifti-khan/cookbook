@@ -161,8 +161,78 @@ an issue and cannot perform the request made by the user.
 ### Forgotten password 
 * This feature will allow users to reset their own password if they forget it, instead of a user getting in contact with the admin of the web application. 
 
-
 ## Technologies Used
+Here is a list of programming languages that I used to create this project along with a list of database storage, software, frameworks, libraries and tools I also used to create this project.
+
+### Programming Languages
+
+* HTML5 -> [Visit Site](https://en.wikipedia.org/wiki/HTML5)
+    * HTML5 was used to create the overall structure and page elements to be viewed in a web browser.
+
+* CSS3 -> [Visit Site](https://en.wikipedia.org/wiki/CSS)
+    * CSS3 was used to give my project and its content style, layout, colours, a different font and format.
+
+
+
+* JavaScript -> [Visit Site](https://en.wikipedia.org/wiki/JavaScript)
+    * JavaScript was used to give my project an interactive look and feel and to be used to interact with APIs.
+
+* Python -> [Visit Site](https://www.python.org/downloads/)
+    * Python was used to create the backend server side logic of the web application.
+
+### Database, Frameworks, Libraries, Software & Tools Used
+
+* MongoDB -> [Visit Site](https://www.mongodb.com/)
+    * MongoDB will be used to store all user and recipe information and this will be done by utilising MongoDB key and value setup, to then be called using python. 
+
+* Materialize CSS & JS -> [Visit Site](https://cdnjs.com/libraries/materialize)
+    * The Materialize CSS and JS will be used for the responsive side of my project. It will also be used for visual elements, validation, affect and initialising some materialize interactive elements.
+
+* Font Awesome v5.15.1 CDN -> [Visit Site](https://cdnjs.com/libraries/font-awesome)
+    * The Font Awesome CDN will be used for the icons that i use within my project to help give the project good visual elements and a good user experience.
+
+* Hover.css v2.3.1 CDN -> [Visit Site](https://cdnjs.com/libraries/hover.css)
+    * The hover css will be used to give my project a nice simple hover visual effect.
+
+* JQuery v3.6.0 -> [Visit Site](https://cdnjs.com/libraries/jquery)
+    * JQuery will be used to manipulate the Document Object Model (DOM), create animations and events.
+
+* Email JS -> [Visit Site](https://www.emailjs.com/docs/sdk/installation/)
+    * This will be used for the contact modal, so that a user can send an actual email to me via an input forms provided.
+
+* Google Fonts -> [Visit Site](https://fonts.google.com/)
+    * Google fonts has been used to import the font i have chosen directly from google into my main CSS file.
+
+* The Code Institute Repository Template -> [Visit Site](https://github.com/Code-Institute-Org/gitpod-full-template)
+    * As a student of The Code Institute they provided a repository template that comes with preconfigured settings and extension, which can be used by Gitpod development environment. 
+
+* GitHub -> [Visit Site](https://github.com/)
+    * I used GitHub to store my project files by creating a repository for it and then using the Git terminal and its commands to version control and store my files.
+
+* Heroku -> [Visit Site](https://www.heroku.com/)
+    * I used Heroku to deploy my web application because GitHub can only deploy static websites where as Heroku can deploy websites with backend server side capabilities. So GitHub this time is only being used for storage but linked to my Heroku, so when I push to my GitHub it automatically deploys to my Heroku. See deployment section for more info. 
+
+* Gitpod -> [Visit Site](https://www.gitpod.io/)
+    * I used this online development environment because of its integration within GitHub. With a click of a button within any repo or browser extension, Gitpod will open up and I am ready to code without installing any physical programs on my laptop.  
+
+* Visual Studio Code -> [Visit Site](https://code.visualstudio.com/)
+    * I used this code editor as well but this was mainly used as a backup, because of Gitpods 50 hour usage limit per month. I chose VSCode because Gitpod utilises VSCode so I was familiar with it. Another reason is because of it built in Git functions, which allowed me to clone my repositories easily and pull, commit and push to my repositories.    
+
+* Balsamiq Desktop -> [Visit Site](https://balsamiq.com/wireframes/desktop/)
+    * Balsamiq was used in the design stage where I created my wireframes for my project to help me get visual representation of what my project could look like.
+
+* Paint 3D -> [Visit Site](https://www.microsoft.com/en-gb/p/paint-3d/9nblggh5fv99?activetab=pivot:overviewtab)
+    * Paint 3D was used to crop screenshot images and then saved to an appropriate image format.
+
+* Google Chrome & Chrome Dev Tools -> [Visit Site](https://support.google.com/chrome/answer/95346?co=GENIE.Platform%3DDesktop&hl=en)
+    * Google Chrome and Chrome Dev Tools was used to help create my project as well as testing it using the developer tools.
+
+* Markdown Table Generator -> [Visit Site](https://www.tablesgenerator.com/markdown_tables)
+    * This online tool helped me to create the markdown tables for testing section of my readme file.
+
+* Online Random Keygen -> [Visit](https://randomkeygen.com/)
+    * This online tool was used to help generate a secure key for my secret key variable within my project.
+
 
 ### Programming Languages
 

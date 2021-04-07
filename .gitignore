@@ -5,3 +5,6 @@ __pycache__/
 *.py[cod]
 node_modules/
 env.py
+.vscode
+.vscode/settings.json
+workspace.code-workspace
