@@ -172,8 +172,6 @@ Here is a list of programming languages that I used to create this project along
 * CSS3 -> [Visit Site](https://en.wikipedia.org/wiki/CSS)
     * CSS3 was used to give my project and its content style, layout, colours, a different font and format.
 
-
-
 * JavaScript -> [Visit Site](https://en.wikipedia.org/wiki/JavaScript)
     * JavaScript was used to give my project an interactive look and feel and to be used to interact with APIs.
 
@@ -233,12 +231,23 @@ Here is a list of programming languages that I used to create this project along
 * Online Random Keygen -> [Visit](https://randomkeygen.com/)
     * This online tool was used to help generate a secure key for my secret key variable within my project.
 
-
-### Programming Languages
-
-### Frameworks, Libraries & Tools Used
+* Python Tutor -> [Visit Site](http://pythontutor.com/)
+    * I used this online tool to help me be better understand my python code because it allowed me to see my code visually run step by step. 
 
 # Validation
+In this section I have used a few different validation tools to thoroughly check and make sure my project code is fully compliant and accessible. If there is any non-compliant code or warnings within the project I will document it and then fix it and this will be the first step of my testing and debugging.
+
+HTML5 Validation -> [Visit Site](https://validator.w3.org/)
+
+CSS3 Validation -> [Visit Site](https://jigsaw.w3.org/css-validator/)
+
+WebAIM Contrast Checker -> [Visit Site](https://webaim.org/resources/contrastchecker/)
+
+JavaScript Validation -> [Visit Site](https://esprima.org/demo/validate.html)
+
+Python Validation -> [Visit Site](http://pep8online.com/)
+
+
 
 ### Validation Document -> [Visit Document](#)
 
