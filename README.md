@@ -247,8 +247,6 @@ JavaScript Validation -> [Visit Site](https://esprima.org/demo/validate.html)
 
 Python Validation -> [Visit Site](http://pep8online.com/)
 
-
-
 ### Validation Document -> [Visit Document](#)
 
 # Testing
@@ -264,8 +262,15 @@ Python Validation -> [Visit Site](http://pep8online.com/)
 # Known Issues And Solutions
 
 # Deployment
-## GitHub Pages
-![Screenshot Of GitHub Pages Deployment](#)
+## Step 1 – MongoDB
+When it came to the deployment, the first step for me was to create a MongoDB account and then a MongoDB cluster. Once that was done I then created my database and finally my collections (tables) to store the relevant data within the database. 
+
+Once this was done I then had the key information I needed for the next step. The key information that is required for the next step is my Mongo database name and the MongoURI.
+
+## Step 2 – GitHub & Gitpod
+In this step I created my repository for my project and then began to build my basic boilerplate for my web application using Gitpod. Within Gitpod I created all of my files and directories that I need for this project.
+
+## Step 3 - Heroku
 
 ## Local Clone
 ![Screenshot Of GitHub Pages Deployment](#)
