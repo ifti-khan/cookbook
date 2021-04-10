@@ -262,15 +262,85 @@ Python Validation -> [Visit Site](http://pep8online.com/)
 # Known Issues And Solutions
 
 # Deployment
-## Step 1 – MongoDB
-When it came to the deployment, the first step for me was to create a MongoDB account and then a MongoDB cluster. Once that was done I then created my database and finally my collections (tables) to store the relevant data within the database. 
+In this section I will list the steps I took to deploy my project to Heroku. 
 
-Once this was done I then had the key information I needed for the next step. The key information that is required for the next step is my Mongo database name and the MongoURI.
+## Step 1 – MongoDB
+1.1	– The first thing I did was sign up to MongoDB and create an account.
+
+1.2	– The next step was to create a cluster.
+
+1.3	– Once the cluster was created I then created my Database and gave it a unique name.
+
+1.4	– After the Database was created, I then created my collections (tables) within the database. 
+
+1.5	– Once I created my collections, I then added some data to my collections. 
+
+| Recipes Collection |                            |
+|--------------------|----------------------------|
+| id                 | OjectId                    |
+| recipe_name        | Test Recipe                |
+| recipe_description | This is a test description |
+|                                                 |
+
+1.6	– Once all of this was done I then had the key information I needed and that is the MongoDB Name and the MongoDB URI.
 
 ## Step 2 – GitHub & Gitpod
-In this step I created my repository for my project and then began to build my basic boilerplate for my web application using Gitpod. Within Gitpod I created all of my files and directories that I need for this project.
+2.1 – After signing up to MongoDB and getting the key information, I then created my GitHub repository for my project and gave it an appropriate name. 
+
+2.2 – After creating my repository, I then launched it in Gitpod.
+
+2.3 – Once Gitpod was done building the workspace, I then started to create the appropriate files, directories and sub directories for the project.
+
+2.4 – Once all the files and directories where in place I then installed the appropriate library and frameworks for my project. 
+
+| Files            | Directories | Sub Directory and Files | Libraries/Frameworks |
+|------------------|-------------|-------------------------|----------------------|
+| app.py           | static      | static/css/style.css    | click==7.1.2         |
+| env.py           |             | static/js/script.js     | dnspython==2.1.0     |
+| Procfile         | templates   | /base.html              | Flask==1.1.2         |
+| README.md        |             | /index.html             | Flask-PyMongo==2.3.0 |
+| requirements.txt |             |                         | itsdangerous==1.1.0  |
+|                  |             |                         | pymongo=3.11.3       |
+|                  |             |                         | Werkzeug==1.0.1      |
+|                                                                                 |
+
+2.5 – Once this was done I then created a requirements file using the CLI interface using the following command pip3 freeze –local > requirements.txt. 
+
+2.6 – Then I created an env file to store the key configuration information for my project and a Procfile, these are needed for the next step.
+
+2.7 – Just before I committed my project to GitHub, I added the env file to .gitignore because it contains key and sensitive information. 
+
+2.8 – Once this was done, I then committed my files to my GitHub repository and I was ready for the next step.
 
 ## Step 3 - Heroku
+3.1 – The first thing I did was sign up to Heroku and create an account. 
+
+3.2 – The next step is to create a new app by clicking new and selecting create new app in the top right hand corner.
+
+3.3 – Give the app a unique app name and select a region that I closet to you, once this is done click create app. 
+
+3.4 – Once this is done you will be taken to the app dashboard and from here you need to click on the settings tab for the next step.
+
+3.5 – On this page I added the config vars for my app and they are:
+
+| Config Vars  | Key Information   |
+|--------------|-------------------|
+| IP           | 0.0.0.0           |
+| PORT         | 5000              |
+| SECRET_KEY   | *secretkey*       |
+| MONGO_URI    | *mongouriaddress* |
+| MONGO_DBNAME | *databasename*    |
+|                                  |
+
+3.6 – After adding the config vars, I then click on the deploy tab for the next step.
+
+3.7 – When I was on the deploy page, I went down to the deployment section and clicked on the “Connect to GitHub” button, which then allowed me to search for my project repository within my GitHub. 
+
+3.8 – Once I had found it I then clicked on the connect button, this then allowed me to choose a branch to deploy from my GitHub, once this was chosen I then clicked on the “Enable Automatic Deploys” button. 
+
+3.9 – The next step was to press the “Deploy Branch” button to full deploy my project to Heroku. Heroku will then set everything up and once done a “View” button will appear.
+
+3.10 – The final step is to click the “View” button and you will be taken your web application which is fully deployed to Heroku.  
 
 ## Local Clone
 ![Screenshot Of GitHub Pages Deployment](#)
