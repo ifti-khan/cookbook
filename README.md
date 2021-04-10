@@ -352,13 +352,17 @@ To make a local clone you are going to need a few tool/software installed and se
 
 ## Local Clone Steps
 1.	Open up your IDE or Local Text Editor, for demo purposes I am using VSCode. 
+
 2.	You need to make a clone of my repo and for this you need the repo address which can be found on my GitHub under the “Code” button or the URL address below.
 
 My repo URL - https://github.com/ifti-khan/ifti-khan-milestone-project-3.git
 
 3.	Once you have the address, go to your VSCode and press the F1 key and type in clone, then you will see “Git: Clone”, click on that and then you will be prompted to enter the GitHub URL address located above. 
+
 4.	Copy and paste my repo URL and then press enter, you will then be prompted to find a save location for the repo.
+
 5.	Once you have a save location and have saved the repo and small popup will appear in the bottom right prompting you to open the project. 
+
 6.	Once you open the project, on the left you will see under the files tabs, my repo files and directories. 
 7.	The next thing that need to be done is to create an env.py file in the root directory.
 8.	Inside of the env.py file, you will need to add the following code:
