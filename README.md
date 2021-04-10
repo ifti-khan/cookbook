@@ -88,11 +88,15 @@ from the [Font Awesome CDN]( https://cdnjs.com/libraries/font-awesome).
 
 # Wireframes
 
-## All Pages Web Browser -> [View PDF](#) -> [View Image](#)
-
-## All Pages Tablet -> [View PDF](#) -> [View Image](#)
-
-## All Pages Smartphone -> [View PDF](#) -> [View Image](#)
+## Home Page -> [View PDF](#) -> [View Image](#)
+## Registration Page -> [View PDF](#) -> [View Image](#)
+## Login Page -> [View PDF](#) -> [View Image](#)
+## Contact Page -> [View PDF](#) -> [View Image](#)
+## Account Page -> [View PDF](#) -> [View Image](#)
+## Add Recipe Page -> [View PDF](#) -> [View Image](#)
+## Update Recipe Page -> [View PDF](#) -> [View Image](#)
+## All Recipes Page -> [View PDF](#) -> [View Image](#)
+## Admin Page -> [View PDF](#) -> [View Image](#)
 
 # Features
 Here is a list of features that will be implemented and utilized within my project. 
