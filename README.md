@@ -293,7 +293,7 @@ In this section I will list the steps I took to deploy my project to Heroku.
 
 2.4 – Once all the files and directories where in place I then installed the appropriate library and frameworks for my project. 
 
-| Files            | Directories | Sub Directory and Files | Libraries/Frameworks |
+| Files in Root Directory | Other Directories | Sub Directories and Files | Libraries/Frameworks |
 |------------------|-------------|-------------------------|----------------------|
 | app.py           | static      | static/css/style.css    | click==7.1.2         |
 | env.py           |             | static/js/script.js     | dnspython==2.1.0     |
@@ -304,7 +304,7 @@ In this section I will list the steps I took to deploy my project to Heroku.
 |                  |             |                         | Werkzeug==1.0.1      |
 |                                                                                 |
 
-2.5 – Once this was done I then created a requirements file using the CLI interface using the following command pip3 freeze –local > requirements.txt. 
+2.5 – Once this was done I then created a requirements file using the CLI interface using the following command: ```pip3 freeze –local > requirements.txt```
 
 2.6 – Then I created an env file to store the key configuration information for my project and a Procfile, these are needed for the next step.
 
@@ -342,8 +342,50 @@ In this section I will list the steps I took to deploy my project to Heroku.
 
 3.10 – The final step is to click the “View” button and you will be taken your web application which is fully deployed to Heroku.  
 
-## Local Clone
-![Screenshot Of GitHub Pages Deployment](#)
+# Local Clone
+To make a local clone you are going to need a few tool/software installed and setup a few things. 
+
+## Tools/Software 
+* An IDE like Gitpod or a Local Text Editor software like VSCode.
+* A MongoDB account for the database collections.
+* The latest version of Python installed on your Local Machine if you are planning on using a Local Text Editor.
+
+## Local Clone Steps
+1.	Open up your IDE or Local Text Editor, for demo purposes I am using VSCode. 
+2.	You need to make a clone of my repo and for this you need the repo address which can be found on my GitHub under the “Code” button or the URL address below.
+
+My repo URL - https://github.com/ifti-khan/ifti-khan-milestone-project-3.git
+
+3.	Once you have the address, go to your VSCode and press the F1 key and type in clone, then you will see “Git: Clone”, click on that and then you will be prompted to enter the GitHub URL address located above. 
+4.	Copy and paste my repo URL and then press enter, you will then be prompted to find a save location for the repo.
+5.	Once you have a save location and have saved the repo and small popup will appear in the bottom right prompting you to open the project. 
+6.	Once you open the project, on the left you will see under the files tabs, my repo files and directories. 
+7.	The next thing that need to be done is to create an env.py file in the root directory.
+8.	Inside of the env.py file, you will need to add the following code:
+
+```
+# Python env Code
+
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "yourkeyhere")
+os.environ.setdefault("MONGO_URI", "yourmongouriaddress")
+os.environ.setdefault("MONGO_DBNAME", "yourdatabasename")
+```
+9.	After creating the env file, you will need to install all of the project requirements from the requirments.txt file. This can easily be done using the terminal window within VSCode.
+10.	 In the terminal type the following command:
+```pip3 install –r requirements.txt```
+In my VSCode I do not need to type the sudo command, so if the top command does not work then type the following command:
+```sudo pip3 install –r requirements.txt```
+11.	The next step is to create a database with a unique name in MongoDB but don’t forget to get the MongoDB URI and Database name. 
+
+12.	Once that is done you will need to create the following ? of collections within the database. 
+
+Put all database collections in here: 
+
+13.	Once all the above is done, you can know successfully run the web application using the following command in the terminal: ```python3 app.py```
 
 # Credits
 ## Content
