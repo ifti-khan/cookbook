@@ -92,7 +92,7 @@ from the [Font Awesome CDN]( https://cdnjs.com/libraries/font-awesome).
 ### Registration Page -> [View PDF](/writeup_files/wireframes/registration-page-all-devices.pdf)
 ### Login Page -> [View PDF](/writeup_files/wireframes/login-page-all-devices.pdf)
 ### Contact Page -> [View PDF](/writeup_files/wireframes/contact-page-all-devices.pdf)
-### Account Page -> [View PDF](#)
+### Account Page -> [View PDF](/writeup_files/wireframes/account-page-all-devices.pdf)
 ### Add Recipe Page -> [View PDF](#)
 ### Update Recipe Page -> [View PDF](#)
 ### All Recipes Page -> [View PDF](#)
