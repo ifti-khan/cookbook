@@ -88,7 +88,7 @@ from the [Font Awesome CDN]( https://cdnjs.com/libraries/font-awesome).
 
 # Wireframes
 
-## Home Page -> [View PDF](#) -> [View Image](#)
+## Home Page -> [View PDF](/writeup_files/wireframes/home-page-all-devices.pdf) -> [View Image](/writeup_files/wireframes/home-page-all-devices.png)
 ## Registration Page -> [View PDF](#) -> [View Image](#)
 ## Login Page -> [View PDF](#) -> [View Image](#)
 ## Contact Page -> [View PDF](#) -> [View Image](#)
