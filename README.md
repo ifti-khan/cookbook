@@ -295,6 +295,8 @@ In this section I will list the steps I took to deploy my project to Heroku.
 
 2.3 – Once Gitpod was done building the workspace, I then started to create the appropriate files, directories and sub directories for the project.
 
+2.3.1 - Once I create the Procfile, I then entered this line of code ```web: python app.py``` on a single line with no space at the end or an empty line underneath. This is needed for Heroku to start running the app.py file.   
+
 2.4 – Once all the files and directories where in place I then installed the appropriate library and frameworks for my project. 
 
 | Files in Root Directory | Other Directories | Sub Directories and Files | Libraries/Frameworks |
