@@ -93,9 +93,9 @@ from the [Font Awesome CDN]( https://cdnjs.com/libraries/font-awesome).
 ### Login Page -> [View PDF](/writeup_files/wireframes/login-page-all-devices.pdf)
 ### Contact Page -> [View PDF](/writeup_files/wireframes/contact-page-all-devices.pdf)
 ### Account Page -> [View PDF](/writeup_files/wireframes/account-page-all-devices.pdf)
+### All Recipe Page -> [View PDF](/writeup_files/wireframes/all-recipes-page-all-devices.pdf)
 ### Add Recipe Page -> [View PDF](#)
-### Update Recipe Page -> [View PDF](#)
-### All Recipes Page -> [View PDF](#)
+### Update Recipes Page -> [View PDF](#)
 ### Admin Page -> [View PDF](#)
 
 # Features
