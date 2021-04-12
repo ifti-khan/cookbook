@@ -96,7 +96,7 @@ from the [Font Awesome CDN]( https://cdnjs.com/libraries/font-awesome).
 ### All Recipe Page -> [View PDF](/writeup_files/wireframes/all-recipes-page-all-devices.pdf)
 ### Add Recipe Page -> [View PDF](/writeup_files/wireframes/add-recipe-page-all-devices.pdf)
 ### Update Recipes Page -> [View PDF](/writeup_files/wireframes/update-recipe-page-all-devices.pdf)
-### Admin Page -> [View PDF](#)
+### Admin Page -> [View PDF](/writeup_files/wireframes/admin-page-all-devices.pdf)
 
 # Features
 Here is a list of features that will be implemented and utilized within my project. 
