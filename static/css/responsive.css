@@ -1,6 +1,26 @@
 /*4K Screen*/
 @media (min-width: 2560px) {
+    /*Navigation Bar*/
+    nav .brand-logo {
+        font-size: 50px;
+    }
+
+    nav ul a {
+        font-size: 30px;
+    }
+
+    /*Footer*/
+    .social-icons {
+        height: 45px;
+    }
+    .social-icons a {
+        font-size: 50px;
+        letter-spacing: 5px;
+    }
     
+    .copyright {
+        font-size: 26px;
+    }
 }
 
 /*Large Laptop*/
@@ -13,11 +33,6 @@
 
 }
 
-/*Small Laptop*/
-@media (max-width: 991px) {
-
-}
-
 /*Tablet*/
 @media (max-width: 768px) {
 
@@ -25,15 +40,24 @@
 
 /*Large Mobile*/
 @media (max-width: 425px) {
-
+    /*Navigation Bar*/
+    nav .brand-logo {
+        margin-left: 0px;
+    }
 }
 
 /*Medium Mobile*/
 @media (max-width: 375px) {
-
+    /*Navigation Bar*/
+    nav .brand-logo {
+        font-size: 26px;
+    }
 }
 
 /*Small Mobile*/
 @media (max-width: 320px) {
-
+    /*Navigation Bar*/
+    nav .brand-logo {
+        font-size: 20px;
+    }
 }
