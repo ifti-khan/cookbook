@@ -44,6 +44,15 @@
     nav .brand-logo {
         margin-left: 0px;
     }
+
+    /*Index.html*/
+    .welcome-row {
+        margin-top: 15px;
+    }
+    
+    .welcome-con h2 {
+        font-size: 34px;
+    }
 }
 
 /*Medium Mobile*/
@@ -52,6 +61,11 @@
     nav .brand-logo {
         font-size: 26px;
     }
+
+    /*Index.html*/
+    .welcome-con h2 {
+        font-size: 30px;
+    }
 }
 
 /*Small Mobile*/
@@ -59,5 +73,10 @@
     /*Navigation Bar*/
     nav .brand-logo {
         font-size: 20px;
+    }
+
+    /*Index.html*/
+    .welcome-con h2 {
+        font-size: 26px;
     }
 }

@@ -66,4 +66,46 @@ footer {
     padding: 2.5px 0px;
 }
 
+/*index.html*/
+.welcome-row {
+    margin-top: 50px;
+}
+
+.welcome-con {
+    background-color: rgba(224, 224, 224, 0.5);
+    height: 480px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow:5px 5px 50px 5px grey; 
+}
+
+.welcome-con h2 {
+    font-family: 'Source Code Pro', sans-serif;
+    font-style: italic;
+    margin: 0 0;
+}
+
+.welcome-con p {
+    font-size: 22px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.btn {
+    border-radius: 5px;
+    line-height: 0px;
+    padding: 25px 16px;
+}
+
+.various-btns {
+    margin-top: 30px;
+}
+
+.various-btns p {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-style: italic;
+}
+
 
