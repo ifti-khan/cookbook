@@ -23,7 +23,17 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/recipes")
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+
+@app.route("/registration")
+def register():
+    return render_template("register.html")
+
+
+@app.route("/all-recipes")
 def all_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
