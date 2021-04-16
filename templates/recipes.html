@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
+{% if not session.user %}
+<h5 class="center-align text-shadow blue-grey lighten-4 black-text reg-message2">Want Full Access? <a href="{{ url_for('register') }}">Register Now!</a></h5>
+{% endif %}
+
     <h1>All Recipes Page</h1>
 
     {% for recipe in recipes %}

@@ -154,3 +154,9 @@ footer {
     box-shadow:5px 5px 50px 5px grey;
 }
 
+/*recipe.html*/
+.reg-message2 {
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
