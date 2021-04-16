@@ -30,13 +30,13 @@
                     <li><a href="{{ url_for('index') }}">Home</a></li>
                     <li><a href="{{ url_for('all_recipes') }}">Recipes</a></li>
                     {% if not session.user %}
-                        <li><a href="{{ url_for('register') }}">Register</a></li>
-                        <li><a href="{{ url_for('login') }}">Log In</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                    <li><a href="{{ url_for('login') }}">Log In</a></li>
                     {% else %}
-                        <li><a href="#">Account</a></li>
-                        <li><a href="#">Log Out</a></li>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Log Out</a></li>
                     {% endif %}
-                    <li><a class="modal-trigger" href="#modal1">Contact</a></li>
+                    <li><a class="modal-trigger" data-target="modal1" href="#">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -46,16 +46,16 @@
             <li>
                 <h4 class="center-align sidenav-heading">Share&#8250;Cook&#8250;Enjoy</h4>
             </li>
-            {% if not session.user %}
             <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('all_recipes') }}">Recipes</a></li>
+            {% if not session.user %}
             <li><a href="{{ url_for('register') }}">Register</a></li>
             <li><a href="{{ url_for('login') }}">Log In</a></li>
-            <li><a href="{{ url_for('all_recipes') }}">Recipes</a></li>
-            <li><a class="modal-trigger" href="#modal1">Contact</a></li>
             {% else %}
             <li><a href="#">Account</a></li>
             <li><a href="#">Log Out</a></li>
             {% endif %}
+            <li><a class="modal-trigger" data-target="modal1" href="#">Contact</a></li>
         </ul>
     </header>
 

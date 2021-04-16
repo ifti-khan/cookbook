@@ -45,8 +45,17 @@
         margin-left: 0px;
     }
 
+    /*Index.html*/
+    .welcome-con {
+        height: 490px;
+    }
+
     .welcome-con h2 {
         font-size: 34px;
+    }
+
+    #index-help-message {
+        font-size: 14px;
     }
 }
 
@@ -71,7 +80,15 @@
     }
 
     /*Index.html*/
+    .welcome-con {
+        height: 510px;
+    }
+
     .welcome-con h2 {
         font-size: 26px;
+    }
+
+    #index-help-message {
+        font-size: 12px;
     }
 }

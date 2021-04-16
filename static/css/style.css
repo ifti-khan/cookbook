@@ -28,7 +28,7 @@ nav ul a {
 }
 
 .fa-bars {
-    color: #9e9e9e;
+    color: #546e7a ;
     
 }
 
@@ -62,7 +62,7 @@ footer {
 .copyright {
     color: #000000;
     margin: 0px;
-    background-color: rgba(51,51,51,0.08);
+    background-color: rgba(51,51,51,0.09);
     padding: 2.5px 0px;
 }
 
@@ -72,7 +72,7 @@ footer {
 }
 
 .welcome-con {
-    background-color: rgba(224, 224, 224, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     height: 480px;
     text-align: center;
     border-radius: 10px;
@@ -91,10 +91,11 @@ footer {
     margin-bottom: 0;
 }
 
-.btn {
+.var-btn {
     border-radius: 5px;
     line-height: 0px;
     padding: 25px 16px;
+    letter-spacing: 1px;
 }
 
 .various-btns {
@@ -118,10 +119,29 @@ footer {
     margin-top: 50px;
 }
 
+.reg-title {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
 .register-con {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.5);
     height: 480px;
     text-align: center;
     border-radius: 10px;
     box-shadow:5px 5px 50px 5px grey;
 }
+
+.reg-message p {
+    margin-top: 50px;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.reg-btn {
+    letter-spacing: 1px;
+    border-radius: 5px;
+    line-height: 0px;
+}
+
