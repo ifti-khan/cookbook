@@ -25,19 +25,11 @@
 
 /*Large Laptop*/
 @media (max-width: 1440px) {
-    /*Index.html*/
-    .welcome-row {
-        margin-top: 150px;
-    }
 
 }
 
 /*Medium Laptop*/
 @media (max-width: 1024px) {
-    /*Index.html*/
-    .welcome-row {
-        margin-top: 125px;
-    }
 
 }
 
@@ -53,11 +45,6 @@
         margin-left: 0px;
     }
 
-    /*Index.html*/
-    .welcome-row {
-        margin-top: 125px;
-    }
-    
     .welcome-con h2 {
         font-size: 34px;
     }
