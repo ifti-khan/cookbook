@@ -72,11 +72,7 @@ footer {
 }
 
 .welcome-con {
-    background-color: rgba(255, 255, 255, 0.5);
-    height: 500px;
     text-align: center;
-    border-radius: 10px;
-    box-shadow:5px 5px 50px 5px grey; 
 }
 
 .welcome-con h2 {
@@ -107,6 +103,7 @@ footer {
     margin-bottom: 15px;
     font-size: 16px;
     font-style: italic;
+    letter-spacing: 1px;
 }
 
 #index-help-message {
@@ -127,15 +124,15 @@ footer {
 }
 
 .register-con {
-    background-color: rgba(255, 255, 255, 0.5);
-    height: 480px;
     text-align: center;
-    border-radius: 10px;
-    box-shadow:5px 5px 50px 5px grey;
+}
+
+.black-text {
+    letter-spacing: 1px;
 }
 
 .login-message p, .reg-message p {
-    margin-top: 50px;
+    margin-top: 15px;
     font-size: 20px;
     font-style: italic;
 }
@@ -147,11 +144,7 @@ footer {
 }
 
 .login-con {
-    background-color: rgba(255, 255, 255, 0.5);
-    height: 325px;
     text-align: center;
-    border-radius: 10px;
-    box-shadow:5px 5px 50px 5px grey;
 }
 
 /*recipe.html*/
