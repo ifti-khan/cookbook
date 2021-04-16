@@ -57,6 +57,20 @@
     #index-help-message {
         font-size: 14px;
     }
+
+    /*register.html & login.html*/
+    .register-con {
+        height: 435px;
+    }
+
+    .login-con {
+        height: 300px;
+    }
+
+    .login-message p, .reg-message p {
+        margin-top: 30px;
+        font-size: 18px;
+    }
 }
 
 /*Medium Mobile*/
