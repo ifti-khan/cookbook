@@ -73,7 +73,7 @@ footer {
 
 .welcome-con {
     background-color: rgba(255, 255, 255, 0.5);
-    height: 480px;
+    height: 500px;
     text-align: center;
     border-radius: 10px;
     box-shadow:5px 5px 50px 5px grey; 
@@ -112,14 +112,15 @@ footer {
 #index-help-message {
     font-size: 18px;
     font-style: italic;
+    margin-top: 25px;
 }
 
-/*register.html*/
-.register-row {
+/*register.html & login.html*/
+.register-row, .login-row {
     margin-top: 50px;
 }
 
-.reg-title {
+.reg-title, .login-title {
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -133,7 +134,7 @@ footer {
     box-shadow:5px 5px 50px 5px grey;
 }
 
-.reg-message p {
+.login-message p, .reg-message p {
     margin-top: 50px;
     font-size: 20px;
     font-style: italic;
@@ -143,5 +144,13 @@ footer {
     letter-spacing: 1px;
     border-radius: 5px;
     line-height: 0px;
+}
+
+.login-con {
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 325px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow:5px 5px 50px 5px grey;
 }
 
