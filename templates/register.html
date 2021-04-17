@@ -11,7 +11,7 @@
                 <div class="input-field col s10 offset-s1 m12">
                     <i class="fas fa-user prefix blue-grey-text text-darken-1"></i>
                     <input id="fullname" name="fullname" type="text" minlength="5" maxlength="25"
-                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        pattern="^[a-zA-Z0-9\s]{5,15}$" class="validate" required>
                     <label for="fullname" class="black-text">Fullname</label>
                 </div>
             </div>
@@ -20,8 +20,8 @@
             <div class="row">
                 <div class="input-field col s10 offset-s1 m12">
                     <i class="fas fa-at prefix blue-grey-text text-darken-1"></i>
-                    <input id="email" name="email" type="email" minlength="5" maxlength="30"
-                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                    <input id="email" name="email" type="email" minlength="5" maxlength="30" 
+                    class="validate" required>
                     <label for="email" class="black-text">Email Address</label>
                 </div>
             </div>

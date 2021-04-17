@@ -52,7 +52,7 @@
             <li><a href="{{ url_for('register') }}">Register</a></li>
             <li><a href="{{ url_for('login') }}">Log In</a></li>
             {% else %}
-            <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
+            <li><a href="#">Account</a></li>
             <li><a href="#">Log Out</a></li>
             {% endif %}
             <li><a class="modal-trigger" data-target="modal1" href="#">Contact</a></li>
