@@ -8,13 +8,26 @@
         </h3>
 
         <div class="row">
-            <h4>Name: {{ fullname }}</h4>
-            <h4>Email: {{ email }}</h4>
-            <h4>Username: {{ username }}</h4> <button>Change Username</button>
-            <h4>Password: {{ password }}</h4> <button>Change Password</button>
+            <div class="col s5 offset-s1">
+                <h4>Name: {{ fullname }}</h4>
+                <h4>Username: {{ username }}</h4>
+                <a href="#" class="btn blue-grey darken-1 text-shadow">Change Username</a>
+            </div>
 
-            <h4>{{ getrecipe }}</h4>
+            <div class="col s5 offset-s1">
+                <h4>Email: {{ email }}</h4>
+                <h4>Password: **********</h4>
+                <a href="#" class="btn blue-grey darken-1 text-shadow">Change Password</a>
+            </div>
         </div>
+
+        <div class="row">
+            <div class="col s6 offset-s5">
+                <a href="#" class="btn blue-grey darken-1 text-shadow">Add Recipe</a> 
+            </div>
+        </div>
+
+
     </div>
 </div>
 
