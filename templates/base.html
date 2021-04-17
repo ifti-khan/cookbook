@@ -65,15 +65,17 @@
         {% if messages %}
         {% for message in messages %}
         <div class="row flashes">
-            <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
+            <h4 class="center-align text-shadow blue-grey lighten-4 black-text">{{ message }}</h4>
         </div>
         {% endfor %}
         {% endif %}
         {% endwith %}
     </section>
 
-    {% block content %}
-    {% endblock %}
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
 
     <footer class="text-shadow blue-grey lighten-5">
         <div class="row">
