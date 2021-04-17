@@ -82,7 +82,14 @@ def account(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("account.html", username=username)
+    fullname = mongo.db.users.find_one(
+        {"username": session["user"]})["fullname"]
+    email = mongo.db.users.find_one(
+        {"username": session["user"]})["email"]
+    password = mongo.db.users.find_one(
+        {"username": session["user"]})["password"]
+    return render_template(
+        "account.html", username=username, fullname=fullname, email=email, password=password)
 
 
 @app.route("/all-recipes")

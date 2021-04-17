@@ -113,7 +113,7 @@ footer {
 }
 
 /*register.html & login.html*/
-.register-row, .login-row {
+.register-row, .login-row, .account-row {
     margin-top: 50px;
 }
 
