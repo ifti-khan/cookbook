@@ -100,10 +100,15 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/all-recipes")
+@app.route("/all_recipes")
 def all_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
+
+
+@app.route("/add_recipe")
+def add_recipe():
+    return render_template("add_recipe.html")
 
 
 if __name__ == "__main__":
