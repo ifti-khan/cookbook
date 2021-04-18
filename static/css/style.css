@@ -45,7 +45,6 @@ nav ul a {
 
 /*Footer*/
 footer {
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -156,13 +155,26 @@ footer {
 }
 
 /*add_recipe.html*/
+
+
 #recipe_name, #recipe_description,
-#recipe_cooktime, #recipe_servings,
-#recipe_ingredients, #recipe_steps {
+#recipe_image_url, #recipe_cooktime, 
+#recipe_servings, #recipe_ingredients, 
+#recipe_steps {
     border-bottom: 1px solid #000000;
 }
 
-
 .select-wrapper input.select-dropdown {
     border-bottom: 1px solid #000000;
+}
+
+.create-recipe-title {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn i {
+    font-size: 14px;
+    vertical-align: baseline;
 }
