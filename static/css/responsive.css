@@ -30,12 +30,19 @@
 
 /*Medium Laptop*/
 @media (max-width: 1024px) {
+    /*add_recipe.html*/
+    .select-wrapper+label {
+        font-size: 10px;
+    }
 
 }
 
 /*Tablet*/
 @media (max-width: 768px) {
-
+    /*add_recipe.html*/
+    .select-wrapper input.select-dropdown {
+        margin-bottom: 25px;
+    }
 }
 
 /*Large Mobile*/
@@ -71,6 +78,16 @@
         margin-top: 30px;
         font-size: 18px;
     }
+
+    /*add_recipe.html*/
+    .select-wrapper input.select-dropdown {
+        margin-bottom: 25px;
+    }
+    
+    .input-field>label {
+        font-size: 12px;
+    }
+    
 }
 
 /*Medium Mobile*/
@@ -83,6 +100,11 @@
     /*Index.html*/
     .welcome-con h2 {
         font-size: 30px;
+    }
+
+    /*add_recipe.html*/
+    .input-field>label {
+        font-size: 11px;
     }
 }
 
@@ -105,4 +127,5 @@
     #index-help-message {
         font-size: 12px;
     }
+
 }
