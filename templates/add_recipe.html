@@ -1,6 +1,83 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>This is the add recipe form</h1>
+<div class="row add_recipe_row">
+    <h3 class="center-align text-shadow">Create Recipe</h3>
+    <form class="col s10 offset-s1">
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+                <input id="recipe_name" type="text" data-length="10">
+                <label for="recipe_name" class="black-text">Recipe Name</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6 offset-s3">
+                <input id="recipe_description" type="text" data-length="10">
+                <label for="recipe_description" class="black-text">Recipe Description</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s2 offset-s2">
+                <select>
+                    <option value="" disabled selected>Select Meal Type</option>
+                    <option value="1">Breakfast</option>
+                    <option value="2">Lunch</option>
+                    <option value="3">Dinner</option>
+                </select>
+                <label class="black-text">Meal Type</label>
+            </div>
+
+            <div class="input-field col s2 offset-s1">
+                <select>
+                    <option value="" disabled selected>Select Cuisine Type</option>
+                    <option value="1">Indian</option>
+                    <option value="2">Italian</option>
+                    <option value="3">Mexican</option>
+                </select>
+                <label class="black-text">Cuisine Type</label>
+            </div>
+
+            <div class="input-field col s2 offset-s1">
+                <select>
+                    <option value="" disabled selected>Select Diet Type</option>
+                    <option value="1">Halal</option>
+                    <option value="2">Vegetarian</option>
+                    <option value="3">Vegan</option>
+                </select>
+                <label class="black-text">Cuisine Type</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s4 offset-s1">
+                <input id="recipe_cooktime" type="text" data-length="10">
+                <label for="recipe_cooktime" class="black-text">Cooking Time - In Minutes</label>
+            </div>
+
+            <div class="col s1 empty-col"></div>
+
+            <div class="input-field col s4 offset-s1">
+                <input id="recipe_servings" type="text" data-length="10">
+                <label for="recipe_servings" class="black-text">Number Of Servings</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s4 offset-s1">
+                <textarea id="recipe_ingredients" class="materialize-textarea" data-length="120"></textarea>
+                <label for="recipe_ingredients" class="black-text">List Ingredients - Press Enter for new line</label>
+            </div>
+
+            <div class="col s1 empty-col"></div>
+
+            <div class="input-field col s4 offset-s1">
+                <textarea id="recipe_steps" class="materialize-textarea" data-length="120"></textarea>
+                <label for="recipe_steps" class="black-text">List Steps - Press Enter for new line</label>
+            </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}

@@ -14,6 +14,11 @@ body {
     margin: 0;
 }
 
+.welcome-row, .register-row, .login-row, 
+.account-row, .add_recipe_row {
+    margin-top: 50px;
+}
+
 /*Navigation bar*/
 nav .brand-logo {
     font-family: 'Source Code Pro', sans-serif;
@@ -67,10 +72,6 @@ footer {
 }
 
 /*index.html*/
-.welcome-row {
-    margin-top: 50px;
-}
-
 .welcome-con {
     text-align: center;
 }
@@ -113,10 +114,6 @@ footer {
 }
 
 /*register.html & login.html*/
-.register-row, .login-row, .account-row {
-    margin-top: 50px;
-}
-
 .reg-title, .login-title {
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -158,3 +155,14 @@ footer {
     margin-top: 30px;
 }
 
+/*add_recipe.html*/
+#recipe_name, #recipe_description,
+#recipe_cooktime, #recipe_servings,
+#recipe_ingredients, #recipe_steps {
+    border-bottom: 1px solid #000000;
+}
+
+
+.select-wrapper input.select-dropdown {
+    border-bottom: 1px solid #000000;
+}
