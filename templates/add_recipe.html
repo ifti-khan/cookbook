@@ -4,12 +4,13 @@
 <!--Create Recipe Form-->
 <div class="row add_recipe_row">
     <h3 class="center-align text-shadow create-recipe-title">Create Recipe</h3>
-    <form class="col s10 offset-s1">
+    <form class="col s10 offset-s1" method="POST" action="{{ url_for('add_recipe') }}">
 
         <!--Input Field Recipe Name-->
         <div class="row">
             <div class="input-field col s10 offset-s1 m10 offset-m1 l6 offset-l3">
-                <input id="recipe_name" type="text" data-length="50">
+                <input id="recipe_name" name="recipe_name" type="text" data-length="50" 
+                pattern="^[a-zA-Z0-9\s]{5,50}$" minlength="5" maxlength="50" class="validate" required>
                 <label for="recipe_name" class="black-text"><i class="fas fa-file-alt"></i> Recipe Name</label>
             </div>
         </div>
@@ -17,7 +18,8 @@
         <!--Input Field Recipe Description-->
         <div class="row">
             <div class="input-field col s10 offset-s1 m10 offset-m1 l6 offset-l3">
-                <input id="recipe_description" type="text" data-length="250">
+                <input id="recipe_description" name="recipe_description" type="text" data-length="250"
+                pattern="^[a-zA-Z0-9\s]{5,250}$" minlength="5" maxlength="250" class="validate" required>
                 <label for="recipe_description" class="black-text"><i class="fas fa-pen-alt"></i> Recipe
                     Description</label>
             </div>
@@ -26,7 +28,8 @@
         <!--Input Field Recipe Image URL-->
         <div class="row">
             <div class="input-field col s10 offset-s1 m10 offset-m1 l6 offset-l3">
-                <input id="recipe_image_url" type="text" data-length="10">
+                <input id="recipe_image_url" name="recipe_image_url" type="text" data-length="250"
+                minlength="5" maxlength="250">
                 <label for="image_url" class="black-text"><i class="fas fa-images"></i> Image URL (Optional)</label>
             </div>
         </div>
@@ -34,7 +37,7 @@
         <!--Input Field Recipe Meal Type Dropdown-->
         <div class="row">
             <div class="input-field col s8 offset-s2 m8 offset-m2 l2 offset-l2">
-                <select>
+                <select id="recipe_meal_type" name="recipe_meal_type" class="validate" required>
                     <option value="" disabled selected>Select Meal Type</option>
                     <option value="1">Breakfast</option>
                     <option value="2">Lunch</option>
@@ -69,7 +72,8 @@
         <!--Input Field Recipe Cooking Time-->
         <div class="row">
             <div class="input-field col s10 offset-s1 l4 offset-l1">
-                <input id="recipe_cooktime" type="text" data-length="10">
+                <input id="recipe_cooktime" name="recipe_cooktime" type="number" data-length="10"
+                pattern="^[0-9]{1,10}$" minlength="1" maxlength="10" class="validate" required>
                 <label for="recipe_cooktime" class="black-text"><i class="fas fa-clock"></i> Cooking Time - In
                     Minutes</label>
             </div>
@@ -79,15 +83,17 @@
 
             <!--Input Field Recipe Servings-->
             <div class="input-field col s10 offset-s1 l4 offset-l1">
-                <input id="recipe_servings" type="text" data-length="10">
-                <label for="recipe_servings" class="black-text"><i class="fas fa-users"></i> Number Of Servings</label>
+                <input id="recipe_servings" name="recipe_servings" type="number" data-length="10"
+                pattern="^[0-9]{1,10}$" minlength="1" maxlength="10" class="validate" required>
+                <label for="recipe_servings" class="black-text"><i class="fas fa-users"></i> No. of Servings</label>
             </div>
         </div>
 
         <!--Text Area For Recipe Ingredient List-->
         <div class="row">
             <div class="input-field col s12 l10 offset-l1">
-                <textarea id="recipe_ingredients" class="materialize-textarea" data-length="120"></textarea>
+                <textarea id="recipe_ingredients" name="recipe_ingredients" class="materialize-textarea" data-length="500"
+                pattern="^[a-zA-Z0-9\s]{5,500}$" minlength="5" maxlength="500" class="validate" required></textarea>
                 <label for="recipe_ingredients" class="black-text">
                     <i class="fas fa-list-ul"></i> List Ingredients - Press enter for a new line</label>
             </div>
@@ -97,7 +103,8 @@
 
             <!--Text Area For Recipe Step By Step List-->
             <div class="input-field col s12 l10 offset-l1">
-                <textarea id="recipe_steps" class="materialize-textarea" data-length="120"></textarea>
+                <textarea id="recipe_steps" name="recipe_steps" class="materialize-textarea" data-length="500"
+                pattern="^[a-zA-Z0-9\s]{5,500}$" minlength="5" maxlength="500" class="validate" required></textarea>
                 <label for="recipe_steps" class="black-text">
                     <i class="fas fa-list-ol"></i> List Steps - Press enter for a new line</label>
             </div>
