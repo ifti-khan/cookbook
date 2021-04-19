@@ -39,9 +39,11 @@
             <div class="input-field col s8 offset-s2 m8 offset-m2 l2 offset-l2">
                 <select id="recipe_meal_type" name="recipe_meal_type" class="validate" required>
                     <option value="" disabled selected>Select Meal Type</option>
-                    <option value="1">Breakfast</option>
-                    <option value="2">Lunch</option>
-                    <option value="3">Dinner</option>
+
+                    {% for meal in meals %}
+                    <option value="{{ meal.meal_name }}">{{ meal.meal_name }}</option>
+                    {% endfor %}
+
                 </select>
                 <label class="black-text"><i class="fas fa-utensils"></i> Meal Type</label>
             </div>
@@ -50,9 +52,11 @@
             <div class="input-field col s8 offset-s2 m8 offset-m2 l2 offset-l1">
                 <select id="recipe_cuisine_type" name="recipe_cuisine_type">
                     <option value="" disabled selected>Select Cuisine Type</option>
-                    <option value="1">Indian</option>
-                    <option value="2">Italian</option>
-                    <option value="3">Mexican</option>
+                    
+                    {% for cuisine in cuisines %}
+                    <option value="{{ cuisine.cuisine_name }}">{{ cuisine.cuisine_name }}</option>
+                    {% endfor %}
+
                 </select>
                 <label class="black-text cuisine-label"><i class="fas fa-globe-americas"></i> Cuisine Type (Optional)</label>
             </div>
@@ -61,9 +65,11 @@
             <div class="input-field col s8 offset-s2 m8 offset-m2 l2 offset-l1">
                 <select id="recipe_diet_type" name="recipe_diet_type">
                     <option value="" disabled selected>Select Diet Type</option>
-                    <option value="1">Halal</option>
-                    <option value="2">Vegetarian</option>
-                    <option value="3">Vegan</option>
+                    
+                    {% for diet in diets %}
+                    <option value="{{ diet.diet_name }}">{{ diet.diet_name }}</option>
+                    {% endfor %}
+
                 </select>
                 <label class="black-text"><i class="fas fa-seedling"></i> Diet Type (Optional)</label>
             </div>

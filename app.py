@@ -126,7 +126,11 @@ def add_recipe():
         flash("Recipe Successfully Added")
         return redirect(url_for("all_recipes"))
 
-    return render_template("add_recipe.html")
+    meals = mongo.db.meals.find().sort("meal_name", 1)
+    cuisines = mongo.db.cuisines.find().sort("cuisine_name", 1)
+    diets = mongo.db.diets.find().sort("diet_name", 1)
+    return render_template(
+        "add_recipe.html", meals=meals, cuisines=cuisines, diets=diets)
 
 
 if __name__ == "__main__":
