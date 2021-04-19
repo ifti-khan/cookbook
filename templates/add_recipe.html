@@ -115,11 +115,16 @@
 
             <!--Cancel Button-->
             <a href="{{ url_for('account', username=session['user']) }}"
-                class="col s3 offset-s2 btn blue-grey darken-1 text-shadow" name="action">Cancel <i
-                    class="fas fa-times"></i></a>
+                class="col s4 btn blue-grey darken-1 text-shadow" name="action">
+                <i class="fas fa-arrow-left"></i> Back</a>
+            
+            <!--Clear Button-->
+            <button type="reset" class="col s4 btn blue-grey lighten-1 text-shadow clear-btn">
+                Clear <i class="fas fa-times"></i>
+            </button>
 
             <!--Submit Button-->
-            <button type="submit" class="col s3 offset-s2 btn blue-grey darken-1 text-shadow">
+            <button type="submit" class="col s4 btn blue-grey darken-1 text-shadow">
                 Create <i class="fas fa-plus"></i>
             </button>
         </div>
