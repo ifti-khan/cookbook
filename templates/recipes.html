@@ -19,6 +19,9 @@
         {{ recipe.recipe_ingredients }}<br>
         {{ recipe.recipe_steps }}<br>
         {{ recipe.created_by }}<br>
+
+        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">View Recipe</a><br><br>
+
     {% endfor %}
 
 {% endblock %}

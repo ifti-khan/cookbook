@@ -134,6 +134,13 @@ def add_recipe():
         "add_recipe.html", meals=meals, cuisines=cuisines, diets=diets)
 
 
+@app.route("/view_recipe/<recipe_id>", methods=["GET", "POST"])
+def view_recipe(recipe_id):
+    recipe_info = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template(
+        "view_recipe.html", recipe_info=recipe_info)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
