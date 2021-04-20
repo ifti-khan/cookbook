@@ -156,6 +156,10 @@ footer {
     min-height: 0;
 }
 
+.input-field .helper-text::after {
+    top: -5px;
+}
+
 /*recipe.html*/
 .reg-message2 {
     font-style: italic;
