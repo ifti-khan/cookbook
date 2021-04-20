@@ -24,7 +24,10 @@
             <div class="card-image">
 
                 {% if recipe.recipe_image_url %}
-                <img src="{{ recipe.recipe_image_url }}" alt="Recipe Image" />
+                <img src="{{ recipe.recipe_image_url }}" alt="Recipe Image Placeholder" />
+                {% else %}
+                <img src="{{ url_for('static', filename='icons/utensils-solid.svg') }}"
+                class="default-image" alt="Default Image Placeholder" />
                 {% endif %}
 
             </div>
@@ -32,8 +35,24 @@
                 <p>{{ recipe.recipe_description }}</p>
             </div>
             <div class="card-action">
-                <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">View Recipe</a>
+                <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"
+                class="btn blue-grey darken-1 text-shadow uppercase">View Recipe</a>
+            
+                {% if session.user == recipe.created_by %}
+            <div class="buttons-container margin-top-med">
+
+                <a href="#" class="btn blue-grey darken-1 text-shadow uppercase">
+                    <i class="fas fa-edit right"></i>Edit</a>
+                
+                    <a href="#" class="btn blue-grey darken-1 text-shadow uppercase">
+                    <i class="fas fa-trash-alt right"></i> Delete</a>
             </div>
+            {% endif %}
+            
+            </div>
+
+            
+
         </div>
     </div>
 

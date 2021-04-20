@@ -3,6 +3,12 @@
 
 <h1>View Recipe Page</h1>
 
+{% if not session.user %}
+<h5 class="center-align text-shadow blue-grey lighten-4 black-text reg-message2">Want To View This Recipe? <a
+        href="{{ url_for('register') }}">Register Now!</a></h5>
+{% endif %}
+
+{% if session.user %}
 {{ recipe_info.recipe_name}}
 
 <!--Ingredients-->
@@ -18,5 +24,6 @@
                 {% endfor %}
             </ul>
         </div>
-
+        
+{% endif %}
 {% endblock %}
