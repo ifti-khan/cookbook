@@ -3,7 +3,7 @@ $(document).ready(function(){
     $(".sidenav").sidenav({ edge: "right" });
     $('.modal').modal();
     $('input#recipe_name, input#recipe_description, input#recipe_image_url,\
-    input#recipe_name, textarea#textarea1, textarea#textarea2').characterCounter();
+    input#recipe_name, textarea#recipe_ingredients, textarea#recipe_steps').characterCounter();
     $('select').formSelect();
 
     validateMaterializeSelect();
