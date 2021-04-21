@@ -6,52 +6,79 @@
         href="{{ url_for('register') }}">Register Now!</a></h5>
 {% endif %}
 
-<h1>All Recipes Page</h1>
 {% for recipe in recipes %}
-
 <div class="row all_recipes_row">
     <div class="col s12 m6 l3 xl3">
-        <div class="card col s12 text-shadow blue-grey lighten-5 center-align">
+        <div class="card text-shadow blue-grey lighten-5 center-align">
             <div class="card-title center-align">{{ recipe.recipe_name }}</div>
-            
-            <div>
-            {{ recipe.recipe_meal_type }}
-            {{ recipe.recipe_cuisine_type }}
-            {{ recipe.recipe_diet_type }}
-            {{ recipe.recipe_cooktime }}
-            {{ recipe.recipe_servings }}
-        </div>
+
+                <table class="responsive-table meal-attributes">
+                    <thead>
+                        <tr>
+                            <th>Meal Type</th>
+                            <th>Cuisine Type</th>
+                            <th>Diet Type</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>{{ recipe.recipe_meal_type }}</td>
+                            <td>{{ recipe.recipe_cuisine_type }}</td>
+                            <td>{{ recipe.recipe_diet_type }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
             <div class="card-image">
 
                 {% if recipe.recipe_image_url %}
                 <img src="{{ recipe.recipe_image_url }}" alt="Recipe Image Placeholder" />
                 {% else %}
-                <img src="{{ url_for('static', filename='icons/utensils-solid.svg') }}"
-                class="default-image" alt="Default Image Placeholder" />
+                <img src="{{ url_for('static', filename='icons/utensils-solid.svg') }}" class="default-image"
+                    alt="Default Image Placeholder" />
                 {% endif %}
-
             </div>
+
+            <table class="responsive-table meal-attributes">
+                <thead>
+                    <tr>
+                        <th>Cooking Time</th>
+                        <th>People Servings</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>{{ recipe.recipe_cooktime }}</td>
+                        <td>{{ recipe.recipe_servings }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            
+                
+
             <div class="card-content">
                 <p>{{ recipe.recipe_description }}</p>
             </div>
-            <div class="card-action">
+            <div class="card-action col s10 xl12">
                 <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"
-                class="btn blue-grey darken-1 text-shadow uppercase">View Recipe</a>
-            
+                    class="btn blue-grey darken-1 text-shadow uppercase">View Recipe</a>
+
                 {% if session.user == recipe.created_by %}
-            <div class="buttons-container margin-top-med">
+
 
                 <a href="#" class="btn blue-grey darken-1 text-shadow uppercase">
                     <i class="fas fa-edit right"></i>Edit</a>
-                
-                    <a href="#" class="btn blue-grey darken-1 text-shadow uppercase">
+
+                <a href="#" class="btn blue-grey darken-1 text-shadow uppercase">
                     <i class="fas fa-trash-alt right"></i> Delete</a>
-            </div>
-            {% endif %}
-            
+                {% endif %}
+
             </div>
 
-            
+
 
         </div>
     </div>

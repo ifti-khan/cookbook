@@ -195,23 +195,44 @@ footer {
 }
 
 /*recipe.html*/
+.all_recipes_row:after {
+    content: none;
+    display: block;
+}
+
 .all_recipes_row {
-    height: 0px;
+    margin-top: 50px;
     margin-bottom: 0px;
+}
+
+.meal-attributes {
+    margin-bottom: 10px;
+}
+
+.meal-attributes th,
+.meal-attributes tr, 
+.meal-attributes td {
+    padding: 0px;
+    text-align: center;
 }
 
 .card {
     border-radius: 5px;
-    height: 500px;
+    height: 450px;
+    margin: 10px;
 }
 .card-image {
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     margin: 0 auto;
 }
 
 .default-image {
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
+}
+
+.card-action .btn {
+    margin-top: 20px;
 }
 
