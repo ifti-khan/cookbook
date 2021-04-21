@@ -35,6 +35,11 @@
         font-size: 10px;
     }
 
+    /*recipe.html*/
+    .card-action .btn {
+        padding: 0 12px;
+    }
+
 }
 
 /*Tablet*/
@@ -42,6 +47,11 @@
     /*add_recipe.html*/
     .select-wrapper input.select-dropdown {
         margin-bottom: 25px;
+    }
+
+    /*recipe.html*/
+    .card-action .btn {
+        padding: 0 16px;
     }
 }
 
@@ -87,7 +97,25 @@
     .input-field>label {
         font-size: 12px;
     }
-    
+
+    /*recipe.html*/
+    .card-title h4 {
+        padding-top: 10px;
+    }
+
+    .card {
+        height: 495px;
+    }
+
+    .default-image {
+    width: 150px;
+    height: 150px;
+    }
+
+    .card-action .btn {
+    margin-top: 20px;
+    padding: 0 16px;
+    }    
 }
 
 /*Medium Mobile*/
@@ -128,4 +156,8 @@
         font-size: 12px;
     }
 
+    /*recipe.html*/
+    .card-action .btn {
+        padding: 0 10px;
+    }
 }
