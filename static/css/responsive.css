@@ -77,15 +77,28 @@
 
     /*register.html & login.html*/
     .register-con {
-        height: 435px;
+        height: 550px;
     }
 
     .login-con {
         height: 300px;
     }
 
-    .login-message p, .reg-message p {
-        margin-top: 30px;
+    .row .col .login-btns {
+        margin-bottom: 10px;
+    }
+
+    .row .col .register-btns {
+        margin-bottom: 10px;
+    }
+
+    .login-message p {
+        margin-top: 65px;
+        font-size: 18px;
+    }
+
+    .reg-message p {
+        margin-top: 85px;
         font-size: 18px;
     }
 
@@ -96,6 +109,10 @@
     
     .input-field>label {
         font-size: 12px;
+    }
+
+    .row .col .addrec-btns {
+        margin-bottom: 10px;
     }
 
     /*recipe.html*/

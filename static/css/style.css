@@ -121,7 +121,7 @@ footer {
     margin-top: 25px;
 }
 
-/*register.html & login.html*/
+/*register.html*/
 .reg-title, .login-title {
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -142,22 +142,17 @@ footer {
     font-style: italic;
 }
 
-.reg-btn {
-    letter-spacing: 1px;
-    border-radius: 5px;
-    line-height: 0px;
+.row .col .register-btns {
+    margin-right: 2px;
 }
 
+/*login.html*/
 .login-con {
     text-align: center;
 }
 
-.input-field .helper-text {
-    min-height: 0;
-}
-
-.input-field .helper-text::after {
-    top: -5px;
+.row .col .login-btns {
+    margin-right: 5px;
 }
 
 /*recipe.html*/
@@ -192,6 +187,10 @@ footer {
 .btn i {
     font-size: 14px;
     vertical-align: baseline;
+}
+
+.row .col .addrec-btns {
+    margin-right: 2px;
 }
 
 /*recipe.html*/
