@@ -9,7 +9,7 @@
         <!--Input Field Recipe Name-->
         <div class="row">
             <div class="input-field col s10 offset-s1 m10 offset-m1 l6 offset-l3">
-                <input id="recipe_name" name="recipe_name" type="text" data-length="50" pattern="^[a-zA-Z0-9\s]{1,50}$"
+                <input id="recipe_name" name="recipe_name" type="text" data-length="50" pattern="^[A-Za-z0-9\W+]{1,50}$"
                     minlength="5" maxlength="50" class="validate" required>
                 <label for="recipe_name" class="black-text"><i class="fas fa-file-alt"></i> Recipe Name</label>
                 <span class="helper-text col s10" data-error="Must be 5 characters or more"></span>
@@ -20,7 +20,7 @@
         <div class="row">
             <div class="input-field col s10 offset-s1 m10 offset-m1 l6 offset-l3">
                 <input id="recipe_description" name="recipe_description" type="text" data-length="500"
-                    pattern="^[a-zA-Z0-9\s]{5,500}$" minlength="5" maxlength="500" class="validate" required>
+                    pattern="^[A-Za-z0-9\W+]{5,500}$" minlength="5" maxlength="500" class="validate" required>
                 <label for="recipe_description" class="black-text"><i class="fas fa-pen-alt"></i> Recipe
                     Description</label>
                 <span class="helper-text col s10" data-error="Must be 5 characters or more"></span>
@@ -105,8 +105,8 @@
         <div class="row">
             <div class="input-field col s12 l10 offset-l1">
                 <textarea id="recipe_ingredients" name="recipe_ingredients" class="materialize-textarea"
-                    data-length="1000" pattern="^[a-zA-Z0-9\s]{5,1000}$" minlength="5" maxlength="1000" class="validate"
-                    required></textarea>
+                    data-length="1000" pattern="^[A-Za-z0-9\W+]{5,1000}$" minlength="5" maxlength="1000"
+                    class="validate" required></textarea>
                 <label for="recipe_ingredients" class="black-text">
                     <i class="fas fa-list-ul"></i> List Ingredients - Each ingredient on new line</label>
             </div>
@@ -117,7 +117,7 @@
             <!--Text Area For Recipe Step By Step List-->
             <div class="input-field col s12 l10 offset-l1">
                 <textarea id="recipe_steps" name="recipe_steps" class="materialize-textarea" data-length="1000"
-                    pattern="^[a-zA-Z0-9\s]{5,1000}$" minlength="5" maxlength="1000" class="validate"
+                    pattern="^[A-Za-z0-9\W+]{5,1000}$" minlength="5" maxlength="1000" class="validate"
                     required></textarea>
                 <label for="recipe_steps" class="black-text">
                     <i class="fas fa-list-ol"></i> List Steps - Each step on new line</label>
