@@ -25,7 +25,7 @@ main {
 
 .welcome-row, .register-row, .login-row, 
 .account-row, .add_recipe_row {
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 /*Navigation bar*/
@@ -136,9 +136,8 @@ footer {
     letter-spacing: 1px;
 }
 
-.login-message p, .reg-message p {
-    margin-top: 15px;
-    font-size: 20px;
+.login-message p {
+    font-size: 18px;
     font-style: italic;
 }
 
@@ -149,6 +148,11 @@ footer {
 /*login.html*/
 .login-con {
     text-align: center;
+}
+
+.reg-message p {
+    font-size: 18px;
+    font-style: italic;
 }
 
 .row .col .login-btns {
@@ -179,7 +183,6 @@ footer {
 }
 
 .create-recipe-title {
-    margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }

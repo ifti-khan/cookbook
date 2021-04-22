@@ -25,21 +25,21 @@
                         <tr>
                             <td>
                                 {% if not recipe.recipe_meal_type %}
-                                    <p>Not Specified</p>
+                                    <p>-</p>
                                 {% else %}
                                     <p>{{ recipe.recipe_meal_type }}</p>
                                 {% endif %}
                             </td>
                             <td>
                                 {% if not recipe.recipe_cuisine_type %}
-                                    <p>Not Specified</p>
+                                    <p>-</p>
                                 {% else %}
                                     <p>{{ recipe.recipe_cuisine_type }}</p>
                                 {% endif %}
                             </td>
                             <td>
                                 {% if not recipe.recipe_diet_type %}
-                                    <p>Not Specified</p>
+                                    <p>-</p>
                                 {% else %}
                                     <p>{{ recipe.recipe_diet_type }}</p>
                                 {% endif %}
