@@ -10,7 +10,7 @@
 <div class="row all_recipes_row">
     <div class="col s12 m6 l4 xl3">
         {% if session.user == recipe.created_by %}
-        <div class="card text-shadow blue-grey lighten-1 white-text center-align hoverable">
+        <div class="card text-shadow blue-grey lighten-4 center-align hoverable">
             {% else %}
             <div class="card text-shadow blue-grey lighten-5 center-align hoverable">
                 {% endif %}
@@ -82,16 +82,16 @@
 
                 <div class="card-content">
                     <p>{{ recipe.recipe_description }}</p>
-                    <div class="col xl11 offset-xl1">
+                    <div class="col s12 m12 l12 xl12">
                         <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"
-                            class="col xl3 offset-xl1 btn blue-grey darken-1 text-shadow uppercase">View <i
+                            class="btn blue-grey darken-1 text-shadow uppercase">View <i
                                 class="fab fa-readme"></i></a>
 
                         {% if session.user == recipe.created_by %}
-                        <a href="#" class="col xl3 btn blue-grey darken-1 text-shadow uppercase">
+                        <a href="#" class="btn blue-grey darken-1 text-shadow uppercase">
                             Edit <i class="fas fa-edit"></i></a>
 
-                        <a href="#" class="col xl3 btn blue-grey darken-1 text-shadow uppercase">
+                        <a href="#" class="btn blue-grey darken-1 text-shadow uppercase">
                             Delete <i class="fas fa-trash-alt"></i></a>
                         {% endif %}
                     </div>
