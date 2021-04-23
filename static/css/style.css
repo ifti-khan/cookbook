@@ -194,6 +194,10 @@ footer {
     letter-spacing: 2px;
 }
 
+.input-field .help_text_ingredients {
+    margin-bottom: 20px;
+}
+
 .btn i {
     font-size: 14px;
     vertical-align: baseline;

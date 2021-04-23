@@ -32,7 +32,7 @@
             <div class="input-field col s10 offset-s1 m10 offset-m1 l6 offset-l3">
                 <input id="recipe_image_url" name="recipe_image_url" type="text" data-length="250" minlength="5"
                     maxlength="250">
-                <label for="image_url" class="black-text"><i class="fas fa-images"></i> Image URL (Optional)</label>
+                <label for="recipe_image_url" class="black-text"><i class="fas fa-images"></i> Image URL (Optional)</label>
                 <span class="helper-text col s10" data-error="Must be 5 characters or more"></span>
             </div>
         </div>
@@ -104,11 +104,11 @@
         <!--Text Area For Recipe Ingredient List-->
         <div class="row">
             <div class="input-field col s12 l10 offset-l1">
-                <textarea id="recipe_ingredients" name="recipe_ingredients" class="materialize-textarea"
-                    data-length="1000" pattern="^[A-Za-z0-9\W+]{5,1000}$" minlength="5" maxlength="1000"
-                    class="validate" required></textarea>
+                <textarea id="recipe_ingredients" name="recipe_ingredients" class="validate materialize-textarea"
+                    data-length="1000" pattern="^[A-Za-z0-9\W+]{5,1000}$" minlength="5" maxlength="1000" required></textarea>
                 <label for="recipe_ingredients" class="black-text">
                     <i class="fas fa-list-ul"></i> List Ingredients - Each ingredient on new line</label>
+                    <span class="helper-text help_text_ingredients col s10" data-error="Enter a list of ingredients"></span>
             </div>
 
             <!--Empty Column-->
@@ -116,11 +116,12 @@
 
             <!--Text Area For Recipe Step By Step List-->
             <div class="input-field col s12 l10 offset-l1">
-                <textarea id="recipe_steps" name="recipe_steps" class="materialize-textarea" data-length="1000"
-                    pattern="^[A-Za-z0-9\W+]{5,1000}$" minlength="5" maxlength="1000" class="validate"
-                    required></textarea>
+                <textarea id="recipe_steps" name="recipe_steps" class="validate materialize-textarea" data-length="1000"
+                    pattern="^[A-Za-z0-9\W+]{5,1000}$" minlength="5" maxlength="1000" required></textarea>
                 <label for="recipe_steps" class="black-text">
                     <i class="fas fa-list-ol"></i> List Steps - Each step on new line</label>
+                    <span class="helper-text col s10" data-error="Enter a list of steps, 
+                    on how to prepare and cook this recipe"></span>
             </div>
         </div>
 
