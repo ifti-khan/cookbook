@@ -9,8 +9,14 @@
 {% for recipe in recipes %}
 <div class="row all_recipes_row">
     <div class="col s12 m6 l4 xl3">
-        <div class="card text-shadow blue-grey lighten-5 center-align">
-            <div class="card-title center-align"><h4>{{ recipe.recipe_name }}</h4></div>
+        {% if session.user == recipe.created_by %}
+        <div class="card text-shadow blue-grey lighten-1 white-text center-align hoverable">
+            {% else %}
+            <div class="card text-shadow blue-grey lighten-5 center-align hoverable">
+                {% endif %}
+                <div class="card-title center-align">
+                    <h4>{{ recipe.recipe_name }}</h4>
+                </div>
 
                 <table class="meal-attributes">
                     <thead>
@@ -25,73 +31,73 @@
                         <tr>
                             <td>
                                 {% if not recipe.recipe_meal_type %}
-                                    <p>-</p>
+                                <p>-</p>
                                 {% else %}
-                                    <p>{{ recipe.recipe_meal_type }}</p>
+                                <p>{{ recipe.recipe_meal_type }}</p>
                                 {% endif %}
                             </td>
                             <td>
                                 {% if not recipe.recipe_cuisine_type %}
-                                    <p>-</p>
+                                <p>-</p>
                                 {% else %}
-                                    <p>{{ recipe.recipe_cuisine_type }}</p>
+                                <p>{{ recipe.recipe_cuisine_type }}</p>
                                 {% endif %}
                             </td>
                             <td>
                                 {% if not recipe.recipe_diet_type %}
-                                    <p>-</p>
+                                <p>-</p>
                                 {% else %}
-                                    <p>{{ recipe.recipe_diet_type }}</p>
+                                <p>{{ recipe.recipe_diet_type }}</p>
                                 {% endif %}
                             </td>
                         </tr>
                     </tbody>
                 </table>
 
-            <div class="card-image s12">
+                <div class="card-image s12">
 
-                {% if recipe.recipe_image_url %}
-                <img src="{{ recipe.recipe_image_url }}" alt="Recipe Image Placeholder" />
-                {% else %}
-                <img src="{{ url_for('static', filename='icons/utensils-solid.svg') }}" class="default-image"
-                    alt="Default Image Placeholder" />
-                {% endif %}
-            </div>
+                    {% if recipe.recipe_image_url %}
+                    <img src="{{ recipe.recipe_image_url }}" alt="Recipe Image Placeholder" />
+                    {% else %}
+                    <img src="{{ url_for('static', filename='icons/utensils-solid.svg') }}" class="default-image"
+                        alt="Default Image Placeholder" />
+                    {% endif %}
+                </div>
 
-            <table class="meal-attributes">
-                <thead>
-                    <tr>
-                        <th>Cooking Time</th>
-                        <th>Servings</th>
-                    </tr>
-                </thead>
+                <table class="meal-attributes">
+                    <thead>
+                        <tr>
+                            <th>Cooking Time</th>
+                            <th>Servings</th>
+                        </tr>
+                    </thead>
 
-                <tbody>
-                    <tr>
-                        <td>{{ recipe.recipe_cooktime }} Minutes</td>
-                        <td>{{ recipe.recipe_servings }} People</td>
-                    </tr>
-                </tbody>
-            </table>
+                    <tbody>
+                        <tr>
+                            <td>{{ recipe.recipe_cooktime }} Minutes</td>
+                            <td>{{ recipe.recipe_servings }} People</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-            <div class="card-content">
-                <p>{{ recipe.recipe_description }}</p>
-            </div>
+                <div class="card-content">
+                    <p>{{ recipe.recipe_description }}</p>
+                    <div class="col xl11 offset-xl1">
+                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"
+                            class="col xl3 offset-xl1 btn blue-grey darken-1 text-shadow uppercase">View <i
+                                class="fab fa-readme"></i></a>
 
-            <div class="card-action col s12 l12 xl12">
-                <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"
-                    class="btn blue-grey darken-1 text-shadow uppercase">View Recipe</a>
+                        {% if session.user == recipe.created_by %}
+                        <a href="#" class="col xl3 btn blue-grey darken-1 text-shadow uppercase">
+                            Edit <i class="fas fa-edit"></i></a>
 
-                {% if session.user == recipe.created_by %}
-                <a href="#" class="btn blue-grey darken-1 text-shadow uppercase">
-                    <i class="fas fa-edit right"></i>Edit</a>
-
-                <a href="#" class="btn blue-grey darken-1 text-shadow uppercase">
-                    <i class="fas fa-trash-alt right"></i> Delete</a>
-                {% endif %}
+                        <a href="#" class="col xl3 btn blue-grey darken-1 text-shadow uppercase">
+                            Delete <i class="fas fa-trash-alt"></i></a>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-{% endfor %}
-{% endblock %}
+    {% endfor %}
+    {% endblock %}
