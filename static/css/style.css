@@ -162,12 +162,6 @@ footer {
     margin-right: 5px;
 }
 
-/*recipe.html*/
-.reg-message2 {
-    font-style: italic;
-    letter-spacing: 1px;
-}
-
 /*account.html*/
 .add-recipe-btn {
     margin-top: 30px;
@@ -208,6 +202,17 @@ footer {
 }
 
 /*recipe.html*/
+.reg-message2 {
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.all_recipe_title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0px;
+}
+
 .all_recipes_row:after {
     content: none;
     display: block;

@@ -2,12 +2,12 @@ import os
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
-from flask_pymongo import PyMongo
+from flask_pymongo import PyMongo, DESCENDING, ASCENDING
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
-
+import math
 
 app = Flask(__name__)
 
@@ -102,8 +102,16 @@ def logout():
 
 @app.route("/all_recipes")
 def all_recipes():
-    recipes = list(mongo.db.recipes.find())
-    return render_template("recipes.html", recipes=recipes)
+    num_of_recipes = mongo.db.recipes.count()
+    cards_per_page = 4
+    current_page = int(request.args.get('current_page', 1))
+    num_of_pages = range(1, int(
+        math.ceil(num_of_recipes / cards_per_page)) + 1)
+    recipes = mongo.db.recipes.find().sort([('_id', ASCENDING)]).skip(
+        (current_page - 1)*cards_per_page).limit(cards_per_page)
+
+    return render_template(
+        "recipes.html", recipes=recipes, current_page=current_page, num_of_pages=num_of_pages, num_of_recipes=num_of_recipes)
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
