@@ -213,6 +213,10 @@ footer {
     margin-bottom: 0px;
 }
 
+.search-row {
+    margin-bottom: 0px;
+}
+
 .all_recipes_row:after {
     content: none;
     display: block;
@@ -256,6 +260,7 @@ footer {
 
 .card-title h4 {
     padding-top: 10px;
+    margin-top: 0px;
 }
 
 .card-image {
