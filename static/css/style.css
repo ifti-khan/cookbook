@@ -135,7 +135,7 @@ footer {
 }
 
 .black-text {
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .login-message p {
@@ -215,6 +215,11 @@ footer {
 
 .search-row {
     margin-bottom: 0px;
+}
+
+.results_title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .all_recipes_row:after {
