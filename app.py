@@ -142,6 +142,17 @@ def add_recipe():
         "add_recipe.html", meals=meals, cuisines=cuisines, diets=diets)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    mongo.db.recipes.create_index([("$**", 'text')])
+    query = request.form.get("search_query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    num_of_recipes = mongo.db.recipes.find(
+        {'$text': {'$search': query}}).count()
+    return render_template(
+        "recipes.html", recipes=recipes, num_of_recipes=num_of_recipes)
+
+
 @app.route("/view_recipe/<recipe_id>", methods=["GET", "POST"])
 def view_recipe(recipe_id):
     recipe_info = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})

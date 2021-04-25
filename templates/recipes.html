@@ -14,20 +14,20 @@
 
     <!--Search Recipe-->
     <div class="row search-row">
-        <form action="#" method="post" class="search-bar-form">
+        <form action="{{ url_for('search') }}" method="post" class="search-bar-form">
             <div class="row">
                 <div class="input-field col s11 m10 offset-m1 l8 offset-l2 xl6 offset-xl3 ">
                     <i class="fas fa-search prefix blue-grey-text lighten-4"></i>
                     <input type="text" name="search_query" id="search_query" minlength="5" maxlength="50"
                         pattern="^[A-Za-z0-9\W+]{5,50}$" class="validate" required>
-                    <label for="search_query">Search Recipes - (Recipe Names Only) </label>
+                    <label for="search_query">Search Recipes</label>
                     <span class="helper-text col s10" data-error="Search must be 5 characters or more 
-                    and recipe names only"></span>
+                    and can be recipe names, cuisines, diet type and more"></span>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12 center-align">
-                    <button type="reset" class="btn blue-grey lighten-5 text-shadow black-text">Reset</button>
+                    <a href="{{ url_for('all_recipes') }}" class="btn blue-grey lighten-5 text-shadow black-text">Reset</a>
                     <button type="submit" class="btn blue-grey darken-1 text-shadow uppercase">
                         <i class="fas fa-search left"></i> Search
                     </button>
