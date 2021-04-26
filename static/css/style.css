@@ -281,4 +281,28 @@ footer {
     height: 175px;
 }
 
+/*view_recipe.html*/
+.reg-message3 {
+    margin-top: 15%;
+    font-style: italic;
+    letter-spacing: 1px;
+}
 
+.view_recipe_title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.view_recipe_image {
+    border-radius: 5px;
+    width: 50%;
+}
+
+.recipe_info_col h5 {
+    margin: 0px;
+    padding-bottom: 40px;
+}
+
+.recipe_info_col .recipe_info_meal {
+    margin-top: 5px;
+}
