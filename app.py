@@ -88,8 +88,13 @@ def account(username):
         {"username": session["user"]})["email"]
     password = mongo.db.users.find_one(
         {"username": session["user"]})["password"]
+    user_recipes = mongo.db.recipes.find({'created_by': username})
+    num_of_user_recipes = user_recipes.count()
     return render_template(
-        "account.html", username=username, fullname=fullname, email=email, password=password)
+        "account.html", username=username, fullname=fullname,
+        email=email, password=password,
+        user_recipes=user_recipes,
+        num_of_user_recipes=num_of_user_recipes)
 
 
 @app.route("/logout")
@@ -111,7 +116,8 @@ def all_recipes():
         (current_page - 1)*cards_per_page).limit(cards_per_page)
 
     return render_template(
-        "recipes.html", recipes=recipes, current_page=current_page, num_of_pages=num_of_pages, num_of_recipes=num_of_recipes)
+        "recipes.html", recipes=recipes, current_page=current_page,
+        num_of_pages=num_of_pages, num_of_recipes=num_of_recipes)
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
@@ -152,8 +158,8 @@ def search():
         {'$text': {'$search': query}}).count()
     search_results = f"Search Results ({num_of_recipes_search})"
     return render_template(
-        "recipes.html", num_of_recipes=num_of_recipes, recipes=recipes, 
-        num_of_recipes_search=num_of_recipes_search, 
+        "recipes.html", num_of_recipes=num_of_recipes, recipes=recipes,
+        num_of_recipes_search=num_of_recipes_search,
         search_results=search_results)
 
 
