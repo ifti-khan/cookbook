@@ -8,27 +8,31 @@
 {% endif %}
 
 {% if session.user %}
+<div class="container recipe_info_con blue-grey lighten-5">
 
-<div class="row">
-    <div class="col s12 xl12">
-        <h3 class="center-align view_recipe_title">{{ recipe_info.recipe_name }}</h3>
+    <!--Recipe Title, Description-->
+    <div class="row">
+        <div class="col s12 m12 l12 xl12 center-align">
+            <h3 class="view_recipe_title">{{ recipe_info.recipe_name }}</h3>
+        </div>
+
+        <div class="col s12 m12 l12 xl12 center-align">
+            <p class="recipe_info_description">{{ recipe_info.recipe_description }}</p>
+        </div>
     </div>
 
-    <div class="col s12 xl12 center-align">
-        {{ recipe_info.recipe_description }}
-    </div>
-</div>
-
-<div class="row">
-    <div class="col s12 xl10 offset-xl2 view_recipe_con">
-        <div class="col s12 xl5 push-xl1 center-align">
+    <!--Recipe Info Image-->
+    <div class="row">
+        <div class="col s12 m8 l8 xl6 push-xl1 center-align">
             <img src="{{ recipe_info.recipe_image_url }}" alt="Recipe Image" class="view_recipe_image">
 
             <h6><i class="fas fa-share-square"></i> Shared By - {{ recipe_info.created_by }}</h6>
         </div>
 
-        <div class="col s12 xl6 left-align recipe_info_col">
-            <h5 class="recipe_info_meal"><i class="fas fa-utensils"></i> Meal - {{ recipe_info.recipe_meal_type }}</h5>
+        <!--Recipe Info Column -->
+        <div class="col s12 m4 pull-m1 l4 pull-l1 xl6 left-align recipe_info_col">
+            <h5 class="recipe_info_meal"><i class="fas fa-utensils"></i> Meal - {{ recipe_info.recipe_meal_type }}
+            </h5>
 
             <h5><i class="fas fa-globe-americas"></i> Cuisine - {{ recipe_info.recipe_cuisine_type }}</h5>
 
@@ -40,34 +44,51 @@
 
         </div>
     </div>
-</div>
 
-
-<!--Ingredients-->
-<div class="row">
-    <div class="col s12 xl12">
-        <h3>Ingredient List</h3>
-        <ul>
-            {% for ingredient in recipe_info.recipe_ingredients %}
-            <li>
-                {{ ingredient }}
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
-</div>
-
-<!--Cooking Steps-->
-<div class="col s12 xl12">
-    <h3>Cooking Steps List</h3>
-    <ol>
-        {% for steps in recipe_info.recipe_steps %}
+    <!--Recipe Ingredients-->
+    <ul class="collapsible">
         <li>
-            {{ steps }}
-        </li>
-        {% endfor %}
-    </ol>
-</div>
+            <div class="collapsible-header">Ingredients List</div>
+            <div class="collapsible-body">
 
+                <div class="row">
+                    <div class="col s12 xl12">
+                        <h3>Ingredient List</h3>
+                        <ul>
+                            {% for ingredient in recipe_info.recipe_ingredients %}
+                            <li>
+                                {{ ingredient }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </li>
+    </ul>
+
+    <!-- Recipe Cooking Steps-->
+    <ul class="collapsible">
+        <li>
+            <div class="collapsible-header">Cooking Steps</div>
+            <div class="collapsible-body">
+
+                <div class="col s12 xl12">
+                    <h3>Cooking Steps List</h3>
+                    <ol>
+                        {% for steps in recipe_info.recipe_steps %}
+                        <li>
+                            {{ steps }}
+                        </li>
+                        {% endfor %}
+                    </ol>
+                </div>
+
+            </div>
+        </li>
+    </ul>
+
+</div>
 {% endif %}
 {% endblock %}

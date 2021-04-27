@@ -288,9 +288,21 @@ footer {
     letter-spacing: 1px;
 }
 
+.recipe_info_con {
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
 .view_recipe_title {
     text-transform: uppercase;
     letter-spacing: 2px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.recipe_info_description {
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .view_recipe_image {
@@ -300,7 +312,8 @@ footer {
 
 .recipe_info_col h5 {
     margin: 0px;
-    padding-bottom: 40px;
+    padding-bottom: 25px;
+    font-size: 23px;
 }
 
 .recipe_info_col .recipe_info_meal {

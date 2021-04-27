@@ -39,6 +39,11 @@
         font-size: 14px;
     }
 
+    /*view_recipe.html*/
+    .recipe_info_col h5 {
+        font-size: 19px;
+    }
+
 }
 
 /*Tablet*/
@@ -46,6 +51,11 @@
     /*add_recipe.html*/
     .select-wrapper input.select-dropdown {
         margin-bottom: 25px;
+    }
+
+    /*view_recipe.html*/
+    .recipe_info_col h5 {
+        font-size: 16px;
     }
 
 }
@@ -120,6 +130,16 @@
     .default-image {
     width: 150px;
     height: 150px;
+    }
+
+    /*view_recipe.html*/
+    .recipe_info_col h5 {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .recipe_info_col .recipe_info_meal {
+        margin-top: 20px;
     }
 
 }
