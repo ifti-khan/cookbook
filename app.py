@@ -123,7 +123,7 @@ def all_recipes():
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
-        recipe = {
+        add_recipe = {
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_image_url": request.form.get("recipe_image_url"),
@@ -137,7 +137,7 @@ def add_recipe():
             "recipe_steps": request.form.get("recipe_steps").splitlines(),
             "created_by": session["user"]
         }
-        mongo.db.recipes.insert_one(recipe)
+        mongo.db.recipes.insert_one(add_recipe)
         flash("Recipe Successfully Added")
         return redirect(url_for("all_recipes"))
 
@@ -172,9 +172,32 @@ def view_recipe(recipe_id):
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    recipe_info = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    if request.method == "POST":
+        edit_recipe = {
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_description": request.form.get("recipe_description"),
+            "recipe_image_url": request.form.get("recipe_image_url"),
+            "recipe_meal_type": request.form.get("recipe_meal_type"),
+            "recipe_cuisine_type": request.form.get("recipe_cuisine_type"),
+            "recipe_diet_type": request.form.get("recipe_diet_type"),
+            "recipe_cooktime": request.form.get("recipe_cooktime"),
+            "recipe_servings": request.form.get("recipe_servings"),
+            "recipe_ingredients": request.form.get(
+                "recipe_ingredients").splitlines(),
+            "recipe_steps": request.form.get("recipe_steps").splitlines(),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, edit_recipe)
+        flash("Recipe Successfully Edited")
+        return redirect(url_for("all_recipes"))
+
+    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    meals = mongo.db.meals.find().sort("meal_name", 1)
+    cuisines = mongo.db.cuisines.find().sort("cuisine_name", 1)
+    diets = mongo.db.diets.find().sort("diet_name", 1)
     return render_template(
-        "edit_recipe.html", recipe_info=recipe_info)
+        "edit_recipe.html", recipes=recipes, meals=meals,
+        cuisines=cuisines, diets=diets)
 
 
 if __name__ == "__main__":
