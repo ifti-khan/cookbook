@@ -310,12 +310,32 @@ footer {
     width: 50%;
 }
 
-.recipe_info_col h5 {
-    margin: 0px;
-    padding-bottom: 25px;
-    font-size: 23px;
+.recipe_info_table {
+    width: 50%;
 }
 
-.recipe_info_col .recipe_info_meal {
-    margin-top: 5px;
+.recipe_info_table td {
+    text-align: left;
+    font-size: 18px;
+}
+
+.collapsible-header h5 {
+    margin: auto;
+}
+
+.collapsible-header {
+    padding: 10px;
+}
+
+.collapsible-body {
+    background-color: #f5f5f5;
+}
+
+.collapsible-body .ingredient-list {
+    list-style-type: disc;
+    margin-left: 40px;
+}
+
+.cooking-steps {
+    padding-bottom: 20px;
 }

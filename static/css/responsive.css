@@ -25,6 +25,14 @@
 
 /*Large Laptop*/
 @media (max-width: 1440px) {
+    /*view_recipe.html*/
+    .recipe_info_table {
+        width: 75%;
+    }
+    
+    .recipe_info_table td {
+        padding: 11px;
+    }
 
 }
 
@@ -40,8 +48,17 @@
     }
 
     /*view_recipe.html*/
-    .recipe_info_col h5 {
-        font-size: 19px;
+    .row .col.pull-m1 {
+        right: 12%;
+    }
+
+    .recipe_info_table {
+        width: 100%;
+    }
+    
+    .recipe_info_table td {
+        text-align: left;
+        padding: 10px;
     }
 
 }
@@ -54,8 +71,12 @@
     }
 
     /*view_recipe.html*/
-    .recipe_info_col h5 {
-        font-size: 16px;
+    .row .col.pull-m1 {
+        right: 12%;
+    }
+
+    .recipe_info_table td {
+        font-size: 12px;
     }
 
 }
@@ -133,13 +154,22 @@
     }
 
     /*view_recipe.html*/
-    .recipe_info_col h5 {
-        text-align: center;
-        font-size: 16px;
+    .row .col.pull-m1 {
+        right: 0;
     }
 
-    .recipe_info_col .recipe_info_meal {
-        margin-top: 20px;
+    .recipe_info_table {
+        width: 75%;
+        margin-top: 10px;
+    }
+    
+    .recipe_info_table td {
+        text-align: center;
+    }
+
+    .collapsible-header h5,
+    .collapsible-header i {
+        font-size: 18px;
     }
 
 }
