@@ -4,7 +4,7 @@
 <!--Create Recipe Form-->
 <div class="row add_recipe_row">
     <h3 class="center-align text-shadow create-recipe-title">Edit Recipe</h3>
-    <form class="col s10 offset-s1" autocomplete="off" method="POST" action="{{ url_for('add_recipe') }}">
+    <form class="col s10 offset-s1" autocomplete="off" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipes._id) }}">
 
         <!--Input Field Recipe Name-->
         <div class="row">
@@ -33,7 +33,8 @@
             <div class="input-field col s10 offset-s1 m10 offset-m1 l6 offset-l3">
                 <input id="recipe_image_url" name="recipe_image_url" type="text" data-length="250" minlength="5"
                     maxlength="250" value="{{ recipes.recipe_image_url}}">
-                <label for="recipe_image_url" class="black-text"><i class="fas fa-images"></i> Image URL (Optional)</label>
+                <label for="recipe_image_url" class="black-text"><i class="fas fa-images"></i> Image URL
+                    (Optional)</label>
                 <span class="helper-text col s10" data-error="Must be 5 characters or more"></span>
             </div>
         </div>
@@ -45,7 +46,11 @@
                     <option value="" disabled selected>Select Meal Type</option>
 
                     {% for meal in meals %}
+                    {% if meal.meal_name == recipes.recipe_meal_type %}
+                    <option value="{{ meal.meal_name }}" selected>{{ meal.meal_name }}</option>
+                    {% else %}
                     <option value="{{ meal.meal_name }}">{{ meal.meal_name }}</option>
+                    {% endif %}
                     {% endfor %}
 
                 </select>
@@ -58,7 +63,11 @@
                     <option value="" disabled selected>Select Cuisine Type</option>
 
                     {% for cuisine in cuisines %}
+                    {% if cuisine.cuisine_name == recipes.recipe_cuisine_type %}
+                    <option value="{{ cuisine.cuisine_name }}" selected>{{ cuisine.cuisine_name }}</option>
+                    {% else %}
                     <option value="{{ cuisine.cuisine_name }}">{{ cuisine.cuisine_name }}</option>
+                    {% endif %}
                     {% endfor %}
 
                 </select>
@@ -72,7 +81,11 @@
                     <option value="" disabled selected>Select Diet Type</option>
 
                     {% for diet in diets %}
+                    {% if diet.diet_name == recipes.recipe_diet_type %}
+                    <option value="{{ diet.diet_name }}" selected>{{ diet.diet_name }}</option>
+                    {% else %}
                     <option value="{{ diet.diet_name }}">{{ diet.diet_name }}</option>
+                    {% endif %}
                     {% endfor %}
 
                 </select>
@@ -109,10 +122,15 @@
             <div class="input-field col s12 l10 offset-l1">
                 <textarea id="recipe_ingredients" name="recipe_ingredients" class="validate materialize-textarea"
                     data-length="1000" pattern="^[A-Za-z0-9\W+]{5,1000}$" minlength="5" maxlength="1000" required>
-                {{- recipes.recipe_ingredients -}}</textarea>
+                    
+                    {%- for ingredient_list in recipes.recipe_ingredients -%}
+                    {{ ingredient_list + "\n" }} 
+                    {%- endfor -%}
+
+                </textarea>
                 <label for="recipe_ingredients" class="black-text">
                     <i class="fas fa-list-ul"></i> List Ingredients - Each ingredient on new line</label>
-                    <span class="helper-text help_text_ingredients col s10" data-error="Enter a list of ingredients"></span>
+                <span class="helper-text help_text_ingredients col s10" data-error="Enter a list of ingredients"></span>
             </div>
 
             <!--Empty Column-->
@@ -122,10 +140,15 @@
             <div class="input-field col s12 l10 offset-l1">
                 <textarea id="recipe_steps" name="recipe_steps" class="validate materialize-textarea" data-length="1000"
                     pattern="^[A-Za-z0-9\W+]{5,1000}$" minlength="5" maxlength="1000" required>
-                    {{- recipes.recipe_steps -}}</textarea>
+                    
+                    {%- for cooking_steps in recipes.recipe_steps -%}
+                    {{ cooking_steps + "\n" }} 
+                    {%- endfor -%}
+
+                </textarea>
                 <label for="recipe_steps" class="black-text">
                     <i class="fas fa-list-ol"></i> List Steps - Each step on new line</label>
-                    <span class="helper-text col s10" data-error="Enter a list of steps, 
+                <span class="helper-text col s10" data-error="Enter a list of steps, 
                     on how to prepare and cook this recipe"></span>
             </div>
         </div>
@@ -134,12 +157,13 @@
         <div class="row">
             <div class="col s12 m11 offset-m1 xl11 offset-xl1">
                 <!--Back/Cancel Button-->
-                <a href="{{ url_for('account', username=session['user']) }}"
+                <a href="{{ url_for('all_recipes') }}"
                     class="col s10 offset-s1 m3 offset-m1 off xl3 offset-xl1 addrec-btns btn blue-grey darken-1 text-shadow">
                     <i class="fas fa-arrow-left"></i> Back</a>
 
                 <!--Clear/Reset Button-->
-                <button type="reset" class="col s10 offset-s1 m3 xl3 addrec-btns btn blue-grey lighten-1 text-shadow clear-btn">
+                <button type="reset"
+                    class="col s10 offset-s1 m3 xl3 addrec-btns btn blue-grey lighten-1 text-shadow clear-btn">
                     Clear <i class="fas fa-times"></i>
                 </button>
 
