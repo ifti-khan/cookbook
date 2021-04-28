@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!--Create Recipe Form-->
+<div class="row add_recipe_row">
+    <h3 class="center-align text-shadow create-recipe-title">Create Recipe</h3>
+    <form class="col s10 offset-s1" autocomplete="off" method="POST" action="{{ url_for('add_recipe') }}">
+
+        <!--Input Field Recipe Name-->
+        <div class="row">
+            <div class="input-field col s10 offset-s1 m10 offset-m1 l6 offset-l3">
+                <input id="recipe_name" name="recipe_name" type="text" data-length="50" pattern="^[A-Za-z0-9\W+]{5,50}$"
+                    minlength="5" maxlength="50" class="validate" required>
+                <label for="recipe_name" class="black-text"><i class="fas fa-file-alt"></i> Recipe Name</label>
+                <span class="helper-text col s10" data-error="Must be 5 characters or more"></span>
+            </div>
+        </div>
+
+        <!--Input Field Recipe Description-->
+        <div class="row">
+            <div class="input-field col s10 offset-s1 m10 offset-m1 l6 offset-l3">
+                <input id="recipe_description" name="recipe_description" type="text" data-length="500"
+                    pattern="^[A-Za-z0-9\W+]{5,500}$" minlength="5" maxlength="500" class="validate" required>
+                <label for="recipe_description" class="black-text"><i class="fas fa-pen-alt"></i> Recipe
+                    Description</label>
+                <span class="helper-text col s10" data-error="Must be 5 characters or more"></span>
+            </div>
+        </div>
+
+        <!--Input Field Recipe Image URL-->
+        <div class="row">
+            <div class="input-field col s10 offset-s1 m10 offset-m1 l6 offset-l3">
+                <input id="recipe_image_url" name="recipe_image_url" type="text" data-length="250" minlength="5"
+                    maxlength="250">
+                <label for="recipe_image_url" class="black-text"><i class="fas fa-images"></i> Image URL (Optional)</label>
+                <span class="helper-text col s10" data-error="Must be 5 characters or more"></span>
+            </div>
+        </div>
+
+        <!--Input Field Recipe Meal Type Dropdown-->
+        <div class="row">
+            <div class="input-field col s8 offset-s2 m8 offset-m2 l2 offset-l2">
+                <select id="recipe_meal_type" name="recipe_meal_type" class="validate" required>
+                    <option value="" disabled selected>Select Meal Type</option>
+
+                    {% for meal in meals %}
+                    <option value="{{ meal.meal_name }}">{{ meal.meal_name }}</option>
+                    {% endfor %}
+
+                </select>
+                <label class="black-text"><i class="fas fa-utensils"></i> Meal Type</label>
+            </div>
+
+            <!--Input Field Recipe Cuisine Type Dropdown-->
+            <div class="input-field col s8 offset-s2 m8 offset-m2 l2 offset-l1">
+                <select id="recipe_cuisine_type" name="recipe_cuisine_type">
+                    <option value="" disabled selected>Select Cuisine Type</option>
+
+                    {% for cuisine in cuisines %}
+                    <option value="{{ cuisine.cuisine_name }}">{{ cuisine.cuisine_name }}</option>
+                    {% endfor %}
+
+                </select>
+                <label class="black-text cuisine-label"><i class="fas fa-globe-americas"></i> Cuisine Type
+                    (Optional)</label>
+            </div>
+
+            <!--Input Field Recipe Diet Type Dropdown-->
+            <div class="input-field col s8 offset-s2 m8 offset-m2 l2 offset-l1">
+                <select id="recipe_diet_type" name="recipe_diet_type">
+                    <option value="" disabled selected>Select Diet Type</option>
+
+                    {% for diet in diets %}
+                    <option value="{{ diet.diet_name }}">{{ diet.diet_name }}</option>
+                    {% endfor %}
+
+                </select>
+                <label class="black-text"><i class="fas fa-seedling"></i> Diet Type (Optional)</label>
+            </div>
+        </div>
+
+        <!--Input Field Recipe Cooking Time-->
+        <div class="row">
+            <div class="input-field col s10 offset-s1 l4 offset-l1">
+                <input id="recipe_cooktime" name="recipe_cooktime" type="number" data-length="10"
+                    pattern="^[0-9]{1,10}$" minlength="1" maxlength="10" class="validate" required>
+                <label for="recipe_cooktime" class="black-text"><i class="fas fa-clock"></i> Cooking Time - In
+                    Minutes</label>
+                <span class="helper-text col s10" data-error="Enter a cooking time"></span>
+            </div>
+
+            <!--Empty Column-->
+            <div class="col s1 empty-col"></div>
+
+            <!--Input Field Recipe Servings-->
+            <div class="input-field col s10 offset-s1 l4 offset-l1">
+                <input id="recipe_servings" name="recipe_servings" type="number" data-length="10"
+                    pattern="^[0-9]{1,10}$" minlength="1" maxlength="10" class="validate" required>
+                <label for="recipe_servings" class="black-text"><i class="fas fa-users"></i> No. of Servings</label>
+                <span class="helper-text col s10" data-error="Enter how many servings"></span>
+            </div>
+        </div>
+
+        <!--Text Area For Recipe Ingredient List-->
+        <div class="row">
+            <div class="input-field col s12 l10 offset-l1">
+                <textarea id="recipe_ingredients" name="recipe_ingredients" class="validate materialize-textarea"
+                    data-length="1000" pattern="^[A-Za-z0-9\W+]{5,1000}$" minlength="5" maxlength="1000" required></textarea>
+                <label for="recipe_ingredients" class="black-text">
+                    <i class="fas fa-list-ul"></i> List Ingredients - Each ingredient on new line</label>
+                    <span class="helper-text help_text_ingredients col s10" data-error="Enter a list of ingredients"></span>
+            </div>
+
+            <!--Empty Column-->
+            <div class="col s1 empty-col"></div>
+
+            <!--Text Area For Recipe Step By Step List-->
+            <div class="input-field col s12 l10 offset-l1">
+                <textarea id="recipe_steps" name="recipe_steps" class="validate materialize-textarea" data-length="1000"
+                    pattern="^[A-Za-z0-9\W+]{5,1000}$" minlength="5" maxlength="1000" required></textarea>
+                <label for="recipe_steps" class="black-text">
+                    <i class="fas fa-list-ol"></i> List Steps - Each step on new line</label>
+                    <span class="helper-text col s10" data-error="Enter a list of steps, 
+                    on how to prepare and cook this recipe"></span>
+            </div>
+        </div>
+
+        <!--Buttons for the form-->
+        <div class="row">
+            <div class="col s12 m11 offset-m1 xl11 offset-xl1">
+                <!--Back/Cancel Button-->
+                <a href="{{ url_for('account', username=session['user']) }}"
+                    class="col s10 offset-s1 m3 offset-m1 off xl3 offset-xl1 addrec-btns btn blue-grey darken-1 text-shadow">
+                    <i class="fas fa-arrow-left"></i> Back</a>
+
+                <!--Clear/Reset Button-->
+                <button type="reset" class="col s10 offset-s1 m3 xl3 addrec-btns btn blue-grey lighten-1 text-shadow clear-btn">
+                    Clear <i class="fas fa-times"></i>
+                </button>
+
+                <!--Submit/Create Button-->
+                <button type="submit" class="col s10 offset-s1 m3 xl3 addrec-btns btn blue-grey darken-1 text-shadow">
+                    Create <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
