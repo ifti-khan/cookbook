@@ -24,7 +24,13 @@
     <!--Recipe Info Image-->
     <div class="row">
         <div class="col s12 m8 l8 xl6 push-xl1 center-align">
+            {% if recipe_info.recipe_image_url %}
             <img src="{{ recipe_info.recipe_image_url }}" alt="Recipe Image" class="view_recipe_image">
+                {% else %}
+                <div class="view-default-img">
+                    <p>Sorry<br>No Image<br>Provided</p>
+                </div>
+                {% endif %}
 
             <h6><i class="fas fa-share-square"></i> Shared By - {{ recipe_info.created_by }}</h6>
         </div>

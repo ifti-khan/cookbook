@@ -276,9 +276,17 @@ footer {
     height: 100%;
 }
 
-.default-image {
+.default-img {
     width: 175px;
     height: 175px;
+    background-color: #bdbdbd;
+    border-radius: 5px;
+}
+
+.default-img p {
+    padding-top: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /*view_recipe.html*/
@@ -310,6 +318,21 @@ footer {
     width: 50%;
 }
 
+.view-default-img {
+    width: 175px;
+    height: 175px;
+    background-color: #bdbdbd;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.view-default-img p {
+    padding-top: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
 .recipe_info_table {
     width: 50%;
 }
@@ -324,6 +347,8 @@ footer {
 .collapsible-header i {
     margin: auto;
     font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .collapsible-header {

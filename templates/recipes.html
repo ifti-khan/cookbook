@@ -103,8 +103,9 @@
                         {% if recipe.recipe_image_url %}
                         <img src="{{ recipe.recipe_image_url }}" alt="Recipe Image Placeholder" />
                         {% else %}
-                        <img src="{{ url_for('static', filename='icons/utensils-solid.svg') }}" class="default-image"
-                            alt="Default Image Placeholder" />
+                        <div class="default-img">
+                            <p>Sorry<br>No Image<br>Provided</p>
+                        </div>
                         {% endif %}
                     </div>
 
