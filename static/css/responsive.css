@@ -31,7 +31,12 @@
     }
     
     .recipe_info_table td {
-        padding: 11px;
+        padding: 9px;
+    }
+
+    .collapsible-header h5,
+    .collapsible-header i {
+        font-size: 20px;
     }
 
 }
@@ -58,7 +63,13 @@
     
     .recipe_info_table td {
         text-align: left;
-        padding: 10px;
+        padding: 9px;
+        font-size: 16px;
+    }
+
+    .collapsible-header h5,
+    .collapsible-header i {
+        font-size: 16px;
     }
 
 }
@@ -76,7 +87,13 @@
     }
 
     .recipe_info_table td {
+        padding: 10px;
         font-size: 12px;
+    }
+
+    .collapsible-header h5,
+    .collapsible-header i {
+        font-size: 16px;
     }
 
 }
@@ -169,7 +186,7 @@
 
     .collapsible-header h5,
     .collapsible-header i {
-        font-size: 18px;
+        font-size: 16px;
     }
 
 }
@@ -210,6 +227,11 @@
 
     #index-help-message {
         font-size: 12px;
+    }
+
+    .collapsible-header h5,
+    .collapsible-header i {
+        font-size: 14px;
     }
 
 }
