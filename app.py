@@ -108,7 +108,7 @@ def logout():
 @app.route("/all_recipes")
 def all_recipes():
     num_of_recipes = mongo.db.recipes.count()
-    cards_per_page = 4
+    cards_per_page = 8
     current_page = int(request.args.get('current_page', 1))
     num_of_pages = range(1, int(
         math.ceil(num_of_recipes / cards_per_page)) + 1)
@@ -200,7 +200,7 @@ def edit_recipe(recipe_id):
         cuisines=cuisines, diets=diets)
 
 
-@app.route("/delete_recipe/<recipe_id>")
+@app.route("/delete_recipe/<recipe_id>", methods=["GET"])
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
