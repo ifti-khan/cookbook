@@ -387,3 +387,22 @@ footer {
 .del_modal .modal-footer {
     text-align: center;
 }
+
+/*change_username.html*/
+.change_username_con h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-top: 20px;
+}
+
+.row .curr_username {
+    margin-top: 50px;
+}
+
+.row .new_username {
+    margin: 20px 0px;
+}
+
+.row .col .chge-user-btns {
+    margin-right: 2px;
+}

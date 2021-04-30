@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if not session.user %}
+<h5 class="center-align text-shadow blue-grey lighten-4 black-text reg-message3">
+    Please <a href="{{ url_for('login') }}">Login</a> or <a href="{{ url_for('register') }}">Register</a> to view this
+    recipe in detail</h5>
+{% endif %}
+
+{% if session.user %}
+<div class="container change_username_con center-align blue-grey lighten-5">
+
+    <h3>Change Username</h3>
+
+    <div class="row ">
+        <form method="POST" action="" autocomplete="off" class="col xl12">
+            <!--Current username-->
+            <div class="input-field col xl6 offset-xl3 curr_username">
+                <i class="fas fa-user prefix"></i>
+                <input value="{{ username }}" id="current_username" name="current_username" type="text" disabled />
+                <label for="current_username">Current Username</label>
+            </div>
+
+            <!--New username-->
+            <div class="row">
+                <div class="input-field col xl6 offset-xl3 new_username">
+                    <i class="fas fa-user-edit prefix"></i>
+                    <input id="new_username" name="new_username" type="text">
+                    <label for="new_username">New Username</label>
+                </div>
+
+                <!--Buttons for the form-->
+                <div class="row">
+                    <!--Back/Cancel Button-->
+                    <a href="{{ url_for('account', username=session['user']) }}"
+                        class="col s10 offset-s1 m4 offset-m2 xl3 offset-xl3 chge-user-btns btn blue-grey darken-1 text-shadow">
+                        <i class="fas fa-arrow-left"></i> Back</a>
+
+                    <!--Submit/Create Button-->
+                    <button type="submit"
+                        class="col s10 offset-s1 m4 xl3 chge-user-btns btn blue-grey darken-1 text-shadow">
+                        Change <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+        </form>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

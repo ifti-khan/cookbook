@@ -11,7 +11,7 @@
             <div class="col s10 offset-s1 m5 offset-m1 l5 offset-l1 xl4 offset-xl2">
                 <h4>Name: {{ fullname }}</h4>
                 <h4>Username: {{ username }}</h4>
-                <a href="#" class="btn blue-grey darken-1 text-shadow">Change Username</a>
+                <a href="{{ url_for('change_username', username=session.user) }}" class="btn blue-grey darken-1 text-shadow">Change Username</a>
             </div>
 
             <div class="col s10 offset-s1 m5 offset-m1 l5 offset-l1 xl4 offset-xl2">

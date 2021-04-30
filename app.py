@@ -207,6 +207,14 @@ def delete_recipe(recipe_id):
     return redirect(url_for("account", username=session['user']))
 
 
+@app.route("/change_username/<username>", methods=["GET", "POST"])
+def change_username(username):
+    if request.method == "POST":
+
+        return render_template(
+            "change_username.html", username=session["user"])
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
