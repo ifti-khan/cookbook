@@ -364,6 +364,26 @@ footer {
     margin-left: 40px;
 }
 
-.cooking-steps {
+.row .view_recipe_btns {
     padding-bottom: 20px;
+}
+
+.del_modal .modal-header h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 15px 0px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.del_modal .modal-content p {
+    font-size: 20px;
+}
+
+.del_modal .modal-content i {
+    font-size: 36px;
+}
+
+.del_modal .modal-footer {
+    text-align: center;
 }

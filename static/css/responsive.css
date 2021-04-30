@@ -189,6 +189,18 @@
         font-size: 16px;
     }
 
+    .del_modal .modal-header h5 {
+        font-size: 20px;
+    }
+    
+    .del_modal .modal-content p {
+        font-size: 18px;
+    }
+    
+    .del_modal .modal-content i {
+        font-size: 28px;
+    }
+
 }
 
 /*Medium Mobile*/
@@ -229,9 +241,22 @@
         font-size: 12px;
     }
 
+    /*view_recipe.html*/
     .collapsible-header h5,
     .collapsible-header i {
         font-size: 14px;
+    }
+
+    .del_modal .modal-header h5 {
+        font-size: 16px;
+    }
+
+    .del_modal .modal-content p {
+        font-size: 16px;
+    }
+    
+    .del_modal .modal-content i {
+        font-size: 26px;
     }
 
 }
