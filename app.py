@@ -236,6 +236,32 @@ def change_username(username):
 
 @app.route("/change_password/<username>", methods=["GET", "POST"])
 def change_password(username):
+    if request.method == "POST":
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        current_password = request.form.get('current_password')
+        new_password = request.form.get('new_password')
+        confirm_password = request.form.get("confirm_password")
+
+        if check_password_hash(mongo.db.users.find_one(
+                {'username': username})['password'], current_password):
+            if new_password == confirm_password:
+                mongo.db.users.update_one(
+                    {"username": username},
+                    {"$set": {'password': generate_password_hash(
+                        new_password)}})
+                flash("Your password has been changed.")
+                return redirect(url_for('account', username=username))
+            else:
+                flash("Your passwords do not match,\
+                    Please try again and make sure both passwords match")
+                return redirect(url_for("change_password",
+                                        username=session["user"]))
+        else:
+            flash('Your Current password is incorrect,\
+                Please try again and type the correct password')
+            return redirect(url_for('change_password',
+                            username=session["user"]))
 
     return render_template("change_password.html", username=session["user"])
 
