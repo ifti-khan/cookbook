@@ -218,14 +218,16 @@ def change_username(username):
             {'username': request.form.get('new_username')})
 
         if username_check:
-            flash('This username is already taken, Please choose another one')
+            flash('This username is taken by another user,\
+                Please type a new unique username')
             return redirect(url_for(
                 'change_username', username=session["user"]))
         else:
             mongo.db.users.update_one(
                 {"username": username}, {"$set": change_username})
 
-        flash("Username has been updated, Please login with your new username")
+        flash("Username has been changed,\
+            Remember to login with your new username")
         session.pop("user")
         return redirect(url_for("login"))
 
@@ -235,8 +237,7 @@ def change_username(username):
 @app.route("/change_password/<username>", methods=["GET", "POST"])
 def change_password(username):
 
-    return render_template(
-            "change_password.html", username=session["user"])
+    return render_template("change_password.html", username=session["user"])
 
 
 if __name__ == "__main__":
