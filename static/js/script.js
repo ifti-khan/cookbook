@@ -3,7 +3,7 @@ $(document).ready(function(){
     $(".sidenav").sidenav({ edge: "right" });
     $('.modal').modal();
     $('input#fullname, input#email, input#username, input#password, input#recipe_name, input#recipe_description, input#recipe_image_url,\
-    input#recipe_name, textarea#recipe_ingredients, textarea#recipe_steps').characterCounter();
+    input#recipe_name, textarea#recipe_ingredients, textarea#recipe_steps, input#new_username, input#current_password, input#new_password, input#confirm_password').characterCounter();
     $('select').formSelect();
     $('.collapsible').collapsible();
 

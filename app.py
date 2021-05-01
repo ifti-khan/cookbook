@@ -210,9 +210,26 @@ def delete_recipe(recipe_id):
 
 @app.route("/change_username/<username>", methods=["GET", "POST"])
 def change_username(username):
+    if request.method == "POST":
+        change_username = {
+            "username": request.form.get("new_username")}
 
-    return render_template(
-            "change_username.html", username=session["user"])
+        username_check = mongo.db.users.find_one(
+            {'username': request.form.get('new_username')})
+
+        if username_check:
+            flash('This username is already taken, Please choose another one')
+            return redirect(url_for(
+                'change_username', username=session["user"]))
+        else:
+            mongo.db.users.update_one(
+                {"username": username}, {"$set": change_username})
+
+        flash("Username has been updated, Please login with your new username")
+        session.pop("user")
+        return redirect(url_for("login"))
+
+    return render_template("change_username.html", username=session["user"])
 
 
 @app.route("/change_password/<username>", methods=["GET", "POST"])
