@@ -406,3 +406,14 @@ footer {
 .row .col .chge-user-btns {
     margin-right: 2px;
 }
+
+/*change_password.html*/
+.change_password_con h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-top: 20px;
+}
+
+.row .col .chge-pass-btns {
+    margin-right: 2px;
+}

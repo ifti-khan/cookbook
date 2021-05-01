@@ -2,11 +2,12 @@ import os
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
-from flask_pymongo import PyMongo, DESCENDING, ASCENDING
+from flask_pymongo import PyMongo, ASCENDING
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
+
 import math
 
 app = Flask(__name__)
@@ -200,7 +201,7 @@ def edit_recipe(recipe_id):
         cuisines=cuisines, diets=diets)
 
 
-@app.route("/delete_recipe/<recipe_id>", methods=["GET"])
+@app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
@@ -209,10 +210,16 @@ def delete_recipe(recipe_id):
 
 @app.route("/change_username/<username>", methods=["GET", "POST"])
 def change_username(username):
-    if request.method == "POST":
 
-        return render_template(
+    return render_template(
             "change_username.html", username=session["user"])
+
+
+@app.route("/change_password/<username>", methods=["GET", "POST"])
+def change_password(username):
+
+    return render_template(
+            "change_password.html", username=session["user"])
 
 
 if __name__ == "__main__":
