@@ -211,6 +211,20 @@ def delete_recipe(recipe_id):
 @app.route("/change_username/<username>", methods=["GET", "POST"])
 def change_username(username):
     if request.method == "POST":
+        current_user = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+
+        change_created_by = {
+            "created_by": request.form.get("new_username")}
+
+        created_by_check = mongo.db.recipes.find(
+            {'created_by': current_user})
+
+        if created_by_check:
+            mongo.db.recipes.update_many(
+                {"created_by": username},
+                {"$set": change_created_by})
+
         change_username = {
             "username": request.form.get("new_username")}
 
