@@ -18,7 +18,7 @@
             <!--Current username-->
             <div class="input-field col s9 offset-s1 m9 offset-m1 l9 offset-l1 xl6 offset-xl3 
             curr_username">
-                <i class="fas fa-user prefix"></i>
+                <i class="fas fa-user prefix blue-grey-text darken-1"></i>
                 <input value="{{ username }}" id="current_username" name="current_username" type="text" disabled>
                 <label for="current_username" class="black-text">Current Username</label>
             </div>
@@ -27,7 +27,7 @@
             <div class="row">
                 <div class="input-field col s9 offset-s1 m9 offset-m1 l9 offset-l1 xl6 offset-xl3 
                 new_username">
-                    <i class="fas fa-user-edit prefix"></i>
+                    <i class="fas fa-user-edit prefix blue-grey-text darken-1"></i>
                     <input id="new_username" name="new_username" type="text" data-length="25" minlength="5" 
                     maxlength="25" pattern="^[a-zA-Z0-9]{5,25}$" class="validate" required>
                     <label for="new_username" class="black-text">New Username</label>
@@ -39,13 +39,13 @@
                 <div class="row">
                     <!--Back/Cancel Button-->
                     <a href="{{ url_for('account', username=session['user']) }}"
-                        class="col s10 offset-s1 m4 offset-m2 xl3 offset-xl3 chge-user-btns btn blue-grey darken-1 text-shadow">
-                        <i class="fas fa-arrow-left"></i> Back</a>
+                        class="col s10 offset-s1 m4 offset-m2 xl3 offset-xl3 chge-user-btns btn blue-grey darken-1 
+                        text-shadow waves-effect waves-light"><i class="fas fa-arrow-left"></i> Back</a>
 
                     <!--Submit/Create Button-->
                     <button type="submit"
-                        class="col s10 offset-s1 m4 xl3 chge-user-btns btn blue-grey darken-1 text-shadow">
-                        Change <i class="fas fa-plus"></i>
+                        class="col s10 offset-s1 m4 xl3 chge-user-btns btn blue-grey darken-1
+                        text-shadow waves-effect waves-light">Change <i class="fas fa-plus"></i>
                     </button>
                 </div>
         </form>
