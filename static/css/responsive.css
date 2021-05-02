@@ -100,6 +100,10 @@
 
 /*Large Mobile*/
 @media (max-width: 425px) {
+    /*Global*/
+    .input-field .helper-text {
+        right: 10px;
+    }   
     /*Navigation Bar*/
     nav .brand-logo {
         margin-left: 0px;
@@ -201,6 +205,15 @@
         font-size: 28px;
     }
 
+    /*change_username.html*/
+    .change_username_con h3 {
+        font-size: 30px;
+    }
+
+    .row .col .chge-user-btns {
+        margin-bottom: 10px;
+    }
+
 }
 
 /*Medium Mobile*/
@@ -223,6 +236,12 @@
 
 /*Small Mobile*/
 @media (max-width: 320px) {
+    /*Global*/
+    .input-field .helper-text {
+        font-size: 10px;
+        right: 12px;
+    }    
+
     /*Navigation Bar*/
     nav .brand-logo {
         font-size: 20px;
@@ -256,6 +275,11 @@
     }
     
     .del_modal .modal-content i {
+        font-size: 26px;
+    }
+
+    /*change_username.html*/
+    .change_username_con h3 {
         font-size: 26px;
     }
 

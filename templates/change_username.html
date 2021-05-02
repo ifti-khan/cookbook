@@ -14,9 +14,10 @@
 
     <div class="row ">
         <form method="POST" action="{{ url_for('change_username', username=session.user) }}" 
-        autocomplete="off" class="col xl12">
+        autocomplete="off" class="col s12 xl12">
             <!--Current username-->
-            <div class="input-field col xl6 offset-xl3 curr_username">
+            <div class="input-field col s9 offset-s1 m9 offset-m1 l9 offset-l1 xl6 offset-xl3 
+            curr_username">
                 <i class="fas fa-user prefix"></i>
                 <input value="{{ username }}" id="current_username" name="current_username" type="text" disabled>
                 <label for="current_username">Current Username</label>
@@ -24,12 +25,13 @@
 
             <!--New username-->
             <div class="row">
-                <div class="input-field col xl6 offset-xl3 new_username">
+                <div class="input-field col s9 offset-s1 m9 offset-m1 l9 offset-l1 xl6 offset-xl3 
+                new_username">
                     <i class="fas fa-user-edit prefix"></i>
                     <input id="new_username" name="new_username" type="text" data-length="25" minlength="5" 
                     maxlength="25" pattern="^[a-zA-Z0-9]{5,25}$" class="validate" required>
                     <label for="new_username">New Username</label>
-                    <span class="helper-text col s6 m6 l6 xl6"
+                    <span class="helper-text"
                         data-error="Must be 5 characters or more with no special characters"></span>
                 </div>
 
