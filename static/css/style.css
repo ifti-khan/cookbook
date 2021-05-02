@@ -196,10 +196,6 @@ footer {
     border-bottom: 1px solid #000000;
 }
 
-.select-wrapper input.select-dropdown {
-    border-bottom: 1px solid #000000;
-}
-
 .create-recipe-title {
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -387,6 +383,7 @@ footer {
     padding-bottom: 20px;
 }
 
+/*Delete Modal*/
 .del_modal .modal-header h5 {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -440,5 +437,22 @@ footer {
 
 .row .col .chge-pass-btns {
     margin-right: 2px;
+}
+
+/*Contact Modal*/
+.cont_modal .modal-header h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 15px 0px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.cont_modal .modal-content {
+    height: 100%;
+}
+
+.cont_modal .modal-footer {
+    text-align: center;
 }
 

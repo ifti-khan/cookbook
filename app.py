@@ -21,7 +21,14 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    fullname = mongo.db.users.find_one(
+        {"username": session["user"]})["fullname"]
+    email = mongo.db.users.find_one(
+        {"username": session["user"]})["email"]
+    return render_template(
+        "index.html", username=username, fullname=fullname, email=email)
 
 
 @app.route("/register", methods=["GET", "POST"])
