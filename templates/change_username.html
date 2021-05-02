@@ -8,7 +8,7 @@
 {% endif %}
 
 {% if session.user %}
-<div class="container change_username_con center-align blue-grey lighten-5">
+<div class="container change_username_con center-align">
 
     <h3>Change Username</h3>
 
@@ -20,7 +20,7 @@
             curr_username">
                 <i class="fas fa-user prefix"></i>
                 <input value="{{ username }}" id="current_username" name="current_username" type="text" disabled>
-                <label for="current_username">Current Username</label>
+                <label for="current_username" class="black-text">Current Username</label>
             </div>
 
             <!--New username-->
@@ -30,7 +30,7 @@
                     <i class="fas fa-user-edit prefix"></i>
                     <input id="new_username" name="new_username" type="text" data-length="25" minlength="5" 
                     maxlength="25" pattern="^[a-zA-Z0-9]{5,25}$" class="validate" required>
-                    <label for="new_username">New Username</label>
+                    <label for="new_username" class="black-text">New Username</label>
                     <span class="helper-text"
                         data-error="Must be 5 characters or more with no special characters"></span>
                 </div>

@@ -165,8 +165,23 @@ footer {
 }
 
 /*account.html*/
+.account-row h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0px;
+}
+
+.user-acc-info p {
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.acc-change-btn {
+    margin-bottom: 10px;
+}
+
 .add-recipe-btn {
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 /*add_recipe.html*/

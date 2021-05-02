@@ -269,6 +269,15 @@
         font-size: 12px;
     }
 
+    /*account.html*/
+    .account-row h3 {
+        font-size: 36px;
+    }
+
+    .user-acc-info p {
+        font-size: 18px;
+    }
+
     /*view_recipe.html*/
     .collapsible-header h5,
     .collapsible-header i {
