@@ -214,6 +214,15 @@
         margin-bottom: 10px;
     }
 
+    /*change_password.html*/
+    .change_password_con h3 {
+        font-size: 30px;
+    }
+
+    .row .col .chge-pass-btns {
+        margin-bottom: 10px;
+    }
+
 }
 
 /*Medium Mobile*/
@@ -280,6 +289,11 @@
 
     /*change_username.html*/
     .change_username_con h3 {
+        font-size: 26px;
+    }
+
+    /*change_password.html*/
+    .change_password_con h3 {
         font-size: 26px;
     }
 

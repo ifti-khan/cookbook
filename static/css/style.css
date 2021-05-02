@@ -397,10 +397,11 @@ footer {
     text-transform: uppercase;
     letter-spacing: 2px;
     padding-top: 20px;
+    margin-bottom: 0px;
 }
 
 .row .curr_username {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .row .new_username {
