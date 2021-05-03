@@ -11,6 +11,15 @@
         type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}" type="text/css">
+    <!--This is for the EmailJS API browser integration for my modal contact forms-->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <!--My JS Script for my contact modal forms, this is my emailjs User ID-->
+    <script>
+        (function() {
+            emailjs.init("user_5ufwrdpLONQqmdzUjcdEi");
+        })();
+    </script>
+    
     {% block styles %}
     {% endblock %}
     <title>Share &#8250; Cook &#8250; Enjoy</title>
@@ -110,7 +119,7 @@
                 <div class="row con-modal-name">
                     <div class="input-field col s12 m10 offset-m1 l10 offset-l1 xl10 offset-xl1">
                         <input id="modal_name" name="modal_name" type="text" data-length="25" minlength="5" maxlength="25"
-                            pattern="^[a-zA-Z0-9]{5,25}$" class="validate" value="{{ fullname }}" required>
+                        pattern="^[A-Za-z0-9\W+]{5,25}$" class="validate" value="{{ fullname }}" required>
                         <label for="modal_name" class="black-text">
                             <i class="fas fa-id-card blue-grey-text text-darken-1"></i> Fullname</label>
                         <span class="helper-text" data-error="Please enter your fullname"></span>
@@ -145,12 +154,12 @@
                     <div class="input-field col s12 m8 offset-m2 l8 offset-l2 xl8 offset-xl2">
                         <select id="modal_message_sub" name="modal_message_sub" class="validate" required>
                             <option value="" disabled selected>Choose An Option</option>
-                            <option value="for-username">Forgotten Username</option>
-                            <option value="for-password">Forgotten Password</option>
-                            <option value="add-meal">Add New Meal Type</option>
-                            <option value="add-cuisine">Add New Cusine Type</option>
-                            <option value="add-diet">Add New Diet Type</option>
-                            <option value="other">Other</option>
+                            <option value="Forgotten Username">Forgotten Username</option>
+                            <option value="Forgotten Password">Forgotten Password</option>
+                            <option value="Add New Meal Type">Add New Meal Type</option>
+                            <option value="Add New Cusine Type">Add New Cusine Type</option>
+                            <option value="Add New Diet Type">Add New Diet Type</option>
+                            <option value="Other">Other</option>
                         </select>
                         <label class="black-text">
                             <i class="fas fa-comment-dots blue-grey-text text-darken-1"></i> Message Subject</label>
@@ -173,7 +182,7 @@
         <div class="modal-footer blue-grey lighten-5">
             <a href="#" class="modal-close waves-effect waves-light btn blue-grey darken-1">Close</a>
             <button type="reset" class="waves-effect waves-light btn blue-grey darken-1">Clear</button>
-            <button type="submit" class="waves-effect waves-light btn blue-grey darken-1">Send</button>
+            <button type="submit" id="send-btn" class="waves-effect waves-light btn blue-grey darken-1">Send</button>
         </div>
         </form>
     </div>
@@ -182,6 +191,7 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/sendemail.js') }}"></script>
     {% block scripts %}
     {% endblock %}
 

@@ -456,6 +456,10 @@ footer {
     text-align: center;
 }
 
+.con-message-subject {
+    margin-top: 30px;
+}
+
 .select-wrapper .caret {
     top: 0;
     margin: auto 0;
