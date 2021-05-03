@@ -104,75 +104,78 @@
             <h5>Contact Us</h5>
         </div>
         <div class="modal-content">
+            <form id="cookbook-contact-form">
 
-            <!--Name Input Field-->
-            <div class="row">
-                <div class="input-field col s10 offset-s1">
-                    <i class="fas fa-id-card prefix blue-grey-text text-darken-1"></i>
-                    <input id="modal_name" name="modal_name" type="text" minlength="5" maxlength="25"
-                        pattern="^[a-zA-Z0-9]{5,25}$" class="validate" value="{{ fullname }}" required>
-                    <label for="modal_name" class="black-text">Fullname</label>
-                    <span class="helper-text" data-error="Please enter your fullname"></span>
+                <!--Name Input Field-->
+                <div class="row con-modal-name">
+                    <div class="input-field col s12 m10 offset-m1 l10 offset-l1 xl10 offset-xl1">
+                        <input id="modal_name" name="modal_name" type="text" data-length="25" minlength="5" maxlength="25"
+                            pattern="^[a-zA-Z0-9]{5,25}$" class="validate" value="{{ fullname }}" required>
+                        <label for="modal_name" class="black-text">
+                            <i class="fas fa-id-card blue-grey-text text-darken-1"></i> Fullname</label>
+                        <span class="helper-text" data-error="Please enter your fullname"></span>
+                    </div>
                 </div>
-            </div>
 
-            <!--Username Input Field-->
-            <div class="row">
-                <div class="input-field col s10 offset-s1">
-                    <i class="fas fa-user prefix blue-grey-text text-darken-1"></i>
-                    <input id="modal_username" name="modal_username" type="text" minlength="5" maxlength="25"
-                        pattern="^[a-zA-Z0-9]{5,25}$" class="validate" value="{{ username }}" required>
-                    <label for="modal_username" class="black-text">Username</label>
-                    <span class="helper-text" data-error="Please enter your username"></span>
+                <!--Username Input Field-->
+                <div class="row con-modal-username">
+                    <div class="input-field col s12 m10 offset-m1 l10 offset-l1 xl10 offset-xl1">
+                        <input id="modal_username" name="modal_username" type="text" data-length="25" minlength="5" maxlength="25"
+                            pattern="^[a-zA-Z0-9]{5,25}$" class="validate" value="{{ username }}" required>
+                        <label for="modal_username" class="black-text">
+                            <i class="fas fa-user blue-grey-text text-darken-1"></i> Username</label>
+                        <span class="helper-text" data-error="Please enter your username"></span>
+                    </div>
                 </div>
-            </div>
 
-            <!--Email Input Field-->
-            <div class="row">
-                <div class="input-field col s10 offset-s1">
-                    <i class="fas fa-at prefix blue-grey-text text-darken-1"></i>
-                    <input id="modal-email" name="modal-email" type="email" data-length="50" minlength="5"
-                        maxlength="50" class="validate" value="{{ email }}" required>
-                    <label for="modal-email" class="black-text">Email Address</label>
-                    <span class="helper-text" data-error="Must be 5 characters or more 
+                <!--Email Input Field-->
+                <div class="row con-modal-email">
+                    <div class="input-field col s12 m10 offset-m1 l10 offset-l1 xl10 offset-xl1">
+                        <input id="modal_email" name="modal_email" type="email" data-length="50" minlength="5"
+                            maxlength="50" class="validate" value="{{ email }}" required>
+                        <label for="modal_email" class="black-text">
+                            <i class="fas fa-at blue-grey-text text-darken-1"></i> Email Address</label>
+                        <span class="helper-text" data-error="Must be 5 characters or more 
                 and contain the @ symbol, with characters following"></span>
+                    </div>
                 </div>
-            </div>
 
-            <!--Dropdown For Message Subject-->
-            <div class="row">
-                <div class="input-field col s8 offset-s2">
-                    <i class="fas fa-comment-dots prefix blue-grey-text text-darken-1"></i>
-                    <select id="message_subject" name="message_subject" class="validate" required>
-                        <option value="" disabled selected>Select A Message Subject</option>
-                        <option value="for-username">Forgotten Username</option>
-                        <option value="for-password">Forgotten Password</option>
-                        <option value="add-meal">Add New Meal Type</option>
-                        <option value="add-cuisine">Add New Cusine Type</option>
-                        <option value="add-diet">Add New Diet Type</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <label class="black-text">Message Subject</label>
+                <!--Dropdown For Message Subject-->
+                <div class="row con-message-subject">
+                    <div class="input-field col s12 m8 offset-m2 l8 offset-l2 xl8 offset-xl2">
+                        <select id="modal_message_sub" name="modal_message_sub" class="validate" required>
+                            <option value="" disabled selected>Choose An Option</option>
+                            <option value="for-username">Forgotten Username</option>
+                            <option value="for-password">Forgotten Password</option>
+                            <option value="add-meal">Add New Meal Type</option>
+                            <option value="add-cuisine">Add New Cusine Type</option>
+                            <option value="add-diet">Add New Diet Type</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <label class="black-text">
+                            <i class="fas fa-comment-dots blue-grey-text text-darken-1"></i> Message Subject</label>
+                    </div>
                 </div>
-            </div>
 
-            <!--Text Area For Contact Message-->
-            <div class="row">
-                <div class="input-field col s10 offset-s1">
-                    <i class="fas fa-envelope prefix blue-grey-text text-darken-1"></i>
-                    <textarea id="modal_message" name="modal_message" class="validate materialize-textarea"
-                        data-length="1000" pattern="^[A-Za-z0-9\W+]{5,1000}$" minlength="5" maxlength="1000"
-                        required></textarea>
-                    <label for="modal_message" class="black-text">Message</label>
-                    <span class="helper-text" data-error="Please type your message here"></span>
+                <!--Text Area For Contact Message-->
+                <div class="row con-modal-message">
+                    <div class="input-field col s12 m10 offset-m1 l10 offset-l1 xl10 offset-xl1">
+                        <textarea id="modal_message" name="modal_message" class="validate materialize-textarea"
+                            data-length="1000" pattern="^[A-Za-z0-9\W+]{5,1000}$" minlength="5" maxlength="1000"
+                            required></textarea>
+                        <label for="modal_message" class="black-text">
+                            <i class="fas fa-envelope blue-grey-text text-darken-1"></i> Message</label>
+                        <span class="helper-text" data-error="Please type your message here"></span>
+                    </div>
                 </div>
-            </div>
         </div>
-
+        
         <div class="modal-footer blue-grey lighten-5">
             <a href="#" class="modal-close waves-effect waves-light btn blue-grey darken-1">Close</a>
-            <a href="#" class="waves-effect waves-light btn blue-grey darken-1">Send</a>
+            <button type="reset" class="waves-effect waves-light btn blue-grey darken-1">Clear</button>
+            <button type="submit" class="waves-effect waves-light btn blue-grey darken-1">Send</button>
         </div>
+        </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"

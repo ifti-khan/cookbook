@@ -456,3 +456,11 @@ footer {
     text-align: center;
 }
 
+.select-wrapper .caret {
+    top: 0;
+    margin: auto 0;
+}
+
+
+
+

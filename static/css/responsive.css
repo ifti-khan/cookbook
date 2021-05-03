@@ -96,13 +96,24 @@
         font-size: 16px;
     }
 
+    /*Contact Modal*/
+    .select-wrapper .caret {
+        top: 10px;
+        margin: 0;
+    }
+
+    .select-wrapper 
+    input.select-dropdown {
+        margin-bottom: 0px;
+    }
+
 }
 
 /*Large Mobile*/
 @media (max-width: 425px) {
     /*Global*/
     .input-field .helper-text {
-        right: 10px;
+        font-size: 12px;
     }   
     /*Navigation Bar*/
     nav .brand-logo {
@@ -223,6 +234,25 @@
         margin-bottom: 10px;
     }
 
+    /*Contact Modal*/
+    .con-message-subject {
+        margin-top: 45px;
+    }
+
+    .select-wrapper .caret {
+        top: 10px;
+        margin: 0;
+    }
+
+    .select-wrapper 
+    input.select-dropdown {
+        margin-bottom: 0px;
+    }
+
+    .cont_modal .modal-content {
+        padding-bottom: 0;
+    }
+
 }
 
 /*Medium Mobile*/
@@ -248,7 +278,6 @@
     /*Global*/
     .input-field .helper-text {
         font-size: 10px;
-        right: 12px;
     }    
 
     /*Navigation Bar*/
