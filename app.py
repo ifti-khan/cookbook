@@ -26,6 +26,11 @@ def index():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    # This will check to see if the user is already logged in
+    if 'user' in session:
+        flash('You have already registered and have logged in')
+        return redirect(url_for('account', username=session["user"]))
+
     if request.method == "POST":
         # checks to see if the username already exists within the db
         existing_user = mongo.db.users.find_one(
@@ -53,6 +58,11 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    # This will check to see if the user is already logged in
+    if 'user' in session:
+        flash('You have already logged in')
+        return redirect(url_for('account', username=session["user"]))
+
     if request.method == "POST":
         # check if username exists in db
         existing_user = mongo.db.users.find_one(
@@ -80,6 +90,12 @@ def login():
 
 @app.route("/account/<username>", methods=["GET", "POST"])
 def account(username):
+    # This prevents users who are not registered or logged in,
+    # from viewing certain forms
+    if 'user' not in session:
+        flash('You must register or login, to access a account')
+        return redirect(url_for('index'))
+
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -123,6 +139,12 @@ def all_recipes():
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    # This prevents users who are not registered or logged in,
+    # from viewing certain forms
+    if 'user' not in session:
+        flash('You must register or login, to add a recipe')
+        return redirect(url_for('index'))
+
     if request.method == "POST":
         add_recipe = {
             "recipe_name": request.form.get("recipe_name"),
@@ -166,6 +188,12 @@ def search():
 
 @app.route("/view_recipe/<recipe_id>", methods=["GET", "POST"])
 def view_recipe(recipe_id):
+    # This prevents users who are not registered or logged in,
+    # from viewing certain forms
+    if 'user' not in session:
+        flash('You must register or login, to view a recipe in detail')
+        return redirect(url_for('index'))
+
     recipe_info = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template(
         "view_recipe.html", recipe_info=recipe_info)
@@ -173,6 +201,12 @@ def view_recipe(recipe_id):
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    # This prevents users who are not registered or logged in,
+    # from viewing certain forms
+    if 'user' not in session:
+        flash('You must register or login, to edit a recipe')
+        return redirect(url_for('index'))
+
     if request.method == "POST":
         edit_recipe = {
             "recipe_name": request.form.get("recipe_name"),
@@ -203,6 +237,12 @@ def edit_recipe(recipe_id):
 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
+    # This prevents users who are not registered or logged in,
+    # from viewing certain forms
+    if 'user' not in session:
+        flash('You must register or login, to delete a recipe')
+        return redirect(url_for('index'))
+
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for("account", username=session['user']))
@@ -210,6 +250,12 @@ def delete_recipe(recipe_id):
 
 @app.route("/change_username/<username>", methods=["GET", "POST"])
 def change_username(username):
+    # This prevents users who are not registered or logged in,
+    # from viewing certain forms
+    if 'user' not in session:
+        flash('You must register or login, to change a username')
+        return redirect(url_for('index'))
+
     if request.method == "POST":
         current_user = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
@@ -250,6 +296,12 @@ def change_username(username):
 
 @app.route("/change_password/<username>", methods=["GET", "POST"])
 def change_password(username):
+    # This prevents users who are not registered or logged in,
+    # from viewing certain forms
+    if 'user' not in session:
+        flash('You must register or login, to change a password')
+        return redirect(url_for('index'))
+
     if request.method == "POST":
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]

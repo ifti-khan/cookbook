@@ -2,8 +2,9 @@
 {% block content %}
 
 {% if not session.user %}
-<h5 class="center-align text-shadow blue-grey lighten-4 black-text reg-message2">Want Full Access? <a
-        href="{{ url_for('register') }}">Register Now!</a></h5>
+<h5 class="center-align text-shadow blue-grey lighten-4 black-text reg-message2">
+    Want Full Access?<br> Please <a href="{{ url_for('login') }}">Login</a> 
+    or <a href="{{ url_for('register') }}">Register</a> for full access to website features</h5>
 {% endif %}
 
 <div class="row">

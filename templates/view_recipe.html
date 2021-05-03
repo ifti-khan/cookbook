@@ -1,13 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% if not session.user %}
-<h5 class="center-align text-shadow blue-grey lighten-4 black-text reg-message3">
-    Please <a href="{{ url_for('login') }}">Login</a> or <a href="{{ url_for('register') }}">Register</a> to view this
-    recipe in detail</h5>
-{% endif %}
-
-{% if session.user %}
 <div class="container recipe_info_con blue-grey lighten-5">
 
     <!--Recipe Title, Description-->
@@ -145,5 +138,4 @@
             class="waves-effect waves-light btn blue-grey darken-1">Delete</a>
     </div>
 </div>
-{% endif %}
 {% endblock %}

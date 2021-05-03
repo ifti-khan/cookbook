@@ -305,12 +305,6 @@ footer {
 }
 
 /*view_recipe.html*/
-.reg-message3 {
-    margin-top: 15%;
-    font-style: italic;
-    letter-spacing: 1px;
-}
-
 .recipe_info_con {
     margin-top: 20px;
     border-radius: 5px;
