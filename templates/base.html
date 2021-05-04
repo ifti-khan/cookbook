@@ -4,16 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Font Awesome v5.15.3 CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" type="text/css">
+    <!--Materialize v1.0.0 CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
+    <!--My Stylesheets-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}" type="text/css">
-    <!--This is for the EmailJS API browser integration for my modal contact forms-->
+    <!--EmailJS CDN for my contact modal-->
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-    <!--My JS Script for my contact modal forms, this is my emailjs User ID-->
+    <!--My JS Script for my contact modal form, this is my emailjs User ID-->
     <script>
         (function() {
             emailjs.init("user_5ufwrdpLONQqmdzUjcdEi");
@@ -30,7 +33,7 @@
 <body>
 
     <header>
-        <!--Main Top Nav Bar -->
+        <!--Main navigation from materialize -->
         <nav class="nav-extend text-shadow blue-grey lighten-5">
             <div class="nav-wrapper">
                 <a href="{{ url_for('index') }}" class="brand-logo">Share&#8250;Cook&#8250;Enjoy</a>
@@ -50,10 +53,11 @@
             </div>
         </nav>
 
-        <!-- Mobile Side Nav Bar -->
+        <!-- Mobile rightside navigation bar from materialize-->
         <ul class="sidenav" id="mobile-demo">
             <li>
-                <h4 class="center-align sidenav-heading">Share&#8250;Cook&#8250;Enjoy</h4>
+                <h4 class="center-align sidenav-heading text-shadow blue-grey lighten-5">
+                    Share&#8250;Cook&#8250;Enjoy</h4>
             </li>
             <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="{{ url_for('all_recipes') }}">Recipes</a></li>
@@ -68,8 +72,8 @@
         </ul>
     </header>
 
+    <!--This section is for the flash messages-->
     <section>
-        <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         {% for message in messages %}
@@ -81,11 +85,13 @@
         {% endwith %}
     </section>
 
+    <!--This is the main block content located in everypage-->
     <main>
         {% block content %}
         {% endblock %}
     </main>
 
+    <!--Footer section containing social icons-->
     <footer class="text-shadow blue-grey lighten-5">
         <div class="row">
             <div class="col s12 social-icons">
@@ -102,16 +108,19 @@
             </div>
         </div>
 
+        <!--Anchor link to my personal portfolio-->
         <a href="https://ifti-khan.github.io/ifti-khan-milestone-project-1/" target="_blank">
             <p class="copyright col s12">Copyright &copy; Ifti Khan <span id="copyright-jsyear"></span></p>
         </a>
     </footer>
 
-    <!--Contact Modal-->
+    <!--Contact Modal from materialize-->
     <div id="contact-modal" class="modal cont_modal">
         <div class="modal-header blue-grey lighten-5 text-shadow center-align">
             <h5>Contact Us</h5>
         </div>
+
+        <!--Contact Form-->
         <div class="modal-content">
             <form id="cookbook-contact-form">
 
@@ -179,6 +188,7 @@
                 </div>
         </div>
         
+        <!--Modal footer containing buttons for the contact form-->
         <div class="modal-footer blue-grey lighten-5">
             <a href="#" class="modal-close waves-effect waves-light btn blue-grey darken-1">Close</a>
             <button type="reset" class="waves-effect waves-light btn blue-grey darken-1">Clear</button>
@@ -187,9 +197,12 @@
         </form>
     </div>
 
+    <!--JQuery v3.6.0 CDN-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--Materialize JS v1.0.0 CDN-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--My JS Script files-->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script src="{{ url_for('static', filename='js/sendemail.js') }}"></script>
     {% block scripts %}
