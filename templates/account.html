@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!--Account container-->
 <div class="container">
+    <!--Using jinja to display username in welcome header-->
     <div class="row account-row center-align">
         <div class="col s12 m12 l12 xl12">
             <h3>Welcome {{ username }}</h3>
 
+            <!--Using jinja to display user account info-->
             <div class="row center-align user-acc-info">
                 <div class="col s12 m12 l12 xl12">
                     <p>Username: {{ username }}</p>
@@ -14,22 +17,24 @@
                 </div>
             </div>
 
+            <!--Change username button-->
             <div class="row">
                 <div class="col s12 m6 xl6 push-xl1">
-                    <a href="{{ url_for('change_username', username=session.user) }}"
-                        class="btn blue-grey darken-1 acc-change-btn text-shadow
-                        waves-effect waves-light">Change Username 
+                    <a href="{{ url_for('change_username', username=session.user) }}" class="btn blue-grey darken-1 acc-change-btn text-shadow
+                        waves-effect waves-light">Change Username
                         <i class="fas fa-edit"></i></a>
                 </div>
 
+                <!--Change password button-->
                 <div class="col s12 m6 xl6 pull-xl1">
-                    <a href="{{ url_for('change_password', username=session.user) }}"
-                        class="btn blue-grey darken-1 acc-change-btn text-shadow
-                        waves-effect waves-light">Change Password 
+                    <a href="{{ url_for('change_password', username=session.user) }}" class="btn blue-grey darken-1 acc-change-btn text-shadow
+                        waves-effect waves-light">Change Password
                         <i class="fas fa-edit"></i></a>
                 </div>
             </div>
 
+            <!--Jinja if statement to see if user has any stored and shared recipes
+            and then display the add recipe button-->
             <div class="row center-align">
                 {% if num_of_user_recipes >= 1 %}
                 <div class="col s10 offset-s1 m10 offset-m1 l10 offset-l1 xl8 offset-xl2">
@@ -39,7 +44,8 @@
                 {% endif %}
             </div>
 
-
+            <!--Simple heading with a number showing the user how 
+            many recipes they have created-->
             <div class="row center-align">
                 <div class="col s10 offset-s1 m10 offset-m1 l10 offset-l1 xl8 offset-xl2">
                     <h4>Your shared and stored recipes ({{ num_of_user_recipes }})</h4>
@@ -49,6 +55,9 @@
     </div>
 </div>
 
+<!--Jinja if statement to see if user has any stored and shared recipes
+and if they dont, prompting them to add recipes and if they do have stored recipes
+they will display the cards below-->
 {% if num_of_user_recipes == 0 %}
 <h4 class="results_title center-align">No Recipes Found</h4><br>
 <a href="{{ url_for('add_recipe') }}">
@@ -56,100 +65,102 @@
 </a>
 {% else %}
 
+<!--Jinja for loop, looping through the database to find recipes that were created by the 
+logged in user using the stored user session. The loop is also used to display the individual
+fields and values within the database-->
 {% for recipe in user_recipes %}
 <div class="row all_recipes_row">
     <div class="col s12 m6 l4 xl3">
         <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="black-text">
             {% if session.user == recipe.created_by %}
             <div class="card text-shadow blue-grey lighten-4 center-align hoverable">
-                {% else %}
-                <div class="card text-shadow blue-grey lighten-5 center-align hoverable">
+                {% endif %}
+                <div class="card-title center-align">
+                    <h4>{{ recipe.recipe_name }}</h4>
+                </div>
+
+                <table class="meal-attributes">
+                    <thead>
+                        <tr>
+                            <th>Meal</th>
+                            <th>Cuisine</th>
+                            <th>Diet</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                {% if not recipe.recipe_meal_type %}
+                                <p>-</p>
+                                {% else %}
+                                <p>{{ recipe.recipe_meal_type }}</p>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if not recipe.recipe_cuisine_type %}
+                                <p>-</p>
+                                {% else %}
+                                <p>{{ recipe.recipe_cuisine_type }}</p>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if not recipe.recipe_diet_type %}
+                                <p>-</p>
+                                {% else %}
+                                <p>{{ recipe.recipe_diet_type }}</p>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="card-image s12">
+
+                    {% if recipe.recipe_image_url %}
+                    <img src="{{ recipe.recipe_image_url }}" alt="Recipe Image Placeholder" />
+                    {% else %}
+                    <div class="default-img">
+                        <p>Sorry<br>No Image<br>Provided</p>
+                    </div>
                     {% endif %}
-                    <div class="card-title center-align">
-                        <h4>{{ recipe.recipe_name }}</h4>
-                    </div>
+                </div>
 
-                    <table class="meal-attributes">
-                        <thead>
-                            <tr>
-                                <th>Meal</th>
-                                <th>Cuisine</th>
-                                <th>Diet</th>
-                            </tr>
-                        </thead>
+                <table class="meal-attributes">
+                    <thead>
+                        <tr>
+                            <th>Cooking Time</th>
+                            <th>Servings</th>
+                        </tr>
+                    </thead>
 
-                        <tbody>
-                            <tr>
-                                <td>
-                                    {% if not recipe.recipe_meal_type %}
-                                    <p>-</p>
-                                    {% else %}
-                                    <p>{{ recipe.recipe_meal_type }}</p>
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    {% if not recipe.recipe_cuisine_type %}
-                                    <p>-</p>
-                                    {% else %}
-                                    <p>{{ recipe.recipe_cuisine_type }}</p>
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    {% if not recipe.recipe_diet_type %}
-                                    <p>-</p>
-                                    {% else %}
-                                    <p>{{ recipe.recipe_diet_type }}</p>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <tbody>
+                        <tr>
+                            <td>{{ recipe.recipe_cooktime }} Minutes</td>
+                            <td>{{ recipe.recipe_servings }} People</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                    <div class="card-image s12">
-
-                        {% if recipe.recipe_image_url %}
-                        <img src="{{ recipe.recipe_image_url }}" alt="Recipe Image Placeholder" />
-                        {% else %}
-                        <div class="default-img">
-                            <p>Sorry<br>No Image<br>Provided</p>
-                        </div>
-                        {% endif %}
-                    </div>
-
-                    <table class="meal-attributes">
-                        <thead>
-                            <tr>
-                                <th>Cooking Time</th>
-                                <th>Servings</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td>{{ recipe.recipe_cooktime }} Minutes</td>
-                                <td>{{ recipe.recipe_servings }} People</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <div class="card-content">
-                        <p class="truncate">{{ recipe.recipe_description }}</p>
-                        <div class="col s12 m12 l12 xl12">
-                            <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"
-                                class="btn blue-grey darken-1 text-shadow uppercase
+                <div class="card-content">
+                    <p class="truncate">{{ recipe.recipe_description }}</p>
+                    <div class="col s12 m12 l12 xl12">
+                        <!--View recipe button to view full recipe details-->
+                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="btn blue-grey darken-1 text-shadow uppercase
                                 waves-effect waves-light">View <i class="fab fa-readme"></i></a>
 
-                            {% if session.user == recipe.created_by %}
-                            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
-                                class="btn blue-grey darken-1 text-shadow uppercase
+                        <!--Jinja if statement only allowing users who created the recipe to edit
+                            their recipes by clicking the edit button-->
+                        {% if session.user == recipe.created_by %}
+                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn blue-grey darken-1 text-shadow uppercase
                                 waves-effect waves-light">Edit <i class="fas fa-edit"></i></a>
-                            {% endif %}
-                        </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
-        </a>
     </div>
+    </a>
+</div>
 </div>
 {% endfor %}
 {% endif %}
