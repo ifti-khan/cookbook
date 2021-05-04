@@ -102,11 +102,6 @@
         margin: 0;
     }
 
-    .select-wrapper 
-    input.select-dropdown {
-        margin-bottom: 0px;
-    }
-
 }
 
 /*Large Mobile*/
@@ -242,11 +237,6 @@
     .select-wrapper .caret {
         top: 10px;
         margin: 0;
-    }
-
-    .select-wrapper 
-    input.select-dropdown {
-        margin-bottom: 0px;
     }
 
     .cont_modal .modal-content {

@@ -45,6 +45,8 @@
                 <select id="recipe_meal_type" name="recipe_meal_type" class="validate" required>
                     <option value="" disabled selected>Select Meal Type</option>
 
+                    <!--Jinja for loop, loopin with meals collection and then
+                    displaying the field values within the dropdown-->
                     {% for meal in meals %}
                     {% if meal.meal_name == recipes.recipe_meal_type %}
                     <option value="{{ meal.meal_name }}" selected>{{ meal.meal_name }}</option>
@@ -62,6 +64,8 @@
                 <select id="recipe_cuisine_type" name="recipe_cuisine_type">
                     <option value="" disabled selected>Select Cuisine Type</option>
 
+                    <!--Jinja for loop, loopin with cuisines collection and then
+                    displaying the field values within the dropdown-->
                     {% for cuisine in cuisines %}
                     {% if cuisine.cuisine_name == recipes.recipe_cuisine_type %}
                     <option value="{{ cuisine.cuisine_name }}" selected>{{ cuisine.cuisine_name }}</option>
@@ -80,6 +84,8 @@
                 <select id="recipe_diet_type" name="recipe_diet_type">
                     <option value="" disabled selected>Select Diet Type</option>
 
+                    <!--Jinja for loop, loopin with diets collection and then
+                    displaying the field values within the dropdown-->
                     {% for diet in diets %}
                     {% if diet.diet_name == recipes.recipe_diet_type %}
                     <option value="{{ diet.diet_name }}" selected>{{ diet.diet_name }}</option>
@@ -118,6 +124,7 @@
         </div>
 
         <!--Text Area For Recipe Ingredient List-->
+        <!--Jinja for loop to display the cooking ingredients array into a list format-->
         <div class="row">
             <div class="input-field col s12 l10 offset-l1">
                 <textarea id="recipe_ingredients" name="recipe_ingredients" class="validate materialize-textarea"
@@ -137,6 +144,7 @@
             <div class="col s1 empty-col"></div>
 
             <!--Text Area For Recipe Step By Step List-->
+            <!--Jinja for loop to display the cooking steps array into a list format-->
             <div class="input-field col s12 l10 offset-l1">
                 <textarea id="recipe_steps" name="recipe_steps" class="validate materialize-textarea" data-length="1000"
                     pattern="^[A-Za-z0-9\W+]{5,1000}$" minlength="5" maxlength="1000" required>
@@ -167,7 +175,7 @@
                     text-shadow waves-effect waves-light">Clear <i class="fas fa-times"></i>
                 </button>
 
-                <!--Submit/Create Button-->
+                <!--Submit/Update Button-->
                 <button type="submit" class="col s10 offset-s1 m3 xl3 addrec-btns btn blue-grey darken-1 
                 text-shadow waves-effect waves-light">Update <i class="fas fa-plus"></i>
                 </button>
