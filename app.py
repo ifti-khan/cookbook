@@ -338,6 +338,12 @@ def page_not_found_error(error):
     return render_template('error_pages/404.html', error=True), 404
 
 
+@app.errorhandler(500)
+def internal_server_error(error):
+
+    return render_template('error_pages/500.html', error=True), 500
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
