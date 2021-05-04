@@ -26,10 +26,6 @@ main {
     margin-top: 10px;
 }
 
-.input-field .helper-text {
-    min-height: 0px;
-}    
-
 /*Navigation bar*/
 nav .brand-logo {
     font-family: 'Source Code Pro', sans-serif;

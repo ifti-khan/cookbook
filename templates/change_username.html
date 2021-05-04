@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<!--Change Username Container-->
 <div class="container change_username_con center-align">
 
     <h3>Change Username</h3>
 
+    <!--Change Username Form-->
     <div class="row ">
         <form method="POST" action="{{ url_for('change_username', username=session.user) }}" 
         autocomplete="off" class="col s12 m12 l12 xl12">
-            <!--Current username-->
+
+            <!--Current Username Input Field-->
             <div class="input-field col s9 offset-s1 m9 offset-m1 l9 offset-l1 xl6 offset-xl3 
             curr_username">
                 <i class="fas fa-user prefix blue-grey-text darken-1"></i>
@@ -16,7 +19,7 @@
                 <label for="current_username" class="black-text">Current Username</label>
             </div>
 
-            <!--New username-->
+            <!--New Username Input Field-->
             <div class="row">
                 <div class="input-field col s9 offset-s1 m9 offset-m1 l9 offset-l1 xl6 offset-xl3 
                 new_username">
@@ -35,7 +38,7 @@
                         class="col s10 offset-s1 m4 offset-m2 xl3 offset-xl3 chge-user-btns btn blue-grey darken-1 
                         text-shadow waves-effect waves-light"><i class="fas fa-arrow-left"></i> Back</a>
 
-                    <!--Submit/Create Button-->
+                    <!--Submit/Change Button-->
                     <button type="submit"
                         class="col s10 offset-s1 m4 xl3 chge-user-btns btn blue-grey darken-1
                         text-shadow waves-effect waves-light">Change <i class="fas fa-plus"></i>
