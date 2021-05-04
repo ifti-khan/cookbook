@@ -251,18 +251,18 @@ footer {
     margin-bottom: 0px;
 }
 
-.meal-attributes {
+.recipe-attributes {
     margin-bottom: 10px;
 }
 
-.meal-attributes th,
-.meal-attributes tr, 
-.meal-attributes td {
+.recipe-attributes th,
+.recipe-attributes tr, 
+.recipe-attributes td {
     padding: 0px;
     text-align: center;
 }
 
-.meal-attributes p {
+.recipe-attributes p {
     margin: 0;
     text-align: center;
 }

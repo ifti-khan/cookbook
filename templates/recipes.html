@@ -1,21 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!--Jinja if statement prompting not registered or not logged in users
+to login or register to get full acces to the website-->
 {% if not session.user %}
 <h5 class="center-align text-shadow blue-grey lighten-4 black-text reg-message2">
     Want Full Access?<br> Please <a href="{{ url_for('login') }}">Login</a> 
     or <a href="{{ url_for('register') }}">Register</a> for full access to website features</h5>
 {% endif %}
 
+<!--All recipe heading with a number showing how many
+recipes have been added to the database-->
 <div class="row">
     <div class="col s12">
         <h4 class="center-align text-shadow all_recipe_title">All Recipes ({{ num_of_recipes }})</h4>
     </div>
 </div>
 
-<!--Search Recipe-->
+<!--Search Recipe Form-->
 <div class="row search-row">
     <form action="{{ url_for('search') }}" method="post" class="search-bar-form">
+        
+        <!--Search Recipe Input Field-->
         <div class="row">
             <div class="input-field col s11 m10 offset-m1 l8 offset-l2 xl6 offset-xl3 ">
                 <i class="fas fa-search prefix blue-grey-text lighten-4"></i>
@@ -26,10 +32,14 @@
                     and can be recipe names, cuisines, diet type and more"></span>
             </div>
         </div>
+
+        <!--Search Recipe Button-->
         <div class="row">
             <div class="col s12 center-align">
+                <!--Reset button that will reload the entire page-->
                 <a href="{{ url_for('all_recipes') }}" class="btn blue-grey lighten-5 text-shadow black-text
                 waves-effect">Reset</a>
+                <!--Sumbit/Search button-->
                 <button type="submit" class="btn blue-grey darken-1 text-shadow uppercase 
                 waves-effect waves-light"><i class="fas fa-search left"></i> Search
                 </button>
@@ -38,10 +48,14 @@
 </div>
 </form>
 
+<!--Search results using a jinja if statment to see if no
+results founds, then display a no result message with a
+clear search button and if results found then display-->
 {% if num_of_recipes_search == 0 %}
 <h4 class="results_title center-align">No Results Found<br><br>Please Use Another Search Term</h4>
 <div class="row">
     <div class="col s10 m12 l12 xl6">
+        <!--Clear search button-->
         <a href="{{ url_for('all_recipes') }}" class="col s6 offset-s4 m4 offset-m4
     l4 offset-l4 xl6 offset-xl9 btn blue-grey darken-1 text-shadow white-text">
             Clear Search <i class="fas fa-times"></i></a>
@@ -51,20 +65,29 @@
 <h4 class="results_title center-align">{{ search_results }}</h4>
 {% endif %}
 
+<!--Jinja for loop, looping through the recipe database, this loop is used to display the individual
+field values within the database-->
 {% for recipe in recipes %}
 <div class="row all_recipes_row">
     <div class="col s12 m6 l4 xl3">
         <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="black-text">
+
+            <!--Jinja if check to see if the recipe is created by matches the 
+            user session and if it does the recipe card background will be
+            a different colours from the others indicating to the user that
+            this recipe is one that he or she have created-->
             {% if session.user == recipe.created_by %}
             <div class="card text-shadow blue-grey lighten-4 center-align hoverable">
                 {% else %}
                 <div class="card text-shadow blue-grey lighten-5 center-align hoverable">
                     {% endif %}
+                    <!--Displaying recipe name from db-->
                     <div class="card-title center-align">
                         <h4>{{ recipe.recipe_name }}</h4>
                     </div>
-
-                    <table class="meal-attributes">
+                    
+                    <!--Recipe attribute top table-->
+                    <table class="recipe-attributes">
                         <thead>
                             <tr>
                                 <th>Meal</th>
@@ -76,6 +99,8 @@
                         <tbody>
                             <tr>
                                 <td>
+                                    <!--Jinja if checking to see if not meal type found
+                                    then display a dash, else if found then display meal type-->
                                     {% if not recipe.recipe_meal_type %}
                                     <p>-</p>
                                     {% else %}
@@ -83,6 +108,8 @@
                                     {% endif %}
                                 </td>
                                 <td>
+                                    <!--Jinja if checking to see if not cuisine type found
+                                    then display a dash, else if found then display cuisine type-->
                                     {% if not recipe.recipe_cuisine_type %}
                                     <p>-</p>
                                     {% else %}
@@ -90,6 +117,8 @@
                                     {% endif %}
                                 </td>
                                 <td>
+                                    <!--Jinja if checking to see if not diet type found
+                                    then display a dash, else if found then display diet type-->
                                     {% if not recipe.recipe_diet_type %}
                                     <p>-</p>
                                     {% else %}
@@ -100,8 +129,11 @@
                         </tbody>
                     </table>
 
+                    <!--Recipe card image-->
                     <div class="card-image s12">
 
+                        <!--Jinja if checking to see if there is a image url and if there
+                        is one then display the image and if not the display default image-->
                         {% if recipe.recipe_image_url %}
                         <img src="{{ recipe.recipe_image_url }}" alt="Recipe Image Placeholder" />
                         {% else %}
@@ -111,7 +143,8 @@
                         {% endif %}
                     </div>
 
-                    <table class="meal-attributes">
+                    <!--Recipe attribute bottom table-->
+                    <table class="recipe-attributes">
                         <thead>
                             <tr>
                                 <th>Cooking Time</th>
@@ -121,25 +154,32 @@
 
                         <tbody>
                             <tr>
+                                <!--Display recipe cook time from db-->
                                 <td>{{ recipe.recipe_cooktime }} Minutes</td>
+                                <!--Display recipe people serving from db-->
                                 <td>{{ recipe.recipe_servings }} People</td>
                             </tr>
                         </tbody>
                     </table>
 
+                    <!--Recipe card content-->
                     <div class="card-content">
+                        <!--Displaying a truncated or short version of the recipe
+                        description from the db-->
                         <p class="truncate">{{ recipe.recipe_description }}</p>
                         <div class="col s12 m12 l12 xl12">
+
+                            <!--View Recipe button-->
                             <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"
                                 class="btn blue-grey darken-1 text-shadow uppercase 
-                                waves-effect waves-light">View <i
-                                    class="fab fa-readme"></i></a>
+                                waves-effect waves-light">View <i class="fab fa-readme"></i></a>
 
+                            <!--Edit recipe button but only if the logged in user matches
+                            the created by field-->
                             {% if session.user == recipe.created_by %}
                             <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
                                 class="btn blue-grey darken-1 text-shadow uppercase 
-                                waves-effect waves-light">
-                                Edit <i class="fas fa-edit"></i></a>
+                                waves-effect waves-light">Edit <i class="fas fa-edit"></i></a>
                             {% endif %}
                         </div>
                     </div>
@@ -150,9 +190,13 @@
 </div>
 {% endfor %}
 
+<!--Recipe card pagination-->
 <div class="row">
     <div class="col s12 xl12">
-        <!--Pagination-->
+        <!--This block of code handle the pagination for the cards.
+        At the moment the cards per page is set to 8 cards, it then uses 
+        jinja for loop and the if statement to check the page number, number of page 
+        and current page to display the correct page number-->
         <ul class="pagination text-shadow center-align">
             {% for page_number in num_of_pages %}
             {% if page_number == current_page %}

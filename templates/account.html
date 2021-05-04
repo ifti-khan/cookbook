@@ -72,14 +72,21 @@ fields and values within the database-->
 <div class="row all_recipes_row">
     <div class="col s12 m6 l4 xl3">
         <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="black-text">
+
+            <!--Jinja if check to see if the recipe is created by matches the 
+            user session and if it does the recipe card background will be
+            a different colours from the others indicating to the user that
+            this recipe is one that he or she have created-->
             {% if session.user == recipe.created_by %}
             <div class="card text-shadow blue-grey lighten-4 center-align hoverable">
                 {% endif %}
+                <!--Displaying recipe name from db-->
                 <div class="card-title center-align">
                     <h4>{{ recipe.recipe_name }}</h4>
                 </div>
 
-                <table class="meal-attributes">
+                <!--Recipe attribute top table-->
+                <table class="recipe-attributes">
                     <thead>
                         <tr>
                             <th>Meal</th>
@@ -91,6 +98,8 @@ fields and values within the database-->
                     <tbody>
                         <tr>
                             <td>
+                                <!--Jinja if checking to see if not meal type found
+                                then display a dash, else if found then display meal type-->
                                 {% if not recipe.recipe_meal_type %}
                                 <p>-</p>
                                 {% else %}
@@ -98,6 +107,8 @@ fields and values within the database-->
                                 {% endif %}
                             </td>
                             <td>
+                                <!--Jinja if checking to see if not cuisine type found
+                                then display a dash, else if found then display cuisine type-->
                                 {% if not recipe.recipe_cuisine_type %}
                                 <p>-</p>
                                 {% else %}
@@ -105,6 +116,8 @@ fields and values within the database-->
                                 {% endif %}
                             </td>
                             <td>
+                                <!--Jinja if checking to see if not diet type found
+                                then display a dash, else if found then display diet type-->
                                 {% if not recipe.recipe_diet_type %}
                                 <p>-</p>
                                 {% else %}
@@ -115,8 +128,11 @@ fields and values within the database-->
                     </tbody>
                 </table>
 
+                <!--Recipe card image-->
                 <div class="card-image s12">
 
+                    <!--Jinja if checking to see if there is a image url and if there
+                    is one then display the image and if not the display default image-->
                     {% if recipe.recipe_image_url %}
                     <img src="{{ recipe.recipe_image_url }}" alt="Recipe Image Placeholder" />
                     {% else %}
@@ -126,7 +142,8 @@ fields and values within the database-->
                     {% endif %}
                 </div>
 
-                <table class="meal-attributes">
+                <!--Recipe attribute bottom table-->
+                <table class="recipe-attributes">
                     <thead>
                         <tr>
                             <th>Cooking Time</th>
@@ -136,31 +153,38 @@ fields and values within the database-->
 
                     <tbody>
                         <tr>
+                            <!--Display recipe cook time from db-->
                             <td>{{ recipe.recipe_cooktime }} Minutes</td>
+                            <!--Display recipe people serving from db-->
                             <td>{{ recipe.recipe_servings }} People</td>
                         </tr>
                     </tbody>
                 </table>
 
+                <!--Recipe card content-->
                 <div class="card-content">
+                    <!--Displaying a truncated or short version of the recipe
+                    description from the db-->
                     <p class="truncate">{{ recipe.recipe_description }}</p>
                     <div class="col s12 m12 l12 xl12">
-                        <!--View recipe button to view full recipe details-->
-                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="btn blue-grey darken-1 text-shadow uppercase
-                                waves-effect waves-light">View <i class="fab fa-readme"></i></a>
 
-                        <!--Jinja if statement only allowing users who created the recipe to edit
-                            their recipes by clicking the edit button-->
+                        <!--View Recipe button-->
+                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"
+                            class="btn blue-grey darken-1 text-shadow uppercase 
+                            waves-effect waves-light">View <i class="fab fa-readme"></i></a>
+
+                        <!--Edit recipe button but only if the logged in user matches
+                        the created by field-->
                         {% if session.user == recipe.created_by %}
-                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn blue-grey darken-1 text-shadow uppercase
-                                waves-effect waves-light">Edit <i class="fas fa-edit"></i></a>
+                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
+                            class="btn blue-grey darken-1 text-shadow uppercase 
+                            waves-effect waves-light">Edit <i class="fas fa-edit"></i></a>
                         {% endif %}
                     </div>
                 </div>
             </div>
+        </a>
     </div>
-    </a>
-</div>
 </div>
 {% endfor %}
 {% endif %}
