@@ -1,55 +1,57 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row login-row">
-    <div class="col s10 offset-s1 m10 offset-m1 l10 offset-l1 xl8 offset-xl2 login-con">
-        <h3 class="center-align text-shadow login-title">Login</h3>
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
+<!--Login container-->
+<div class="container">
+    <!--Login row-->
+    <div class="row login-row">
+        <!--Login heading-->
+        <div class="col s12 m12 l12 xl12 login-con">
+            <h3 class="center-align text-shadow login-title">Login</h3>
+            <!--Login form-->
+            <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
 
-            <!--Username Input Field-->
-            <div class="row">
-                <div class="input-field col s10 offset-s1 m12">
-                    <i class="fas fa-user-plus prefix blue-grey-text text-darken-1"></i>
-                    <input id="username-login" name="username" type="text" minlength="5" maxlength="25"
-                        pattern="^[a-zA-Z0-9]{5,25}$" class="validate" required>
-                    <label for="username-login" class="black-text login-pg-username">Username</label>
-                    <span class="helper-text login-error col s10" data-error="Please enter your username"></span>
+                <!--Username Input Field-->
+                <div class="row">
+                    <div class="input-field col s10 offset-s1 m12 l12 xl12">
+                        <i class="fas fa-user-plus prefix blue-grey-text text-darken-1"></i>
+                        <input id="username-login" name="username" type="text" minlength="5" maxlength="25"
+                            pattern="^[a-zA-Z0-9]{5,25}$" class="validate" required>
+                        <label for="username-login" class="black-text login-pg-username">Username</label>
+                        <span class="helper-text login-error col s10" data-error="Please enter your username"></span>
+                    </div>
                 </div>
-            </div>
 
-            <!--Password Input Field-->
-            <div class="row">
-                <div class="input-field col s10 offset-s1 m12">
-                    <i class="fas fa-user-lock prefix blue-grey-text text-darken-1"></i>
-                    <input id="password-login" name="password" type="password" minlength="5" maxlength="20"
-                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                    <label for="password-login" class="black-text password-pg-username">Password</label>
-                    <span class="helper-text password-error col s10" data-error="Please enter your password"></span>
+                <!--Password Input Field-->
+                <div class="row">
+                    <div class="input-field col s10 offset-s1 m12 l12 xl12">
+                        <i class="fas fa-user-lock prefix blue-grey-text text-darken-1"></i>
+                        <input id="password-login" name="password" type="password" minlength="5" maxlength="20"
+                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <label for="password-login" class="black-text password-pg-username">Password</label>
+                        <span class="helper-text password-error col s10" data-error="Please enter your password"></span>
+                    </div>
                 </div>
-            </div>
 
-            <!--Buttons for the form-->
+                <!--Buttons for the form-->
+                <div class="row">
+                    <!--Back/Cancel Button-->
+                    <a href="{{ url_for('index') }}" class="col s10 offset-s1 m4 offset-m2 xl3 offset-xl3 login-btns btn blue-grey lighten-1 text-shadow
+                    waves-effect waves-light"><i class="fas fa-arrow-left"></i> Back</a>
+
+                    <!--Submit/Login Button-->
+                    <button type="submit" class="col s10 offset-s1 m4 xl3 login-btns btn blue-grey darken-1 text-shadow
+                    waves-effect waves-light">Login <i class="fas fa-sign-in-alt"></i></button>
+                </div>
+            </form>
+
+            <!--Register message-->
             <div class="row">
-
-                <!--Back/Cancel Button-->
-                <a href="{{ url_for('index') }}"
-                    class="col s10 offset-s1 m4 offset-m2 xl3 offset-xl3 login-btns btn blue-grey lighten-1 text-shadow
-                    waves-effect waves-light"><i
-                        class="fas fa-arrow-left"></i> Back</a>
-
-                <!--Submit/Login Button-->
-                <button type="submit"
-                    class="col s10 offset-s1 m4 xl3 login-btns btn blue-grey darken-1 text-shadow
-                    waves-effect waves-light">Login <i
-                        class="fas fa-sign-in-alt"></i></button>
-            </div>
-        </form>
-
-        <div class="row">
-            <div class="col s12 reg-message">
-                <p class="center-align text-shadow">
-                    To Get Full Access, <a href="{{ url_for('register') }}">Register Here</a>
-                </p>
+                <div class="col s12 reg-message">
+                    <p class="center-align text-shadow">
+                        To Get Full Access, <a href="{{ url_for('register') }}">Register Here</a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
