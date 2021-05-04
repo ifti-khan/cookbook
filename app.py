@@ -332,6 +332,12 @@ def change_password(username):
     return render_template("change_password.html", username=session["user"])
 
 
+@app.errorhandler(404)
+def page_not_found_error(error):
+
+    return render_template('error_pages/404.html', error=True), 404
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

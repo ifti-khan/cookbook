@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+<!-- 404 Error page container, with a small message caption and 
+    two navigation links for user who enter a incorrect URL-->
+<div class="container center-align">
+    <div class="row">
+        <div class="col s12">
+            <h1><i class="fas fa-bug"></i> 404</h1>
+            <h2>File Not Found</h2>
+            <h4>We're sorry but the page you have requested could not be found.<br><br>
+            Please go back to the homepage or contact support</h4>
+
+            <a href="{{ url_for('index')}}" class="btn blue-grey darken-1 
+            waves-effect waves-light text-shadow uppercase">Home 
+            <i class="fas fa-home"></i></a>
+
+            <a href="#contact-modal" class="btn blue-grey darken-1 
+            waves-effect waves-light text-shadow uppercase modal-trigger" 
+            data-target="contact-modal">Contact 
+            <i class="fas fa-envelope"></i></a>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
