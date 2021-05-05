@@ -4,9 +4,11 @@
 //Here is a list of URL that helped me create this JS Script.
 //https://dashboard.emailjs.com/admin/integration/browser
 //https://www.emailjs.com/docs/sdk/send/
-//https://jsfiddle.net/api/post/library/pure/ - This code is from the playground test features within EmailJS and might not work since you have to login with my user details.
+//https://jsfiddle.net/api/post/library/pure/ - This code is from the playground test features 
+//within EmailJS and might not work since you have to login with my user details.
 
-//Creating a variable btn to store the send button in the contact form so that the inner text can be changed at certain points.
+//Creating a variable btn to store the send button in the contact form 
+//so that the inner text can be changed at certain points.
 let btn = document.getElementById('send-btn');
 
 //This function is for the timing event used below and it is used to change btn text to Send.

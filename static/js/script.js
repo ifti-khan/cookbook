@@ -1,5 +1,9 @@
 $(document).ready(function(){
+    // This is for the copyright year located in the footer
     $("#copyright-jsyear").text(new Date().getFullYear());
+
+    // Materialize initialization of sidenav, modal, input elements character count and text helper, 
+    // textarea character count and text helper, form selection and collapsible elements
     $(".sidenav").sidenav({ edge: "right" });
     $('.modal').modal();
     $('input#fullname, input#email, input#username, input#password, input#recipe_name, input#recipe_description, input#recipe_image_url,\
@@ -8,6 +12,8 @@ $(document).ready(function(){
     $('select').formSelect();
     $('.collapsible').collapsible();
 
+    // This block of code was provided by The Code Institute to help 
+    // with the validation for the dropdown select options
     validateMaterializeSelect();
     function validateMaterializeSelect() {
         let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
