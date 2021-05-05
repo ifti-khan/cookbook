@@ -25,6 +25,7 @@
                         <i class="fas fa-edit"></i></a>
                 </div>
 
+
                 <!--Change password button-->
                 <div class="col s12 m6 xl6 pull-xl1">
                     <a href="{{ url_for('change_password', username=session.user) }}" class="btn blue-grey darken-1 acc-change-btn text-shadow
@@ -32,6 +33,35 @@
                         <i class="fas fa-edit"></i></a>
                 </div>
             </div>
+            
+            {% if session.user|lower == "admin"|lower %}
+            <div class="container admin-con">
+                <h3>Manage Recipe Attributes</h3>
+            <!--Manage Recipe Attributes-->
+            <div class="row">
+                <!--Manage Meal Attributes-->
+                <div class="col s12 m4 xl4">
+                    <a href="#" class="btn blue-grey darken-1 recipe-attrib-btn text-shadow
+                        waves-effect waves-light">Manage Meal Types
+                        <i class="fas fa-edit"></i></a>
+                </div>
+
+                <!--Manage Cuisine Attributes-->
+                <div class="col s12 m4 xl4">
+                    <a href="#" class="btn blue-grey darken-1 recipe-attrib-btn text-shadow
+                        waves-effect waves-light">Manage Cuisine Types
+                        <i class="fas fa-edit"></i></a>
+                </div>
+
+                <!--Manage Diet Attributes-->
+                <div class="col s12 m4 xl4">
+                    <a href="#" class="btn blue-grey darken-1 recipe-attrib-btn text-shadow
+                        waves-effect waves-light">Manage Diet Types
+                        <i class="fas fa-edit"></i></a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
 
             <!--Jinja if statement to see if user has any stored and shared recipes
             and then display the add recipe button-->

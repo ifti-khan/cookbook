@@ -190,6 +190,16 @@ footer {
     margin-top: 15px;
 }
 
+/*Admin account.html*/
+.admin-con {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.admin-con h3 {
+    margin-bottom: 25px;
+}
+
 /*add_recipe.html*/
 .add_recipe_row {
     height: 100%;

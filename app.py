@@ -48,7 +48,7 @@ def register():
     if request.method == "POST":
         # Checks to see if the username already exists within the db
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower})
+            {"username": request.form.get("username").lower()})
 
         # If the username chosen already exists then it will
         # alert the user with a message and redirect them to the
