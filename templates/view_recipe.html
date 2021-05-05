@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!--View Recipe Container-->
 <div class="container recipe_info_con blue-grey lighten-5">
 
-    <!--Recipe Title, Description-->
+    <!--Recipe title from db-->
     <div class="row">
         <div class="col s12 m12 l12 xl12 center-align">
             <h3 class="view_recipe_title">{{ recipe_info.recipe_name }}</h3>
         </div>
 
+        <!--Recipe description from db-->
         <div class="col s10 offset-s1 m10 offset-m1 l10 offset-l1 xl10 offset-xl1 center-align">
             <p class="recipe_info_description">{{ recipe_info.recipe_description }}</p>
         </div>
@@ -17,6 +19,8 @@
     <!--Recipe Info Image-->
     <div class="row">
         <div class="col s12 m8 l8 xl6 push-xl1 center-align">
+            <!--Jinja if checking to see if there is a image url and if there
+            is one then display the image and if not the display default image-->
             {% if recipe_info.recipe_image_url %}
             <img src="{{ recipe_info.recipe_image_url }}" alt="Recipe Image" class="view_recipe_image">
             {% else %}
@@ -25,29 +29,35 @@
             </div>
             {% endif %}
 
+            <!--Recipe creator from db-->
             <h6><i class="fas fa-share-square"></i> Shared By - {{ recipe_info.created_by }}</h6>
         </div>
 
-        <!--Recipe Info Column-->
+        <!--Recipe Attribute Column from db-->
         <div class="col s10 offset-s2 m4 pull-m1 l4 pull-l1 xl6">
             <table class="recipe_info_table">
                 <tr>
+                    <!--Meal type attribute-->
                     <td><i class="fas fa-utensils"></i> Meal</td>
                     <td>{{ recipe_info.recipe_meal_type }}</td>
                 </tr>
                 <tr>
+                    <!--Cuisine type attribute-->
                     <td><i class="fas fa-globe-americas"></i> Cuisine</td>
                     <td>{{ recipe_info.recipe_cuisine_type }}</td>
                 </tr>
                 <tr>
+                    <!--Diet type attribute-->
                     <td><i class="fas fa-seedling"></i> Diet</td>
                     <td>{{ recipe_info.recipe_diet_type }}</td>
                 </tr>
                 <tr>
+                    <!--Recipe cooking time attribute-->
                     <td><i class="fas fa-clock"></i> Cooking Time</td>
                     <td>{{ recipe_info.recipe_cooktime }} Minutes</td>
                 </tr>
                 <tr>
+                    <!--Recipe people serving attribute-->
                     <td><i class="fas fa-users"></i> Servings</td>
                     <td>{{ recipe_info.recipe_servings }} People</td>
                 </tr>
@@ -56,7 +66,7 @@
 
     </div>
 
-    <!--Recipe Ingredients-->
+    <!--Recipe Ingredients from db-->
     <div class="row">
         <ul class="collapsible col s10 offset-s1 m10 offset-m1 l10 offset-l1 xl10 offset-xl1">
             <li>
@@ -68,6 +78,8 @@
                     <div class="row">
                         <div class="col s12 xl12">
                             <ul>
+                                <!--Jinja for loop, looping through the ingredient list array
+                                to display the array as a list-->
                                 {% for ingredient in recipe_info.recipe_ingredients %}
                                 <li class="ingredient-list">
                                     {{ ingredient }}
@@ -93,6 +105,8 @@
                     <div class="row">
                         <div class="col s12 xl12">
                             <ol>
+                                <!--Jinja for loop, looping through the cooking step list array
+                                to display the array as a ordered list-->
                                 {% for steps in recipe_info.recipe_steps %}
                                 <li>
                                     {{ steps }}
@@ -106,34 +120,44 @@
         </ul>
     </div>
 
+    <!--Edit button-->
     <div class="row">
         <div class="col s12 m12 l12 xl12 center-align view_recipe_btns">
-        {% if session.user == recipe_info.created_by %}
-        <a href="{{ url_for('edit_recipe', recipe_id=recipe_info._id) }}"
-            class="btn blue-grey darken-1 text-shadow uppercase waves-effect waves-light">
-            Edit <i class="fas fa-edit"></i></a>
+            <!--Jinja if to check to see if the user session matches the created by 
+            username to display the edit button-->
+            {% if session.user == recipe_info.created_by %}
+            <a href="{{ url_for('edit_recipe', recipe_id=recipe_info._id) }}"
+                class="btn blue-grey darken-1 text-shadow uppercase waves-effect waves-light">
+                Edit <i class="fas fa-edit"></i></a>
 
-        <a href="#" class="btn blue-grey darken-1
-    modal-trigger text-shadow uppercase waves-effect waves-light" data-target="delete_modal">
-            Delete <i class="fas fa-trash-alt"></i></a>
-        {% endif %}
-    </div>
+            <!--Delete button which is linked to the delete modal to confirm deleting a recipe
+            which also checks to see if the user session and created by username match to display-->
+            <a href="#" class="btn blue-grey darken-1 modal-trigger 
+            text-shadow uppercase waves-effect waves-light" data-target="delete_modal">
+                Delete <i class="fas fa-trash-alt"></i></a>
+            {% endif %}
+        </div>
     </div>
 
 </div>
 
-<!--Delete Modal-->
+<!--Delete Recipe Confirmation Modal-->
 <div id="delete_modal" class="modal del_modal">
     <div class="modal-header blue-grey lighten-5 text-shadow center-align">
         <h5>Delete Confirmation</h5>
     </div>
+    <!--This modal will display a message to the user alerting them that they are about to 
+    delete a specific recipe from the website and database-->
     <div class="modal-content center-align">
         <p><i class="fas fa-exclamation-triangle"></i>&nbsp; Attention: This action will permanently delete:<br><br>
             {{ recipe_info.recipe_name }}</p>
         <p>Are you sure you want to delete this recipe?</p>
     </div>
+    <!--Modal buttons-->
     <div class="modal-footer blue-grey lighten-5 text-shadow">
+        <!--Cancel delete button-->
         <a href="#!" class="modal-close waves-effect waves-light btn blue-grey darken-1">Cancel</a>
+        <!--Confirm delete button-->
         <a href="{{ url_for('delete_recipe', recipe_id=recipe_info._id) }}"
             class="waves-effect waves-light btn blue-grey darken-1">Delete</a>
     </div>
