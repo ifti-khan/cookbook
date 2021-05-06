@@ -505,6 +505,9 @@ def change_password(username):
 '''Admin Section'''
 
 
+'''Add Meal Type Section'''
+
+
 @app.route("/manage_meals")
 def get_meals():
     # This prevents users who are not registered or logged in,
@@ -549,6 +552,55 @@ def delete_meals(meal_id):
     mongo.db.meals.remove({"_id": ObjectId(meal_id)})
     flash("Meal Has Been Deleted")
     return redirect(url_for("get_meals"))
+
+
+'''Add Cuisine Type Section'''
+
+
+@app.route("/manage_cuisines")
+def get_cuisines():
+    # This prevents users who are not registered or logged in,
+    # from viewing certain pages and forms
+    if 'user' not in session:
+        flash('You must register or login, to change a password')
+        return redirect(url_for('index'))
+
+    cuisines = list(mongo.db.cuisines.find().sort("cuisine_name", 1))
+    return render_template("admin/manage_cuisines.html", cuisines=cuisines)
+
+
+@app.route("/add_cuisine", methods=["GET", "POST"])
+def add_cuisine():
+    if request.method == "POST":
+        new_cuisine = {
+            "cuisine_name": request.form.get("new_cuisine_name")
+        }
+        mongo.db.cuisines.insert_one(new_cuisine)
+        flash("New Cuisine Type Added")
+        return redirect(url_for("get_cuisines"))
+
+    return render_template("admin/add_cuisines.html")
+
+
+@app.route("/edit_cuisine/<cuisine_id>", methods=["GET", "POST"])
+def edit_cuisines(cuisine_id):
+    if request.method == "POST":
+        edit_cuisine = {
+            "cuisine_name": request.form.get("new_cuisine_name")
+        }
+        mongo.db.cuisines.update({"_id": ObjectId(cuisine_id)}, edit_cuisine)
+        flash("Cuisine Has Been Updated")
+        return redirect(url_for("get_cuisines"))
+
+    cuisines = mongo.db.cuisines.find_one({"_id": ObjectId(cuisine_id)})
+    return render_template("admin/edit_cuisines.html", cuisines=cuisines)
+
+
+@app.route("/delete_cuisine/<cuisine_id>")
+def delete_cuisines(cuisine_id):
+    mongo.db.cuisines.remove({"_id": ObjectId(cuisine_id)})
+    flash("Cuisine Has Been Deleted")
+    return redirect(url_for("get_cuisines"))
 
 
 @app.errorhandler(404)
