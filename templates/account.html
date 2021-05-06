@@ -34,6 +34,8 @@
                 </div>
             </div>
             
+            <!--Jinja if to check if the session user is admin,
+            if true then show manage recipe attributes container-->
             {% if session.user|lower == "admin"|lower %}
             <div class="container admin-con">
                 <h3>Manage Recipe Attributes</h3>
@@ -41,7 +43,7 @@
             <div class="row">
                 <!--Manage Meal Attributes-->
                 <div class="col s12 m4 xl4">
-                    <a href="#" class="btn blue-grey darken-1 recipe-attrib-btn text-shadow
+                    <a href="{{ url_for('get_meals') }}" class="btn blue-grey darken-1 recipe-attrib-btn text-shadow
                         waves-effect waves-light">Manage Meal Types
                         <i class="fas fa-edit"></i></a>
                 </div>

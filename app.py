@@ -502,6 +502,15 @@ def change_password(username):
     return render_template("change_password.html", username=session["user"])
 
 
+'''Admin Section'''
+
+
+@app.route("/manage_meals")
+def get_meals():
+    
+    return render_template("admin/manage_meals.html")
+
+
 @app.errorhandler(404)
 def page_not_found_error(error):
     '''
