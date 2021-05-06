@@ -72,6 +72,11 @@
         font-size: 16px;
     }
 
+    /*account.html*/
+    .row .recipe-attrib-btn {
+        margin-bottom: 10px;
+    }
+
 }
 
 /*Tablet*/
@@ -212,6 +217,11 @@
         font-size: 28px;
     }
 
+    /*account.html*/
+    .row .recipe-attrib-btn {
+        margin-bottom: 10px;
+    }
+
     /*change_username.html*/
     .change_username_con h3 {
         font-size: 30px;
@@ -242,6 +252,11 @@
 
     .cont_modal .modal-content {
         padding-bottom: 0;
+    }
+
+    /*add_meal.html*/
+    .row .add_meal_att_btn {
+        margin-bottom: 10px;
     }
 
 }

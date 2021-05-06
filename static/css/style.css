@@ -475,15 +475,25 @@ footer {
     margin: auto 0;
 }
 
-/*manage_meals.html*/
-.mange-meal-title {
+/*manage_meals.html
+add_meals.html*/
+.mange-meal-title,
+.add-meal-title {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .meal-con .card-title {
     padding-top: 10px;
+    letter-spacing: 2px;
 }
+
+.row .add_meal_att_btn {
+    margin-right: 5px;
+}
+
+
+
 
 
 
