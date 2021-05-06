@@ -507,8 +507,27 @@ def change_password(username):
 
 @app.route("/manage_meals")
 def get_meals():
-    
-    return render_template("admin/manage_meals.html")
+    # This prevents users who are not registered or logged in,
+    # from viewing certain pages and forms
+    if 'user' not in session:
+        flash('You must register or login, to change a password')
+        return redirect(url_for('index'))
+
+    meals = list(mongo.db.meals.find().sort("meal_name", 1))
+    return render_template("admin/manage_meals.html", meals=meals)
+
+
+@app.route("/add_meal", methods=["GET", "POST"])
+def add_meal():
+    if request.method == "POST":
+        new_meal = {
+            "meal_name": request.form.get("new_meal_name")
+        }
+        mongo.db.meals.insert_one(new_meal)
+        flash("New Meal Type Added")
+        return redirect(url_for("get_meals"))
+
+    return render_template("admin/add_meals.html")
 
 
 @app.errorhandler(404)

@@ -1,1 +1,31 @@
-<h1>Add Meals</h1>
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <h3 class="center-align">Add Meal</h3>
+
+    <div class="row">
+        <form class="col xl6 offset-xl3" method="POST" action="{{ url_for('add_meal') }}">
+            <!--Meal Type Name-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-utensils prefix blue-grey-text text-darken-1"></i>
+                    <input id="new_meal_name" name="new_meal_name" data-length="25" minlength="2" maxlength="25"
+                        type="text" class="validate" required>
+                    <label for="new_meal_name">Meal Type Name</label>
+                    <span class="helper-text col s10" data-error="Must be 2 characters or more"></span>
+                </div>
+            </div>
+            <!--Add/Submit button-->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn blue-grey darken-1 text-shadow">
+                        Add Meal <i class="fas fa-plus "></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
