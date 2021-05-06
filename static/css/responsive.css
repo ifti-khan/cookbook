@@ -107,6 +107,11 @@
         margin: 0;
     }
 
+    /*account.html*/
+    .row .recipe-attrib-btn {
+        margin-bottom: 10px;
+    }
+
 }
 
 /*Large Mobile*/
@@ -256,6 +261,11 @@
 
     /*add_meal.html*/
     .row .add_meal_att_btn {
+        margin-bottom: 10px;
+    }
+
+    /*add_cuisine.html*/
+    .row .add_cuisine_att_btn {
         margin-bottom: 10px;
     }
 

@@ -478,7 +478,9 @@ footer {
 /*manage_meals.html
 add_meals.html*/
 .mange-meal-title,
-.add-meal-title {
+.mange-cuisine-title,
+.add-meal-title, 
+.add-cuisine-title {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -488,7 +490,8 @@ add_meals.html*/
     letter-spacing: 2px;
 }
 
-.row .add_meal_att_btn {
+.row .add_meal_att_btn,
+.row .add_cuisine_att_btn {
     margin-right: 5px;
 }
 
