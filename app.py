@@ -530,6 +530,27 @@ def add_meal():
     return render_template("admin/add_meals.html")
 
 
+@app.route("/edit_meal/<meal_id>", methods=["GET", "POST"])
+def edit_meals(meal_id):
+    if request.method == "POST":
+        edit_meal = {
+            "meal_name": request.form.get("new_meal_name")
+        }
+        mongo.db.meals.update({"_id": ObjectId(meal_id)}, edit_meal)
+        flash("Meal Has Been Updated")
+        return redirect(url_for("get_meals"))
+
+    meals = mongo.db.meals.find_one({"_id": ObjectId(meal_id)})
+    return render_template("admin/edit_meals.html", meals=meals)
+
+
+@app.route("/delete_meal/<meal_id>")
+def delete_meals(meal_id):
+    mongo.db.meals.remove({"_id": ObjectId(meal_id)})
+    flash("Meal Has Been Deleted")
+    return redirect(url_for("get_meals"))
+
+
 @app.errorhandler(404)
 def page_not_found_error(error):
     '''
