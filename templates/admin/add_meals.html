@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!--Add Meal container-->
 <div class="container">
     <h3 class="center-align add-meal-title">Add Meal</h3>
 
     <div class="row">
+        <!--Add Meal form-->
         <form class="col s10 offset-s1 m8 offset-m2 xl6 offset-xl3" method="POST" action="{{ url_for('add_meal') }}">
-            <!--Meal Type Name-->
+            <!--Meal Type Input Field-->
             <div class="row">
                 <div class="input-field col s11">
                     <i class="fas fa-utensils prefix blue-grey-text text-darken-1"></i>

@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!--Jinja if checking to see if the logged in is not admin
+if true, it will display a message, if false it will display
+the manage page-->
 {% if not session.user|lower == "admin"|lower %}
 <h3 class="center-align text-shadow blue-grey lighten-4 black-text">
     <i class="fas fa-exclamation-triangle"></i><br>
@@ -8,6 +11,7 @@
     Go Back To Your <a href="{{ url_for('account', username=session['user']) }}">Account</a> Page
 </h3>
 {% else %}
+<!--Manage Container-->
 <div class="container">
     <h3 class="center-align mange-meal-title">Manage Meal Types</h3>
 
@@ -27,9 +31,12 @@
     </div>
 
     <div class="row">
+        <!--Jinja for loop, looping through the meals db-->
         {% for meal in meals %}
         <div class="col s12 m4 l4 xl4 meal-con">
+            <!--Meal card-->
             <div class="card text-shadow center-align blue-grey lighten-4">
+                <!--Card main content-->
                 <div class="card-content">
                     <span class="card-title">{{ meal.meal_name }}</span>
 
