@@ -1,16 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!--Jinja if checking to see if the logged in is not admin
-if true, it will display a message, if false it will display
-the manage page-->
-{% if not session.user|lower == "admin"|lower %}
-<h3 class="center-align text-shadow blue-grey lighten-4 black-text">
-    <i class="fas fa-exclamation-triangle"></i><br>
-    Access Denied<br><br>Only The Website Administrator Can Access This Page<br>
-    Go Back To Your <a href="{{ url_for('account', username=session['user']) }}">Account</a> Page
-</h3>
-{% else %}
 <!--Manage Container-->
 <div class="container">
     <h3 class="center-align mange-cuisine-title">Manage Cuisine Types</h3>
@@ -53,5 +43,4 @@ the manage page-->
         {% endfor %}
     </div>
 </div>
-{% endif %}
 {% endblock %}

@@ -513,19 +513,51 @@ def get_meals():
     # This prevents users who are not registered or logged in,
     # from viewing certain pages and forms
     if 'user' not in session:
-        flash('You must register or login, to change a password')
+        flash('Only Site Administrator Has Access To This Page')
         return redirect(url_for('index'))
 
+    # This prevents logged in users who are not admin to
+    # view this page and redirects them to there account page
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if not username == "admin":
+        flash('Only Site Administrator Has Access To This Page')
+        return redirect(url_for("account", username=session['user']))
+
+    # This get all the meal types from the meal db
+    # and sorts them alphabetically
     meals = list(mongo.db.meals.find().sort("meal_name", 1))
-    return render_template("admin/manage_meals.html", meals=meals)
+    return render_template("admin/manage_meals.html", meals=meals,
+                           username=username)
 
 
 @app.route("/add_meal", methods=["GET", "POST"])
 def add_meal():
+    # This prevents users who are not registered or logged in,
+    # from viewing certain pages and forms
+    if 'user' not in session:
+        flash('Only Site Administrator Has Access To This Page')
+        return redirect(url_for('index'))
+
+    # This prevents logged in users who are not admin to
+    # view this page and redirects them to there account page
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if not username == "admin":
+        flash('Only Site Administrator Has Access To This Page')
+        return redirect(url_for("account", username=session['user']))
+
     if request.method == "POST":
+        # This takes the admin input from the add new meal form
+        # and put it into a dictionary
         new_meal = {
             "meal_name": request.form.get("new_meal_name")
         }
+        # This then adds the above dictionary into the meals db,
+        # and a message is displayed when meal type is added and
+        # redirects them to the manage page
         mongo.db.meals.insert_one(new_meal)
         flash("New Meal Type Added")
         return redirect(url_for("get_meals"))
@@ -535,10 +567,31 @@ def add_meal():
 
 @app.route("/edit_meal/<meal_id>", methods=["GET", "POST"])
 def edit_meals(meal_id):
+    # This prevents users who are not registered or logged in,
+    # from viewing certain pages and forms
+    if 'user' not in session:
+        flash('Only Site Administrator Has Access To This Page')
+        return redirect(url_for('index'))
+
+    # This prevents logged in users who are not admin to
+    # view this page and redirects them to there account page
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if not username == "admin":
+        flash('Only Site Administrator Has Access To This Page')
+        return redirect(url_for("account", username=session['user']))
+
     if request.method == "POST":
+        # This takes the admin input from the edit meal form
+        # and put it into a dictionary
         edit_meal = {
             "meal_name": request.form.get("new_meal_name")
         }
+        # This then uses the above dictionary and updates
+        # the meal type with the meals db,
+        # and a message is displayed when the meal type is updated and
+        # redirects admin to the manage page
         mongo.db.meals.update({"_id": ObjectId(meal_id)}, edit_meal)
         flash("Meal Has Been Updated")
         return redirect(url_for("get_meals"))
@@ -549,6 +602,9 @@ def edit_meals(meal_id):
 
 @app.route("/delete_meal/<meal_id>")
 def delete_meals(meal_id):
+    # This allows the admin to delete a meal type using
+    # that meals type unique id, once done a message
+    # will display and redirect admin to the manage page
     mongo.db.meals.remove({"_id": ObjectId(meal_id)})
     flash("Meal Has Been Deleted")
     return redirect(url_for("get_meals"))
@@ -562,19 +618,50 @@ def get_cuisines():
     # This prevents users who are not registered or logged in,
     # from viewing certain pages and forms
     if 'user' not in session:
-        flash('You must register or login, to change a password')
+        flash('Only Site Administrator Has Access To This Page')
         return redirect(url_for('index'))
 
+    # This prevents logged in users who are not admin to
+    # view this page and redirects them to there account page
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if not username == "admin":
+        flash('Only Site Administrator Has Access To This Page')
+        return redirect(url_for("account", username=session['user']))
+
+    # This get all the cuisine types from the cuisines db
+    # and sorts them alphabetically
     cuisines = list(mongo.db.cuisines.find().sort("cuisine_name", 1))
     return render_template("admin/manage_cuisines.html", cuisines=cuisines)
 
 
 @app.route("/add_cuisine", methods=["GET", "POST"])
 def add_cuisine():
+    # This prevents users who are not registered or logged in,
+    # from viewing certain pages and forms
+    if 'user' not in session:
+        flash('Only Site Administrator Has Access To This Page')
+        return redirect(url_for('index'))
+
+    # This prevents logged in users who are not admin to
+    # view this page and redirects them to there account page
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if not username == "admin":
+        flash('Only Site Administrator Has Access To This Page')
+        return redirect(url_for("account", username=session['user']))
+
     if request.method == "POST":
+        # This takes the admin input from the add new cuisine form
+        # and put it into a dictionary
         new_cuisine = {
             "cuisine_name": request.form.get("new_cuisine_name")
         }
+        # This then adds the above dictionary into the cuisine db,
+        # and a message is displayed when cuisine type is added and
+        # redirects them to the manage page
         mongo.db.cuisines.insert_one(new_cuisine)
         flash("New Cuisine Type Added")
         return redirect(url_for("get_cuisines"))
@@ -584,10 +671,31 @@ def add_cuisine():
 
 @app.route("/edit_cuisine/<cuisine_id>", methods=["GET", "POST"])
 def edit_cuisines(cuisine_id):
+    # This prevents users who are not registered or logged in,
+    # from viewing certain pages and forms
+    if 'user' not in session:
+        flash('Only Site Administrator Has Access To This Page')
+        return redirect(url_for('index'))
+
+    # This prevents logged in users who are not admin to
+    # view this page and redirects them to there account page
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if not username == "admin":
+        flash('Only Site Administrator Has Access To This Page')
+        return redirect(url_for("account", username=session['user']))
+
     if request.method == "POST":
+        # This takes the admin input from the update cuisine form
+        # and put it into a dictionary
         edit_cuisine = {
             "cuisine_name": request.form.get("new_cuisine_name")
         }
+        # This then uses the above dictionary and updates
+        # the cuisine type within the cuisines db,
+        # and a message is displayed when the cuisine type is updated and
+        # redirects admin to the manage page
         mongo.db.cuisines.update({"_id": ObjectId(cuisine_id)}, edit_cuisine)
         flash("Cuisine Has Been Updated")
         return redirect(url_for("get_cuisines"))
@@ -598,6 +706,9 @@ def edit_cuisines(cuisine_id):
 
 @app.route("/delete_cuisine/<cuisine_id>")
 def delete_cuisines(cuisine_id):
+    # This allows the admin to delete a cuisine type using
+    # that cuisines type unique id, once done a message
+    # will display and redirect admin to the manage page
     mongo.db.cuisines.remove({"_id": ObjectId(cuisine_id)})
     flash("Cuisine Has Been Deleted")
     return redirect(url_for("get_cuisines"))
