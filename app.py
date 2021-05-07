@@ -714,6 +714,110 @@ def delete_cuisines(cuisine_id):
     return redirect(url_for("get_cuisines"))
 
 
+'''Add Diet Type Section'''
+
+
+@app.route("/manage_diets")
+def get_diets():
+    # This prevents users who are not registered or logged in,
+    # from viewing certain pages and forms
+    if 'user' not in session:
+        flash('Only Site Administrator Has Access To This Page')
+        return redirect(url_for('index'))
+
+    # This prevents logged in users who are not admin to
+    # view this page and redirects them to there account page
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if not username == "admin":
+        flash('Only Site Administrator Has Access To This Page')
+        return redirect(url_for("account", username=session['user']))
+
+    # This get all the diet types from the diets db
+    # and sorts them alphabetically
+    diets = list(mongo.db.diets.find().sort("diet_name", 1))
+    return render_template("admin/manage_cuisines.html", diets=diets)
+
+
+@app.route("/add_diet", methods=["GET", "POST"])
+def add_diet():
+    # This prevents users who are not registered or logged in,
+    # from viewing certain pages and forms
+    if 'user' not in session:
+        flash('Only Site Administrator Has Access To This Page')
+        return redirect(url_for('index'))
+
+    # This prevents logged in users who are not admin to
+    # view this page and redirects them to there account page
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if not username == "admin":
+        flash('Only Site Administrator Has Access To This Page')
+        return redirect(url_for("account", username=session['user']))
+
+    if request.method == "POST":
+        # This takes the admin input from the add new diet form
+        # and put it into a dictionary
+        new_diet = {
+            "diet_name": request.form.get("new_diet_name")
+        }
+        # This then adds the above dictionary into the diets db,
+        # and a message is displayed when diet type is added and
+        # redirects them to the manage page
+        mongo.db.diets.insert_one(new_diet)
+        flash("New Diet Type Added")
+        return redirect(url_for("get_diets"))
+
+    return render_template("admin/add_diets.html")
+
+
+@app.route("/edit_diet/<diet_id>", methods=["GET", "POST"])
+def edit_diets(diet_id):
+    # This prevents users who are not registered or logged in,
+    # from viewing certain pages and forms
+    if 'user' not in session:
+        flash('Only Site Administrator Has Access To This Page')
+        return redirect(url_for('index'))
+
+    # This prevents logged in users who are not admin to
+    # view this page and redirects them to there account page
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if not username == "admin":
+        flash('Only Site Administrator Has Access To This Page')
+        return redirect(url_for("account", username=session['user']))
+
+    if request.method == "POST":
+        # This takes the admin input from the update diet form
+        # and put it into a dictionary
+        edit_diet = {
+            "diet_name": request.form.get("new_diet_name")
+        }
+        # This then uses the above dictionary and updates
+        # the diet type within the diets db,
+        # and a message is displayed when the diet type is updated and
+        # redirects admin to the manage page
+        mongo.db.diets.update({"_id": ObjectId(diet_id)}, edit_diet)
+        flash("Diet Has Been Updated")
+        return redirect(url_for("get_diets"))
+
+    diets = mongo.db.diets.find_one({"_id": ObjectId(diet_id)})
+    return render_template("admin/edit_diets.html", diets=diets)
+
+
+@app.route("/delete_diet/<diet_id>")
+def delete_diets(diet_id):
+    # This allows the admin to delete a diet type using
+    # that diets type unique id, once done a message
+    # will display and redirect admin to the manage page
+    mongo.db.diet.remove({"_id": ObjectId(diet_id)})
+    flash("Diet Has Been Deleted")
+    return redirect(url_for("get_diets"))
+
+
 @app.errorhandler(404)
 def page_not_found_error(error):
     '''
