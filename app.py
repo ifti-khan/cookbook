@@ -737,7 +737,7 @@ def get_diets():
     # This get all the diet types from the diets db
     # and sorts them alphabetically
     diets = list(mongo.db.diets.find().sort("diet_name", 1))
-    return render_template("admin/manage_cuisines.html", diets=diets)
+    return render_template("admin/manage_diets.html", diets=diets)
 
 
 @app.route("/add_diet", methods=["GET", "POST"])
