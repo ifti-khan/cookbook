@@ -813,7 +813,7 @@ def delete_diets(diet_id):
     # This allows the admin to delete a diet type using
     # that diets type unique id, once done a message
     # will display and redirect admin to the manage page
-    mongo.db.diet.remove({"_id": ObjectId(diet_id)})
+    mongo.db.diets.remove({"_id": ObjectId(diet_id)})
     flash("Diet Has Been Deleted")
     return redirect(url_for("get_diets"))
 

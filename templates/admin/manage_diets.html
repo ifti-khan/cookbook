@@ -1,6 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Manage Diets</h1>
+<!--Manage Container-->
+<div class="container">
+    <h3 class="center-align mange-diet-title">Manage Diet Types</h3>
 
+    <!--Buttons for the form-->
+    <div class="row center-align">
+        <div class="col s12 m12 l12 xl12">
+            <!--Back Button-->
+            <a href="{{ url_for('account', username=session['user']) }}" 
+            class="col s10 offset-s1 m4 offset-m2 xl3 offset-xl3 btn btn blue-grey lighten-1 
+                    text-shadow waves-effect waves-light add_diet_att_btn"><i class="fas fa-arrow-left"></i> Back</a>
+
+            <!--Add Meal Button-->
+            <a href="{{ url_for('add_diet') }}" 
+            class="col s10 offset-s1 m4 xl3 btn blue-grey darken-1 
+                    text-shadow waves-effect waves-light add_diet_att_btn">Add Diet <i class="fas fa-plus"></i></a>
+        </div>
+    </div>
+
+    <div class="row">
+        <!--Jinja for loop, looping through the diets db-->
+        {% for diet in diets %}
+        <div class="col s12 m4 l4 xl4 diet-con">
+            <!--Diet card-->
+            <div class="card text-shadow center-align blue-grey lighten-4">
+                <!--Card main content-->
+                <div class="card-content">
+                    <span class="card-title">{{ diet.diet_name }}</span>
+
+                    <!--Edit Diet Button-->
+                    <a href="{{ url_for('edit_diets', diet_id=diet._id) }}" class="btn blue-grey lighten-5 text-shadow black-text
+                        waves-effect">Edit</a>
+
+                    <!--Delete Diet Button-->
+                    <a href="{{ url_for('delete_diets', diet_id=diet._id) }}" class="btn blue-grey darken-1 
+                        text-shadow waves-effect waves-light">Delete</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
