@@ -40,13 +40,21 @@
                 <a href="{{ url_for('index') }}" class="brand-logo">Share&#8250;Cook&#8250;Enjoy</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('index') }}">Home</a></li>
-                    <li><a href="{{ url_for('all_recipes') }}">Recipes</a></li>
+                    <!--These jinja ifs within the list elements, check if true it will 
+                    add the active class to the nav list elements if that list element 
+                    is clicked within the navigation bar-->
+                    <li class="{% if active=='home' %}active{%endif %}">
+                        <a href="{{ url_for('index') }}">Home</a></li>
+                    <li class="{% if active=='recipes' %}active{%endif %}">
+                        <a href="{{ url_for('all_recipes') }}">Recipes</a></li>
                     {% if not session.user %}
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
-                    <li><a href="{{ url_for('login') }}">Log In</a></li>
+                    <li class="{% if active=='register' %}active{%endif %}">
+                        <a href="{{ url_for('register') }}">Register</a></li>
+                    <li class="{% if active=='log in' %}active{%endif %}">
+                        <a href="{{ url_for('login') }}">Log In</a></li>
                     {% else %}
-                    <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
+                    <li class="{% if active=='account' %}active{%endif %}">
+                        <a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% endif %}
                     <li><a class="modal-trigger" data-target="contact-modal" href="#">Contact</a></li>
@@ -60,16 +68,24 @@
                 <h4 class="center-align sidenav-heading text-shadow blue-grey lighten-5">
                     Share&#8250;Cook&#8250;Enjoy</h4>
             </li>
-            <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('all_recipes') }}">Recipes</a></li>
-            {% if not session.user %}
-            <li><a href="{{ url_for('register') }}">Register</a></li>
-            <li><a href="{{ url_for('login') }}">Log In</a></li>
-            {% else %}
-            <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
-            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-            {% endif %}
-            <li><a class="modal-trigger" data-target="contact-modal" href="#">Contact</a></li>
+            <!--These jinja ifs within the list elements, check if true it will 
+                    add the active class to the nav list elements if that list element 
+                    is clicked within the navigation bar-->
+                    <li class="{% if active=='home' %}active{%endif %}">
+                        <a href="{{ url_for('index') }}">Home</a></li>
+                    <li class="{% if active=='recipes' %}active{%endif %}">
+                        <a href="{{ url_for('all_recipes') }}">Recipes</a></li>
+                    {% if not session.user %}
+                    <li class="{% if active=='register' %}active{%endif %}">
+                        <a href="{{ url_for('register') }}">Register</a></li>
+                    <li class="{% if active=='log in' %}active{%endif %}">
+                        <a href="{{ url_for('login') }}">Log In</a></li>
+                    {% else %}
+                    <li class="{% if active=='account' %}active{%endif %}">
+                        <a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    {% endif %}
+                    <li><a class="modal-trigger" data-target="contact-modal" href="#">Contact</a></li>
         </ul>
     </header>
 

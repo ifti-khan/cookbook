@@ -26,7 +26,7 @@ def index():
     This is the app route for the first
     page that loads which in the index.html
     '''
-    return render_template("index.html")
+    return render_template("index.html", active='home')
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -77,7 +77,7 @@ def register():
         flash("Registration Successful!")
         return redirect(url_for("account", username=session["user"]))
 
-    return render_template("register.html")
+    return render_template("register.html", active='register')
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -125,7 +125,7 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
-    return render_template("login.html")
+    return render_template("login.html", active='log in')
 
 
 @app.route("/account/<username>", methods=["GET", "POST"])
@@ -162,8 +162,8 @@ def account(username):
     # This is passing the varibles into the template, so
     # they can be used in the rendered page
     return render_template(
-        "account.html", username=username, fullname=fullname,
-        email=email, user_recipes=user_recipes,
+        "account.html", active='account', username=username,
+        fullname=fullname, email=email, user_recipes=user_recipes,
         num_of_user_recipes=num_of_user_recipes)
 
 
@@ -205,8 +205,9 @@ def all_recipes():
     # This is passing the varibles into the template, so
     # they can be used in the rendered page
     return render_template(
-        "recipes.html", recipes=recipes, current_page=current_page,
-        num_of_pages=num_of_pages, num_of_recipes=num_of_recipes)
+        "recipes.html", active='recipes', recipes=recipes,
+        current_page=current_page, num_of_pages=num_of_pages,
+        num_of_recipes=num_of_recipes)
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
