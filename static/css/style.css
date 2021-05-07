@@ -475,12 +475,13 @@ footer {
     margin: auto 0;
 }
 
-/*manage_meals.html
-add_meals.html*/
+/*Admin Pages*/
 .mange-meal-title,
 .mange-cuisine-title,
+.mange-diet-title,
 .add-meal-title, 
-.add-cuisine-title {
+.add-cuisine-title,
+.add-diet-title {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -491,7 +492,8 @@ add_meals.html*/
 }
 
 .row .add_meal_att_btn,
-.row .add_cuisine_att_btn {
+.row .add_cuisine_att_btn,
+.row .add_diet_att_btn {
     margin-right: 5px;
 }
 

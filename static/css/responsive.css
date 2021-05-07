@@ -38,7 +38,6 @@
     .collapsible-header i {
         font-size: 20px;
     }
-
 }
 
 /*Medium Laptop*/
@@ -266,6 +265,11 @@
 
     /*add_cuisine.html*/
     .row .add_cuisine_att_btn {
+        margin-bottom: 10px;
+    }
+
+    /*add_diet.html*/
+    .row .add_diet_att_btn {
         margin-bottom: 10px;
     }
 
