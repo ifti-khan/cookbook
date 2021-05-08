@@ -246,7 +246,7 @@ def add_recipe():
         # the user they have successfully added a recipe to the collection
         mongo.db.recipes.insert_one(add_recipe)
         flash("Recipe Successfully Added")
-        return redirect(url_for("all_recipes"))
+        return redirect(url_for("account", username=session["user"]))
 
     # These variables take data from the assigned collection
     # and they fill within the assigned dropdown list
@@ -346,7 +346,7 @@ def edit_recipe(recipe_id):
         # to the user.
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, edit_recipe)
         flash("Recipe Successfully Updated")
-        return redirect(url_for("all_recipes"))
+        return redirect(url_for("account", username=session["user"]))
 
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     # These variables take data from the assigned collection
