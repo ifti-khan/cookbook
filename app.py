@@ -603,6 +603,21 @@ def edit_meals(meal_id):
 
 @app.route("/delete_meal/<meal_id>")
 def delete_meals(meal_id):
+    # This prevents users who are not registered or logged in,
+    # from viewing certain pages and forms
+    if 'user' not in session:
+        flash('Only Site Administrator Has Access To This Feature')
+        return redirect(url_for('index'))
+
+    # This prevents logged in users who are not admin to
+    # view this page and redirects them to there account page
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if not username == "admin":
+        flash('Only Site Administrator Has Access To This Feature')
+        return redirect(url_for("account", username=session['user']))
+
     # This allows the admin to delete a meal type using
     # that meals type unique id, once done a message
     # will display and redirect admin to the manage page
@@ -707,6 +722,21 @@ def edit_cuisines(cuisine_id):
 
 @app.route("/delete_cuisine/<cuisine_id>")
 def delete_cuisines(cuisine_id):
+    # This prevents users who are not registered or logged in,
+    # from viewing certain pages and forms
+    if 'user' not in session:
+        flash('Only Site Administrator Has Access To This Feature')
+        return redirect(url_for('index'))
+
+    # This prevents logged in users who are not admin to
+    # view this page and redirects them to there account page
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if not username == "admin":
+        flash('Only Site Administrator Has Access To This Feature')
+        return redirect(url_for("account", username=session['user']))
+
     # This allows the admin to delete a cuisine type using
     # that cuisines type unique id, once done a message
     # will display and redirect admin to the manage page
@@ -811,6 +841,21 @@ def edit_diets(diet_id):
 
 @app.route("/delete_diet/<diet_id>")
 def delete_diets(diet_id):
+    # This prevents users who are not registered or logged in,
+    # from viewing certain pages and forms
+    if 'user' not in session:
+        flash('Only Site Administrator Has Access To This Feature')
+        return redirect(url_for('index'))
+
+    # This prevents logged in users who are not admin to
+    # view this page and redirects them to there account page
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if not username == "admin":
+        flash('Only Site Administrator Has Access To This Feature')
+        return redirect(url_for("account", username=session['user']))
+
     # This allows the admin to delete a diet type using
     # that diets type unique id, once done a message
     # will display and redirect admin to the manage page
