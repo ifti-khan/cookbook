@@ -243,7 +243,7 @@ JavaScript Validation -> [Visit Site](https://esprima.org/demo/validate.html)
 
 Python Validation -> [Visit Site](http://pep8online.com/)
 
-### Validation Document -> [Visit Document](#)
+### Validation Document -> [Visit Document](/writeup_files/validation/validation.md)
 
 # Testing
 
