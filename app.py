@@ -526,6 +526,7 @@ def delete_account(username):
     # This gets all the logged in users recipes from the recipe db
     get_all_recipes = mongo.db.recipes.find(
         {'created_by': current_username})
+
     # if true this will remove the logged in user from database
     # inform the user the account and recipe deletion has been done,
     # clear the cookie session which logs them out and redirect
