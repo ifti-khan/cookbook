@@ -503,6 +503,41 @@ def change_password(username):
     return render_template("change_password.html", username=session["user"])
 
 
+@app.route("/delete_account/<username>", methods=['GET', 'POST'])
+def delete_account(username):
+    '''
+    INFO.
+    This app route is for deleting the users account using the
+    username as a parameter. This will allow the logged in user
+    to delete there account and all recipes by entering
+    there password to confirm deletion.
+    '''
+    # This prevents users who are not registered or logged in,
+    # from viewing certain pages and forms
+    if 'user' not in session:
+        flash('You must register or login, to deactivate an account')
+        return redirect(url_for('index'))
+
+    # Variable that get the logged in user username from the
+    # users db using the cookie session
+    current_username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    # This gets all the logged in users recipes from the recipe db
+    get_all_recipes = mongo.db.recipes.find(
+        {'created_by': current_username})
+    # if true this will remove the logged in user from database
+    # inform the user the account and recipe deletion has been done,
+    # clear the cookie session which logs them out and redirect
+    # them to the home page
+    if get_all_recipes:
+        mongo.db.recipes.remove({"created_by": current_username})
+    flash("Your account and recipes have been deleted.")
+    session.pop("user")
+    mongo.db.users.remove({"username": current_username})
+    return redirect(url_for("index"))
+
+
 '''Admin Section'''
 
 

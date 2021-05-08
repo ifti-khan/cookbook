@@ -19,51 +19,57 @@
 
             <!--Change username button-->
             <div class="row">
-                <div class="col s12 m6 xl6 push-xl1">
+                <div class="col s12 m6 xl4">
                     <a href="{{ url_for('change_username', username=session.user) }}" class="btn blue-grey darken-1 acc-change-btn text-shadow
                         waves-effect waves-light">Change Username
                         <i class="fas fa-edit"></i></a>
                 </div>
 
-
                 <!--Change password button-->
-                <div class="col s12 m6 xl6 pull-xl1">
+                <div class="col s12 m6 xl4">
                     <a href="{{ url_for('change_password', username=session.user) }}" class="btn blue-grey darken-1 acc-change-btn text-shadow
                         waves-effect waves-light">Change Password
                         <i class="fas fa-edit"></i></a>
                 </div>
+
+                <!--Delete Account button-->
+                <div class="col s12 m6 xl4">
+                    <a href="#" class="btn blue-grey darken-1 acc-change-btn text-shadow modal-trigger
+                        waves-effect waves-light" data-target="delete_modal_account">Delete Account
+                        <i class="fas fa-times"></i></a>
+                </div>
             </div>
-            
+
             <!--Jinja if to check if the session user is admin,
             if true then show manage recipe attributes container-->
             {% if session.user|lower == "admin"|lower %}
             <div class="container admin-con">
                 <h3>Manage Recipe Attributes</h3>
-            <!--Manage Recipe Attributes-->
-            <div class="row">
-                <!--Manage Meal Attributes-->
-                <div class="col s12 m6 l6 xl4">
-                    <a href="{{ url_for('get_meals') }}" class="btn blue-grey darken-1 recipe-attrib-btn text-shadow
+                <!--Manage Recipe Attributes-->
+                <div class="row">
+                    <!--Manage Meal Attributes-->
+                    <div class="col s12 m6 l6 xl4">
+                        <a href="{{ url_for('get_meals') }}" class="btn blue-grey darken-1 recipe-attrib-btn text-shadow
                         waves-effect waves-light">Manage Meal Types
-                        <i class="fas fa-edit"></i></a>
-                </div>
+                            <i class="fas fa-edit"></i></a>
+                    </div>
 
-                <!--Manage Cuisine Attributes-->
-                <div class="col s12 m6 l6 xl4">
-                    <a href="{{ url_for('get_cuisines') }}" class="btn blue-grey darken-1 recipe-attrib-btn text-shadow
+                    <!--Manage Cuisine Attributes-->
+                    <div class="col s12 m6 l6 xl4">
+                        <a href="{{ url_for('get_cuisines') }}" class="btn blue-grey darken-1 recipe-attrib-btn text-shadow
                         waves-effect waves-light">Manage Cuisine Types
-                        <i class="fas fa-edit"></i></a>
-                </div>
+                            <i class="fas fa-edit"></i></a>
+                    </div>
 
-                <!--Manage Diet Attributes-->
-                <div class="col s12 m12 l12 xl4">
-                    <a href="{{ url_for('get_diets') }}" class="btn blue-grey darken-1 recipe-attrib-btn text-shadow
+                    <!--Manage Diet Attributes-->
+                    <div class="col s12 m12 l12 xl4">
+                        <a href="{{ url_for('get_diets') }}" class="btn blue-grey darken-1 recipe-attrib-btn text-shadow
                         waves-effect waves-light">Manage Diet Types
-                        <i class="fas fa-edit"></i></a>
+                            <i class="fas fa-edit"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        {% endif %}
+            {% endif %}
 
             <!--Jinja if statement to see if user has any stored and shared recipes
             and then display the add recipe button-->
@@ -201,15 +207,13 @@ fields and values within the database-->
                     <div class="col s12 m12 l12 xl12">
 
                         <!--View Recipe button-->
-                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"
-                            class="btn blue-grey darken-1 text-shadow uppercase 
+                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="btn blue-grey darken-1 text-shadow uppercase 
                             waves-effect waves-light">View <i class="fab fa-readme"></i></a>
 
                         <!--Edit recipe button but only if the logged in user matches
                         the created by field-->
                         {% if session.user == recipe.created_by %}
-                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
-                            class="btn blue-grey darken-1 text-shadow uppercase 
+                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn blue-grey darken-1 text-shadow uppercase 
                             waves-effect waves-light">Edit <i class="fas fa-edit"></i></a>
                         {% endif %}
                     </div>
@@ -220,4 +224,30 @@ fields and values within the database-->
 </div>
 {% endfor %}
 {% endif %}
+
+<!--Delete Account Confirmation Modal-->
+<div id="delete_modal_account" class="modal del_modal">
+    <div class="modal-header blue-grey lighten-5 text-shadow center-align">
+        <h5>Delete Confirmation</h5>
+    </div>
+    <!--This modal will display a message to the user alerting them that they are about to 
+    delete their account from the website and database-->
+    <div class="modal-content center-align">
+        <p><i class="fas fa-exclamation-triangle"></i>&nbsp; Attention: Please read carefully, 
+            this action is permanent</p>
+        <p>Going ahead with action will delete your account and all the recipes you have created</p>
+        <p>Username: {{ username }}</p>
+        <p>Recipes Created: ({{ num_of_user_recipes }})</p>
+        <p>Are you sure you want to go ahead with this action?</p>
+    </div>
+
+    <!--Modal Buttons-->
+    <div class="modal-footer blue-grey lighten-5 text-shadow">
+        <!--Cancel delete button-->
+        <a href="#!" class="modal-close waves-effect waves-light btn blue-grey darken-1">Cancel</a>
+        <!--Confirm delete button-->
+        <a href="{{ url_for('delete_account', username=session.user) }}"
+            class="waves-effect waves-light btn blue-grey darken-1">Delete</a>
+    </div>
+</div>
 {% endblock %}
