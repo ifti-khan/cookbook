@@ -1,7 +1,7 @@
 # Validation
 
 ## HTML5 Validation
-Here I have tested all of the HTML files using the HTML5 W3C validator and got some interesting results. The validaotr does not seem to recognize Jinja2 templating language and it showed a number of errors. 
+Here I have tested all of the HTML files using the HTML5 W3C validator and got some interesting results. The validator does not seem to recognize Jinja2 templating language and it showing a large number of errors. 
 
 After going through the errors i did mange to pick up a few HTML error, nothing critical just small mistakes. One mistakes was that I closed a form of incorrectly in my base file. Another was that I used pattern attributes on textarea and number input field.
 

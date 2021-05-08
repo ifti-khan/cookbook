@@ -43,19 +43,17 @@ My users for this project are people seeking new cooking recipes for their break
 
 * As a user, I want to be able to logout of my account from any page. 
 
-* As a user, I want to be able to visit my account/profile page, so that I can change my username and password.
-
-* As a user, I want to be able to add multiple recipes, so that I can store and share my recipes. 
+* As a user, I want to be able to visit my account/profile page, so that I can change my username, password and delete account.
 
 * As a user, I want a detailed add recipe form, so that I can fill in the form with great detail for the next user to follow. 
 
-* As a user, I want to be able to view all recipe and details, so that I can follow the detailed instructions on how to cook that food dish. 
+* As a user, I want to be able to view all recipe ingredients and cooking steps, so that I can follow the instructions on how to cook that food dish.
+
+* As a user, I want to able to view my recipes only, so that I can see how many recipes I have created.
 
 * As a user, I want to be able to edit my recipes, so that I can fix mistakes or update them. 
 
 * As a user, I want to be able to delete my recipes which i have created.
-
-* As a user, I want to able to view my recipes only, so that I can see how many recipes I have created.
 
 * As a user, I want to be able to contact the website administrator, so that if have any question or issues they can be addressed. 
 
@@ -69,12 +67,12 @@ The colour scheme that I have chosen will be easy on the eyes and easy for users
 The buttons and flash messages will stand out from the rest of the content so they can be noticed. All colour chosen will 
 be validated beforehand using the WebAIM online contrast checker to make sure they meet accessibility standards. 
 
-| Colour used from Materialize |                |
-|--------------------|--------------------------|
-| #eceff1 blue-grey lighten-5                   |
-| #cfd8dc blue-grey lighten-4                   |
-| #546e7a blue-grey darken-1                    |
-|                                               |
+| Colour used from Materialize |
+|------------------------------|
+| #eceff1 blue-grey lighten-5  |
+| #cfd8dc blue-grey lighten-4  |
+| #546e7a blue-grey darken-1   |
+|                              |
 
 ## Typography 
 For this project I have chosen two fonts from Google Fonts, the first font I have chosen is 
@@ -246,10 +244,13 @@ Python Validation -> [Visit Site](http://pep8online.com/)
 ### Validation Document -> [Visit Document](/writeup_files/validation/validation.md)
 
 # Testing
+When it comes to testing and debugging I find it easier and good practise to test as I go along with my project and this can be seen in my git commit messages to my repository every time I pushed my completed files.
+
+In this section I will test my project against my user stories and further text by doing some manual testing. These test will be done using a variety of different browsers and a variety of different screen sizes as well to ensure my projects compatibly and responsiveness.
 
 # UX - User Story Testing
 
-### UX User Story Testing Document -> [Visit Document](#)
+### UX User Story Testing Document -> [Visit Document](/writeup_files/testing/user_story_testing.md)
 
 # Further Testing
 
