@@ -102,10 +102,9 @@
         <!--Text Area For Recipe Ingredient List-->
         <div class="row">
             <div class="input-field col s12 l10 offset-l1">
-                <textarea id="recipe_ingredients" name="recipe_ingredients" class="validate materialize-textarea"
-                    data-length="1000" minlength="5" maxlength="1000" required></textarea>
+                <textarea id="recipe_ingredients" name="recipe_ingredients" class="validate materialize-textarea" required></textarea>
                 <label for="recipe_ingredients" class="black-text">
-                    <i class="fas fa-list-ul"></i> List Ingredients - Each ingredient on new line</label>
+                    <i class="fas fa-list-ul"></i> List Ingredients - Each ingredient on new line, leave no blank lines</label>
                     <span class="helper-text help_text_ingredients col s10" data-error="Enter a list of ingredients"></span>
             </div>
 
@@ -114,10 +113,9 @@
 
             <!--Text Area For Recipe Step By Step List-->
             <div class="input-field col s12 l10 offset-l1">
-                <textarea id="recipe_steps" name="recipe_steps" class="validate materialize-textarea" data-length="1000"
-                minlength="5" maxlength="1000" required></textarea>
+                <textarea id="recipe_steps" name="recipe_steps" class="validate materialize-textarea" required></textarea>
                 <label for="recipe_steps" class="black-text">
-                    <i class="fas fa-list-ol"></i> List Steps - Each step on new line</label>
+                    <i class="fas fa-list-ol"></i> List Steps - Each step on new line, leave no blank lines</label>
                     <span class="helper-text col s10" data-error="Enter a list of steps, 
                     on how to prepare and cook this recipe"></span>
             </div>

@@ -18,15 +18,14 @@
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <!--My JS Script for my contact modal form, this is my emailjs User ID-->
     <script>
-        (function() {
+        (function () {
             emailjs.init("user_5ufwrdpLONQqmdzUjcdEi");
         })();
     </script>
 
     <title>Share &#8250; Cook &#8250; Enjoy</title>
     <!--This is for the favicon-->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='icons/utensils-solid.svg') }}" 
-    type="image/jpg" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='icons/utensils-solid.svg') }}" type="image/jpg" />
 </head>
 
 <body>
@@ -42,17 +41,22 @@
                     add the active class to the nav list elements if that list element 
                     is clicked within the navigation bar-->
                     <li class="{% if active=='home' %}active{%endif %}">
-                        <a href="{{ url_for('index') }}">Home</a></li>
+                        <a href="{{ url_for('index') }}">Home</a>
+                    </li>
                     <li class="{% if active=='recipes' %}active{%endif %}">
-                        <a href="{{ url_for('all_recipes') }}">Recipes</a></li>
+                        <a href="{{ url_for('all_recipes') }}">Recipes</a>
+                    </li>
                     {% if not session.user %}
                     <li class="{% if active=='register' %}active{%endif %}">
-                        <a href="{{ url_for('register') }}">Register</a></li>
+                        <a href="{{ url_for('register') }}">Register</a>
+                    </li>
                     <li class="{% if active=='log in' %}active{%endif %}">
-                        <a href="{{ url_for('login') }}">Log In</a></li>
+                        <a href="{{ url_for('login') }}">Log In</a>
+                    </li>
                     {% else %}
                     <li class="{% if active=='account' %}active{%endif %}">
-                        <a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
+                        <a href="{{ url_for('account', username=session['user']) }}">Account</a>
+                    </li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% endif %}
                     <li><a class="modal-trigger" data-target="contact-modal" href="#">Contact</a></li>
@@ -69,21 +73,26 @@
             <!--These jinja ifs within the list elements, check if true it will 
                     add the active class to the nav list elements if that list element 
                     is clicked within the navigation bar-->
-                    <li class="{% if active=='home' %}active{%endif %}">
-                        <a href="{{ url_for('index') }}">Home</a></li>
-                    <li class="{% if active=='recipes' %}active{%endif %}">
-                        <a href="{{ url_for('all_recipes') }}">Recipes</a></li>
-                    {% if not session.user %}
-                    <li class="{% if active=='register' %}active{%endif %}">
-                        <a href="{{ url_for('register') }}">Register</a></li>
-                    <li class="{% if active=='log in' %}active{%endif %}">
-                        <a href="{{ url_for('login') }}">Log In</a></li>
-                    {% else %}
-                    <li class="{% if active=='account' %}active{%endif %}">
-                        <a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
-                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                    {% endif %}
-                    <li><a class="modal-trigger" data-target="contact-modal" href="#">Contact</a></li>
+            <li class="{% if active=='home' %}active{%endif %}">
+                <a href="{{ url_for('index') }}">Home</a>
+            </li>
+            <li class="{% if active=='recipes' %}active{%endif %}">
+                <a href="{{ url_for('all_recipes') }}">Recipes</a>
+            </li>
+            {% if not session.user %}
+            <li class="{% if active=='register' %}active{%endif %}">
+                <a href="{{ url_for('register') }}">Register</a>
+            </li>
+            <li class="{% if active=='log in' %}active{%endif %}">
+                <a href="{{ url_for('login') }}">Log In</a>
+            </li>
+            {% else %}
+            <li class="{% if active=='account' %}active{%endif %}">
+                <a href="{{ url_for('account', username=session['user']) }}">Account</a>
+            </li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            {% endif %}
+            <li><a class="modal-trigger" data-target="contact-modal" href="#">Contact</a></li>
         </ul>
     </header>
 
@@ -142,8 +151,9 @@
                 <!--Name Input Field-->
                 <div class="row con-modal-name">
                     <div class="input-field col s12 m10 offset-m1 l10 offset-l1 xl10 offset-xl1">
-                        <input id="modal_name" name="modal_name" type="text" data-length="25" minlength="5" maxlength="25"
-                        pattern="^[A-Za-z0-9\W+]{5,25}$" class="validate" value="{{ fullname }}" required>
+                        <input id="modal_name" name="modal_name" type="text" data-length="25" minlength="5"
+                            maxlength="25" pattern="^[A-Za-z0-9\W+]{5,25}$" class="validate" value="{{ fullname }}"
+                            required>
                         <label for="modal_name" class="black-text">
                             <i class="fas fa-id-card blue-grey-text text-darken-1"></i> Fullname</label>
                         <span class="helper-text" data-error="Please enter your fullname"></span>
@@ -153,8 +163,9 @@
                 <!--Username Input Field-->
                 <div class="row con-modal-username">
                     <div class="input-field col s12 m10 offset-m1 l10 offset-l1 xl10 offset-xl1">
-                        <input id="modal_username" name="modal_username" type="text" data-length="25" minlength="5" maxlength="25"
-                            pattern="^[a-zA-Z0-9]{5,25}$" class="validate" value="{{ username }}" required>
+                        <input id="modal_username" name="modal_username" type="text" data-length="25" minlength="5"
+                            maxlength="25" pattern="^[a-zA-Z0-9]{5,25}$" class="validate" value="{{ username }}"
+                            required>
                         <label for="modal_username" class="black-text">
                             <i class="fas fa-user blue-grey-text text-darken-1"></i> Username</label>
                         <span class="helper-text" data-error="Please enter your username"></span>
@@ -193,22 +204,22 @@
                 <!--Text Area For Contact Message-->
                 <div class="row con-modal-message">
                     <div class="input-field col s12 m10 offset-m1 l10 offset-l1 xl10 offset-xl1">
-                        <textarea id="modal_message" name="modal_message" class="validate materialize-textarea"
-                            data-length="1000" minlength="5" maxlength="1000"
-                            required></textarea>
+                        <textarea id="modal_message" name="modal_message" class="validate materialize-textarea" required></textarea>
                         <label for="modal_message" class="black-text">
                             <i class="fas fa-envelope blue-grey-text text-darken-1"></i> Message</label>
                         <span class="helper-text" data-error="Please type your message here"></span>
                     </div>
                 </div>
+
+                <!--Modal footer containing buttons for the contact form-->
+                <div class="center-align">
+                    <a href="#" class="modal-close waves-effect waves-light btn blue-grey darken-1">Close</a>
+                    <button type="reset" class="waves-effect waves-light btn blue-grey darken-1">Clear</button>
+                    <button type="submit" id="send-btn"
+                        class="waves-effect waves-light btn blue-grey darken-1">Send</button>
+                </div>
+
             </form>
-        </div>
-        
-        <!--Modal footer containing buttons for the contact form-->
-        <div class="modal-footer blue-grey lighten-5">
-            <a href="#" class="modal-close waves-effect waves-light btn blue-grey darken-1">Close</a>
-            <button type="reset" class="waves-effect waves-light btn blue-grey darken-1">Clear</button>
-            <button type="submit" id="send-btn" class="waves-effect waves-light btn blue-grey darken-1">Send</button>
         </div>
     </div>
 
