@@ -1,4 +1,5 @@
 import os
+import math
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -8,7 +9,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
-import math
 
 app = Flask(__name__)
 # Config settings and environmental variables located in env.py

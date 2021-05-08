@@ -102,8 +102,7 @@
         <!--Input Field Recipe Cooking Time-->
         <div class="row">
             <div class="input-field col s10 offset-s1 l4 offset-l1">
-                <input id="recipe_cooktime" name="recipe_cooktime" type="number" data-length="10"
-                    pattern="^[0-9]{1,10}$" minlength="1" maxlength="10" class="validate"
+                <input id="recipe_cooktime" name="recipe_cooktime" type="number" data-length="10" class="validate"
                     value="{{ recipes.recipe_cooktime }}" required>
                 <label for="recipe_cooktime" class="black-text"><i class="fas fa-clock"></i> Cooking Time - In
                     Minutes</label>
@@ -115,8 +114,7 @@
 
             <!--Input Field Recipe Servings-->
             <div class="input-field col s10 offset-s1 l4 offset-l1">
-                <input id="recipe_servings" name="recipe_servings" type="number" data-length="10"
-                    pattern="^[0-9]{1,10}$" minlength="1" maxlength="10" class="validate"
+                <input id="recipe_servings" name="recipe_servings" type="number" data-length="10" class="validate"
                     value="{{ recipes.recipe_servings }}" required>
                 <label for="recipe_servings" class="black-text"><i class="fas fa-users"></i> No. of Servings</label>
                 <span class="helper-text col s10" data-error="Enter how many servings"></span>
@@ -128,7 +126,7 @@
         <div class="row">
             <div class="input-field col s12 l10 offset-l1">
                 <textarea id="recipe_ingredients" name="recipe_ingredients" class="validate materialize-textarea"
-                    data-length="1000" pattern="^[A-Za-z0-9\W+]{5,1000}$" minlength="5" maxlength="1000" required>
+                    data-length="1000" minlength="5" maxlength="1000" required>
                     
                     {%- for ingredient_list in recipes.recipe_ingredients -%}
                     {{ ingredient_list + "\n" }} 
@@ -147,7 +145,7 @@
             <!--Jinja for loop to display the cooking steps array into a list format-->
             <div class="input-field col s12 l10 offset-l1">
                 <textarea id="recipe_steps" name="recipe_steps" class="validate materialize-textarea" data-length="1000"
-                    pattern="^[A-Za-z0-9\W+]{5,1000}$" minlength="5" maxlength="1000" required>
+                minlength="5" maxlength="1000" required>
                     
                     {%- for cooking_steps in recipes.recipe_steps -%}
                     {{ cooking_steps + "\n" }} 

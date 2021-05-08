@@ -22,9 +22,7 @@
             emailjs.init("user_5ufwrdpLONQqmdzUjcdEi");
         })();
     </script>
-    
-    {% block styles %}
-    {% endblock %}
+
     <title>Share &#8250; Cook &#8250; Enjoy</title>
     <!--This is for the favicon-->
     <link rel="shortcut icon" href="{{ url_for('static', filename='icons/utensils-solid.svg') }}" 
@@ -196,13 +194,14 @@
                 <div class="row con-modal-message">
                     <div class="input-field col s12 m10 offset-m1 l10 offset-l1 xl10 offset-xl1">
                         <textarea id="modal_message" name="modal_message" class="validate materialize-textarea"
-                            data-length="1000" pattern="^[A-Za-z0-9\W+]{5,1000}$" minlength="5" maxlength="1000"
+                            data-length="1000" minlength="5" maxlength="1000"
                             required></textarea>
                         <label for="modal_message" class="black-text">
                             <i class="fas fa-envelope blue-grey-text text-darken-1"></i> Message</label>
                         <span class="helper-text" data-error="Please type your message here"></span>
                     </div>
                 </div>
+            </form>
         </div>
         
         <!--Modal footer containing buttons for the contact form-->
@@ -211,7 +210,6 @@
             <button type="reset" class="waves-effect waves-light btn blue-grey darken-1">Clear</button>
             <button type="submit" id="send-btn" class="waves-effect waves-light btn blue-grey darken-1">Send</button>
         </div>
-        </form>
     </div>
 
     <!--JQuery v3.6.0 CDN-->
@@ -222,8 +220,6 @@
     <!--My JS Script files-->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script src="{{ url_for('static', filename='js/sendemail.js') }}"></script>
-    {% block scripts %}
-    {% endblock %}
 
 </body>
 
