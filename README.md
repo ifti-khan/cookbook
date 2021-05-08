@@ -1,16 +1,16 @@
-# Ifti Khan Milestone Project 3 - Backend Development Project
+# Ifti Khan Milestone Project 3 - Data Centric Development Project
 
 [Click Here To Visit My Deployed Project Site](https://iftikhan-milestone-3-project.herokuapp.com/)
 
-![Image of Project](#)
+![Image of Project](/writeup_files/images/responsive-site-device.jpg)
 
 ## Project Title - Share, Cook, Enjoy Online Cookbook
 
 ### Introduction
-This repository is showcasing my third milestone project for The Code Institute
+This repository is showcasing my third milestone project for The Code Institute.
  
 Share, Cook, Enjoy is a simple way for online user to view, create, share and store their favourite recipes. 
-For this backend development project I am going to create a web application that allows users to create, read, update and delete (CRUD) recipes stored within a database. 
+For this data centric development project I am going to create a web application that allows users to create, read, update and delete (CRUD) recipes stored within a database. 
 
 The reason I have chosen to pursue this as my third milestone project is that it will allow me to showcase the new skills that 
 I have learnt from The Code Institute and previous skill learnt from other projects. The primary skills being showcased here is 
@@ -39,29 +39,25 @@ My users for this project are people seeking new cooking recipes for their break
 
 * As a user, I want to be able to register to the website, so that I can login and have full access to the web application.
 
-* As a user, I want to be able to view my account profile, so that I can change my username and password.
+* As a user, I want to be able to login, so that I can create my own recipes.
 
 * As a user, I want to be able to logout of my account from any page. 
 
-* As a user, I want to be able to login, so that I can create my own recipes.
+* As a user, I want to be able to visit my account/profile page, so that I can change my username and password.
 
-* As a user, I want to add new recipes, so that I can store and share my recipes. 
+* As a user, I want to be able to add multiple recipes, so that I can store and share my recipes. 
 
-* As a user, I want a detailed recipe form, so that I can create a well detailed recipe instructions for another user to follow. 
+* As a user, I want a detailed add recipe form, so that I can fill in the form with great detail for the next user to follow. 
 
-* As a user, I want to be able to view all recipe details, so that I can follow the detailed instructions on how to cook the food dish. 
+* As a user, I want to be able to view all recipe and details, so that I can follow the detailed instructions on how to cook that food dish. 
 
 * As a user, I want to be able to edit my recipes, so that I can fix mistakes or update them. 
 
-* As a user, I want to be able to delete my recipes added to the database.
+* As a user, I want to be able to delete my recipes which i have created.
 
 * As a user, I want to able to view my recipes only, so that I can see how many recipes I have created.
 
-* As a user, I want to be able to view all recipes without registering, so that I do not have to create an account or log in.
-
 * As a user, I want to be able to contact the website administrator, so that if have any question or issues they can be addressed. 
-
-* As a user, I want to access the web application on different device sizes, so that I can view the website on the go.
 
 # Design 
 ## Framework
@@ -73,6 +69,13 @@ The colour scheme that I have chosen will be easy on the eyes and easy for users
 The buttons and flash messages will stand out from the rest of the content so they can be noticed. All colour chosen will 
 be validated beforehand using the WebAIM online contrast checker to make sure they meet accessibility standards. 
 
+| Colour used from Materialize |                |
+|--------------------|--------------------------|
+| #eceff1 blue-grey lighten-5                   |
+| #cfd8dc blue-grey lighten-4                   |
+| #546e7a blue-grey darken-1                    |
+|                                               |
+
 ## Typography 
 For this project I have chosen two fonts from Google Fonts, the first font I have chosen is 
 called [Source Code Pro](https://fonts.google.com/specimen/Source+Code+Pro?preview.text_type=custom). 
@@ -82,8 +85,7 @@ The second font I have chosen is also from Google Fonts and it is called [Baloo 
 This font will be used the main content of the project as well as displaying the main recipe cooking instructions. 
 
 ## Imagery
-The images that will be used for this project will be some of my personal images that I have taken of the wife’s cooking. 
-The other images will be taken from Google and referenced in my media section of the write up.  The icons used within this project will be utilised 
+The images that will be used for this project will will be taken from Google or any other cooking website, and will be referenced in my media section of the write up.  The icons used within this project will be utilised 
 from the [Font Awesome CDN]( https://cdnjs.com/libraries/font-awesome). 
 
 # Wireframes
@@ -106,43 +108,39 @@ and will revisit at a later date to implement.
 ## Existing Features 
 
 ### Different navigation bars for different users
-* A non-registered will only be able to see the homepage navigation link, login navigation link, 
-registration navigation link, contact navigation link and all recipe navigation links. 
+* A non-registered will only be able to see the following navigation links: Home, Recipes, Register, Login and Contact
 
-* For a registered they will have full access and will be able to see the homepage navigation link, 
-logout navigation link, registration navigation link, contact navigation link and all recipe navigation links 
-and the account navigation link. 
+* For a registered they will have full access and will be able to see the following navigation links: Home, Recipes, Account, Logout and Contact
 
 ### Registration form
-* This feature will only be available to non-registered and will be located in the top navigation bar for non-registered 
-to see and will be prompted on the homepage to register to get full access to create, share and store recipes.  
+* This feature will only be available to non-registered and will be located in the top navigation bar for non-registered. The user will also be prompted on the homepage and all recipes page to register to get full access to create, share and store recipes.  
 
 ### Login form
-* This feature will be available to all users allowing them to login into the web application, but once the user is logged in, 
-the login navigation link will disappear and the logout navigation link will appear.   
+* This feature will be available to non-logged in users allowing them to login into the web application from the homepage or the navigation bar. Once the user is logged in, the login navigation link will disappear and the logout navigation link will appear.   
 
 ### Contact form
-* A contact form feature will be created for users to get in contact with the site admin to help with
-any issues e.g. login issues like forgotten username and passwords. 
+* A contact form feature will be created for users to get in contact with the site admin to help with any issues e.g. login issues, forgotten username and passwords. 
 
 ### User account page
-* This will allow user to change their username and password as well as displaying their created recipes, 
-so this acts like a recipe storage page for the user. 
+* This page will allow user to change their username and password or even delete their account. It will also allow the users to add recipes from page, as well as displaying their created recipes.
 
 ### Add recipe form
-* This feature will provide a detailed recipe input form for users to create their recipes to store and share. 
+* This feature will provide a detailed recipe form for users to create their recipes to store and share. 
 
-### Update recipe
-* This feature will be found in the user account page and will be a button located next to their created recipes. 
-Once clicked it take them to a detailed form like the add recipe form, but this form will allow users to update a created recipe. 
-
+### Edit/Update recipe
+* This feature will allow the user to edit thier own created recipes using an edit input form and will be found in the view recipe page.
 
 ### Delete recipe
-* This feature will be found in the user account page of the web application and will be a button that 
-will allow users to delete their own created recipes.
+* This feature will allow users to delete their own created recipes, and will be found in the view recipe page.
+
+### Search recipes
+* This feature will allow users on the all recipe page to search for a recipe using any keyword or words they choose. 
+
+### Recipe default image/URL
+* This feature will be found in the add and edit recipe forms, it will allow users to add an image URL from google or another website. If an image URL is not provided and default image placeholder will be shown for that recipe.
 
 ### Social links in footer
-* This feature will be available for all users and will contain social media logo links like 
+* This feature will be available for all users and will contain social media icon links like 
 Facebook, Twitter, Instagram, GitHub, and LinkedIn within the footer of the web application. 
 
 ### Error pages 
@@ -154,10 +152,10 @@ an issue and cannot perform the request made by the user.
 ## Future Features To Implement
 
 ### Allowing users to upload images
-* This feature is to allow users to upload their own images of their own recipes when they are creating a recipe.  
+* This feature is to allow users to upload their own images of their own recipes that they have personally taken.  
 
 ### Users can save their favourite recipes 
-* This feature will allow users to save recipes they come across when browsing through the recipe section and will save to their user account profile page under a favourite recipe section.
+* This feature will allow users to save recipes they come across whilts browsing through the all recipe section and will save to their user account profile page under a favourite recipe section.
 
 ### Email verification when users register 
 * This feature will work alongside the registration form, so when a user inputs an email address, this feature would then send a verification email to make sure the email address provided is valid and active.
@@ -193,9 +191,6 @@ Here is a list of programming languages that I used to create this project along
 * Font Awesome v5.15.1 CDN -> [Visit Site](https://cdnjs.com/libraries/font-awesome)
     * The Font Awesome CDN will be used for the icons that i use within my project to help give the project good visual elements and a good user experience.
 
-* Hover.css v2.3.1 CDN -> [Visit Site](https://cdnjs.com/libraries/hover.css)
-    * The hover css will be used to give my project a nice simple hover visual effect.
-
 * JQuery v3.6.0 -> [Visit Site](https://cdnjs.com/libraries/jquery)
     * JQuery will be used to manipulate the Document Object Model (DOM), create animations and events.
 
@@ -204,9 +199,6 @@ Here is a list of programming languages that I used to create this project along
 
 * Google Fonts -> [Visit Site](https://fonts.google.com/)
     * Google fonts has been used to import the font i have chosen directly from google into my main CSS file.
-
-* The Code Institute Repository Template -> [Visit Site](https://github.com/Code-Institute-Org/gitpod-full-template)
-    * As a student of The Code Institute they provided a repository template that comes with preconfigured settings and extension, which can be used by Gitpod development environment. 
 
 * GitHub -> [Visit Site](https://github.com/)
     * I used GitHub to store my project files by creating a repository for it and then using the Git terminal and its commands to version control and store my files.
