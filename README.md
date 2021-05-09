@@ -2,7 +2,7 @@
 
 [Click Here To Visit My Deployed Project Site](https://iftikhan-milestone-3-project.herokuapp.com/)
 
-![Image of Project](/writeup_files/images/responsive-site-device.jpg)
+![Image of Project](writeup_files/images/responsive-site-device.jpg)
 
 ## Project Title - Share, Cook, Enjoy Online Cookbook
 
