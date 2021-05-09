@@ -3,6 +3,21 @@ Here I will test my web application against my user stories,
 
 * As a user, I want to be able to register to the website, so that I can login and have full access to the web application.
 
+### Step 1
+Visit website and click on the register button located in the navigation bar, or the main body of the page. 
+
+![User Registration Step 1](/screenshots/ux-register1.jpg)
+
+### Step 2
+Now fill in the registration form with valid details and then click the register button located at the bottom when done.
+
+![User Registration Step 2](/screenshots/ux-register2.jpg)
+
+### Step 3
+Once the register button is clicked, the user will be taken to there account page and a message will to the user saying registration success.
+
+![User Registration Step 3](/screenshots/ux-register3.jpg)
+
 * As a user, I want to be able to login, so that I can create my own recipes.
 
 * As a user, I want to be able to logout of my account from any page. 
