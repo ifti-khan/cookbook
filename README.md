@@ -254,12 +254,16 @@ When it comes to testing and debugging I find it easier and good practise to tes
 In this section I will test my project against my user stories and further text by doing some manual testing. These test will be done using a variety of different browsers and a variety of different screen sizes as well to ensure my projects compatibly and responsiveness.
 
 # UX - User Story Testing
+Here in this section I will provide a user story scenario with screenshot examples with steps if necessary to test my project against my user story.
 
 ### UX User Story Testing Document -> [Visit Document](/writeup_files/testing/user_story_testing.md)
 
 # Further Testing
+I have decided to further test my project by testing all of the features implemented as seen in my user story testing and more. I will test my project in a variety of different browser to ensure it is fully compatible. The browsers I have chosen are Google Chrome, Microsoft Edge, Firefox and Opera. Another crucial test is to make sure that the project is fully responsive on a wide range of device sizes. 
 
-### Further Testing Document -> [Visit Document](#)
+### Further Testing Document -> [Visit Document](/writeup_files/testing/further_testing.md)
+
+Throughout the whole project I developed my project on my Dell Inspiron 15inch Laptop and my Acer 24inch Monitor. I also used Chrome Dev tools whilst programming my project and used the responsive tool to simulate different device sizes. I also did some physical testing on a few devices such as my Samsung Galaxy S21+, Samsung Galaxy Tab 6.
 
 # Known Issues And Solutions
 
