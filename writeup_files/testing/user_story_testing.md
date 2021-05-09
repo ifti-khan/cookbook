@@ -13,6 +13,8 @@ Here I will test my web application against my user stories,
 
 * As a user, I want to be able to view all recipe ingredients and cooking steps, so that I can follow the instructions on how to cook that food dish. 
 
+* As a user, I want to able to search for recipes, so that I can find a specific recipe within the website.
+
 * As a user, I want to able to view my recipes only, so that I can see how many recipes I have created.
 
 * As a user, I want to be able to edit my recipes, so that I can fix mistakes or update them. 

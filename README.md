@@ -49,6 +49,8 @@ My users for this project are people seeking new cooking recipes for their break
 
 * As a user, I want to be able to view all recipe ingredients and cooking steps, so that I can follow the instructions on how to cook that food dish.
 
+* As a user, I want to able to search for recipes, so that I can find a specific recipe within the website.
+
 * As a user, I want to able to view my recipes only, so that I can see how many recipes I have created.
 
 * As a user, I want to be able to edit my recipes, so that I can fix mistakes or update them. 
@@ -182,6 +184,9 @@ Here is a list of programming languages that I used to create this project along
 
 * MongoDB -> [Visit Site](https://www.mongodb.com/)
     * MongoDB will be used to store all user and recipe information and this will be done by utilising MongoDB key and value setup, to then be called using python. 
+
+* MongoDB Compass v1.26.1 -> [Visit Site](https://www.mongodb.com/try/download/compass)
+    * MongoDB Compass is GUI software, that allows users to create, read, update and delete there MongoDB clusters, collections, documents and so much more locally from their computer. 
 
 * Materialize CSS & JS -> [Visit Site](https://cdnjs.com/libraries/materialize)
     * The Materialize CSS and JS will be used for the responsive side of my project. It will also be used for visual elements, validation, affect and initialising some materialize interactive elements.
