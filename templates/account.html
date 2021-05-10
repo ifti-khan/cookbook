@@ -108,7 +108,7 @@ logged in user using the stored user session. The loop is also used to display t
 fields and values within the database-->
 {% for recipe in user_recipes %}
 <div class="row all_recipes_row">
-    <div class="col s12 m6 l4 xl3">
+    <div class="col s12 m4 l4 xl2">
         <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="black-text">
 
             <!--Jinja if check to see if the recipe is created by matches the 
