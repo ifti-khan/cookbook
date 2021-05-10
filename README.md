@@ -316,7 +316,7 @@ In this section I will list the steps I took to deploy my project to Heroku.
 
 2.6 – Then I created an env file to store the key configuration information for my project and a Procfile, these are needed for the next step.
 
-2.7 – Just before I committed my project to GitHub, I added the env file to .gitignore because it contains key and sensitive information. 
+2.7 – Just before I committed my project to GitHub, I added the env file to .gitignore because it contains key and sensitive information and set the debug within the app.py file to False. 
 
 2.8 – Once this was done, I then committed my files to my GitHub repository and I was ready for the next step.
 
@@ -395,6 +395,7 @@ In my VSCode I do not need to type the sudo command, so if the top command does 
 
 12.	Once that is done you will need to create the following ? of collections within the database. 
 
+### MongoDB Database Structure
 Put all database collections in here: 
 
 13.	Once all the above is done, you can know successfully run the web application using the following command in the terminal: ```python3 app.py```
