@@ -266,6 +266,15 @@ I have decided to further test my project by testing all of the features impleme
 Throughout the whole project I developed my project on my Dell Inspiron 15inch Laptop and my Acer 24inch Monitor. I also used Chrome Dev tools whilst programming my project and used the responsive tool to simulate different device sizes. I also did some physical testing on a few devices such as my Samsung Galaxy S21+, Samsung Galaxy Tab 6.
 
 # Known Issues And Solutions
+During my testing I found a few minor bugs that were fixed very easily. 
+
+One bug that I found was in the base.html in the contact modal section dropdown list validation. Since materialize do not validate dropdown lists and The Code Institute in the MongoDB Mini Project allowed us to user their JavaScript code to validate dropdown lists. Since I added the class validate to the dropdown list attribute there was a conflict, so to fix the issue I remove the class validate.
+
+Another bug that I encountered during test was within the account.html and it was to do with the recipe cards position for the created recipes by that specific user. I had on larger screens set the div col class to xl3, but this caused and issue with the fifth recipe cards position. So to fix this bug all I had to do was change the div col class from xl3 to xl2. 
+
+A known issue that I have is with located within my add_recipe.html and edit_recipe.html ingredient and cooking instruction list. The issue is when a user is adding the ingredient to the text area or cooking instruction text area, they cannot leave an intentional blank line to separate the text. The reason for this is within the view_recipe.html I will think that the blank line is an ingredient or instruction because I have in the HTML displayed the ingredient list as a list element and the cooking instructions as an order list element.
+
+To overcome the issue within the add and edit recipe html files in the label of the two text area I have told the users when entering the information to add each ingredient or instruction on a new line and not to leave any blank lines. 
 
 # Deployment
 In this section I will list the steps I took to deploy my project to Heroku. 
