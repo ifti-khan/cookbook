@@ -476,6 +476,10 @@ I would like to reference that all of the recipe information and recipe images h
 ## Code
 Here I have listed all of the external URLs that helped me during the development of my project.
 
+I would like to reference here that the biggest source of help throughout this project has been from The Code Institutes MongoDB Task Manager Mini Project. Following the videos and looking at the code helped me get a better understanding of how flask works. 
+
+Then from there usings snippets of various code, modifying the code and then piecing it all together to create my project was challenging but worth it. 
+
 ### External URL Document -> [Visit Document](writeup_files/documents/ext_url_document.md)
 
 ## Acknowledgements
