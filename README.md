@@ -459,13 +459,26 @@ This collection stores all of the diet types for the diet types dropdown for the
 14.	Once all the above is done, you can know successfully run the web application using the following command in the terminal: ```python3 app.py```
 
 # Credits
+Here in this section I have listed the various different types of content and code I used within my project. The majority of code and content has come from The Code Institutes MongoDB Mini Project that I had done before my Milestone 3 Project. I also want to reference the help I got from The Code Institutes lessons, challenges and video tutorials.
+
 ## Content
+I would like to reference that all of the recipe infromation has come from this site and all information is for education purposes. 
 
 ## Media
+Fontawesome Icons
+Marble Body Background
+Recipe images
 
 ## Code
-Here I have listed all of the external URLs that helped me during the development of the project.
+Here I have listed all of the external URLs that helped me during the development of my project.
 
 ### External URL Document -> [Visit Document](#)
 
 ## Acknowledgements
+I want to acknowledge my student mentor Adegbenga Adeye for his helpful advice and guidance throughout the whole project. I would also like to thank The Code Institute for the course lessons, challenges, video tutorials they supplied and the MongoDB Mini Project. 
+
+Lastly I would like to thank Stack Overflow, W3C School, Materialize, jQuery, the slack community and the other URL links that helped me develop my project.
+
+The reason I chose to base my project on a cookbook is that I wanted to challenge myself and becuase it was one of the recommended project idea. The Overall development of this project was a challenge throughout but who doesn't like a challenge. 
+
+I learnt a lot from developing this project and learnt just how powerful and useful Python, Flask, MongoDB and Materialize can be.
