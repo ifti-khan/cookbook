@@ -402,12 +402,61 @@ In my VSCode I do not need to type the sudo command, so if the top command does 
 ```sudo pip3 install –r requirements.txt```
 11.	The next step is to create a database with a unique name in MongoDB but don’t forget to get the MongoDB URI and Database name. 
 
-12.	Once that is done you will need to create the following ? of collections within the database. 
+12.	Once that is done you will need to create the following five collections within the database. 
 
-### MongoDB Database Structure
-Put all database collections in here: 
+## MongoDB Database Structure
 
-13.	Once all the above is done, you can know successfully run the web application using the following command in the terminal: ```python3 app.py```
+This collection stores all of the users information. 
+| Users Collection |               |          |
+|------------------|---------------|----------|
+| _id              | ObjectId      | ObjectId |
+| fullname         | Fullname      | String   |
+| email            | Email Address | String   |
+| username         | Username      | String   |
+| password         | Password      | String   |
+|                                             |
+
+This collection stores all of the recipe information.
+| Recipes Collection  |                      |          |
+|---------------------|----------------------|----------|
+| _id                 | ObjectId             | ObjectId |
+| recipe_name         | Recipe Name          | String   |
+| recipe_description  | Recipe Description   | String   |
+| recipe_image_url    | Image URL or Blank   | String   |
+| recipe_meal_type    | A Meal Type          | String   |
+| recipe_cuisine_type | A Cuisine Type       | String   |
+| recipe_diet_type    | A Diet Type          | String   |
+| recipe_cooktime     | Recipe Cooking Time  | String   |
+| recipe_servings     | Servings             | String   |
+| recipe_ingredients  | Ingredient List      | Array    |
+| recipe_steps        | Cooking Instructions | Array    |
+| created_by          | Username             | String   |
+|                                                       |
+
+This collection stores all of the meal types for the meal types dropdown for the add and edit recipe forms dropdown list.
+| Meals Collection |                |          |
+|------------------|----------------|----------|
+| _id              | ObjectId       | ObjectId |
+| meal_name        | Meal Type Name | String   |
+|                                              |
+
+This collection stores all of the cuisine types for the cuisines types dropdown for the add and edit recipe forms dropdown list.
+| Cuisines Collection |                   |          |
+|---------------------|-------------------|----------|
+| _id                 | ObjectId          | ObjectId |
+| cuisine_name        | Cuisine Type Name | String   |
+|                                                    |
+
+This collection stores all of the diet types for the diet types dropdown for the add and edit recipe forms dropdown list.
+| Diets Collection |                |          |
+|------------------|----------------|----------|
+| _id              | ObjectId       | ObjectId |
+| diet_name        | Diet Type Name | String   |
+|                                              |
+
+13. Another thing that needs to be done is within the app.py file and this is to scroll all the way to the bottom and turn debug from False to True. 
+
+14.	Once all the above is done, you can know successfully run the web application using the following command in the terminal: ```python3 app.py```
 
 # Credits
 ## Content
