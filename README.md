@@ -462,17 +462,21 @@ This collection stores all of the diet types for the diet types dropdown for the
 Here in this section I have listed the various different types of content and code I used within my project. The majority of code and content has come from The Code Institutes MongoDB Mini Project that I had done before my Milestone 3 Project. I also want to reference the help I got from The Code Institutes lessons, challenges and video tutorials.
 
 ## Content
-I would like to reference that all of the recipe infromation has come from this site and all information is for education purposes. 
+I would like to reference that all of the recipe information and recipe images have come from the BBC good food webiste and all information is being used for education purposes.
+
+[BBC Good Food Website](https://www.bbcgoodfood.com/)
 
 ## Media
-Fontawesome Icons
-Marble Body Background
-Recipe images
+[Font Awesome Icon](https://fontawesome.com/) - These have been used throughout the entire project and can be seen in the website forms and buttons. 
+
+[Marble Body Background](https://sensientpharma.com/wp-content/uploads/2019/03/marble.jpg) - This image has been used for the body background in all HTML pages. 
+
+[Recipe card images](https://www.bbcgoodfood.com/)
 
 ## Code
 Here I have listed all of the external URLs that helped me during the development of my project.
 
-### External URL Document -> [Visit Document](#)
+### External URL Document -> [Visit Document](writeup_files/documents/ext_url_document.md)
 
 ## Acknowledgements
 I want to acknowledge my student mentor Adegbenga Adeye for his helpful advice and guidance throughout the whole project. I would also like to thank The Code Institute for the course lessons, challenges, video tutorials they supplied and the MongoDB Mini Project. 
