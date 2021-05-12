@@ -103,6 +103,8 @@ from the [Font Awesome CDN]( https://cdnjs.com/libraries/font-awesome).
 ### Admin Manage Recipe Attribute Pages -> [View PDF](/writeup_files/wireframes/admin-manage-page-all-devices.pdf)
 ### Admin Add Recipe Attribute Pages -> [View PDF](/writeup_files/wireframes/admin-add-page-all-devices.pdf)
 ### Admin Edit Recipe Attribute Pages -> [View PDF](/writeup_files/wireframes/admin-edit-page-all-devices.pdf)
+### Error 404 Page -> [View PDF](/writeup_files/wireframes/error-404-page-all-devices.pdf)
+### Error 500 Page -> [View PDF](/writeup_files/wireframes/error-500-page-all-devices.pdf)
 # Features
 Here is a list of features that will be implemented and utilized within my project. 
 There will also be a list for future features that I would like to add to the project 
