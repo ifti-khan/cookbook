@@ -98,8 +98,11 @@ from the [Font Awesome CDN]( https://cdnjs.com/libraries/font-awesome).
 ### All Recipe Page -> [View PDF](/writeup_files/wireframes/all-recipes-page-all-devices.pdf)
 ### Add Recipe Page -> [View PDF](/writeup_files/wireframes/add-recipe-page-all-devices.pdf)
 ### Update Recipes Page -> [View PDF](/writeup_files/wireframes/update-recipe-page-all-devices.pdf)
+### View Recipes Page -> [View PDF](/writeup_files/wireframes/view-recipe-page-all-devices.pdf)
 ### Admin Page -> [View PDF](/writeup_files/wireframes/admin-page-all-devices.pdf)
-
+### Admin Manage Recipe Attribute Pages -> [View PDF](/writeup_files/wireframes/admin-manage-page-all-devices.pdf)
+### Admin Add Recipe Attribute Pages -> [View PDF](/writeup_files/wireframes/admin-add-page-all-devices.pdf)
+### Admin Edit Recipe Attribute Pages -> [View PDF](/writeup_files/wireframes/admin-edit-page-all-devices.pdf)
 # Features
 Here is a list of features that will be implemented and utilized within my project. 
 There will also be a list for future features that I would like to add to the project 
