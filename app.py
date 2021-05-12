@@ -903,7 +903,8 @@ def delete_diets(diet_id):
 @app.errorhandler(404)
 def page_not_found_error(error):
     '''
-    This handles page not found 404 error
+    This handles page not found 404 error and is
+    linked to my custom error page.
     '''
     return render_template('error_pages/404.html', error=True), 404
 
@@ -911,7 +912,8 @@ def page_not_found_error(error):
 @app.errorhandler(500)
 def internal_server_error(error):
     '''
-    This handles internal server 500 error
+    This handles internal server 500 error and is
+    linked to my custom error page.
     '''
     return render_template('error_pages/500.html', error=True), 500
 
