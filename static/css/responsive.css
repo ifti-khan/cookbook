@@ -25,11 +25,6 @@
 
 /*Large Laptop*/
 @media (max-width: 1440px) {
-    /*recipe.html*/
-    .card {
-        min-height: 56vh;
-    }
-
     /*view_recipe.html*/
     .recipe_info_table {
         width: 75%;
@@ -54,11 +49,6 @@
 
     .select-wrapper input.select-dropdown {
         font-size: 14px;
-    }
-
-    /*recipe.html*/
-    .card {
-        min-height: 55vh;
     }
 
     /*view_recipe.html*/
@@ -89,12 +79,7 @@
 }
 
 /*Tablet*/
-@media (max-width: 768px) {
-    /*recipe.html*/
-    .card {
-        min-height: 55vh;
-    }
-    
+@media (max-width: 768px) {   
     /*add_recipe.html*/
     .select-wrapper input.select-dropdown {
         margin-bottom: 25px;
@@ -193,10 +178,6 @@
     /*recipe.html*/
     .card-title h5 {
         padding-top: 10px;
-    }
-
-    .card {
-        min-height: 50vh;
     }
 
     .default-image {

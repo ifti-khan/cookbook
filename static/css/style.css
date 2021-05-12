@@ -279,7 +279,7 @@ footer {
 
 .card {
     border-radius: 5px;
-    min-height: 50vh;
+    height: 100%;
     margin: 10px;
 }
 
@@ -385,6 +385,13 @@ footer {
 }
 
 .collapsible-body .ingredient-list {
+    list-style-type: none;
+}
+.collapsible-body .instruction-list {
+    list-style-type: none;
+}
+
+.collapsible-body .no-decoration {
     list-style-type: disc;
     margin-left: 40px;
 }

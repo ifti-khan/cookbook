@@ -19,21 +19,21 @@
 
             <!--Change username button-->
             <div class="row">
-                <div class="col s12 m6 xl4">
+                <div class="col s12 m4 xl4">
                     <a href="{{ url_for('change_username', username=session.user) }}" class="btn blue-grey darken-1 acc-change-btn text-shadow
                         waves-effect waves-light">Change Username
                         <i class="fas fa-edit"></i></a>
                 </div>
 
                 <!--Change password button-->
-                <div class="col s12 m6 xl4">
+                <div class="col s12 m4 xl4">
                     <a href="{{ url_for('change_password', username=session.user) }}" class="btn blue-grey darken-1 acc-change-btn text-shadow
                         waves-effect waves-light">Change Password
                         <i class="fas fa-edit"></i></a>
                 </div>
 
                 <!--Delete Account button-->
-                <div class="col s12 m6 xl4">
+                <div class="col s12 m4 xl4">
                     <a href="#" class="btn blue-grey darken-1 acc-change-btn text-shadow modal-trigger
                         waves-effect waves-light" data-target="delete_modal_account">Delete Account
                         <i class="fas fa-times"></i></a>
@@ -108,7 +108,7 @@ logged in user using the stored user session. The loop is also used to display t
 fields and values within the database-->
 {% for recipe in user_recipes %}
 <div class="row all_recipes_row">
-    <div class="col s12 m4 l4 xl2">
+    <div class="col s12 m6 l4 xl3">
         <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="black-text">
 
             <!--Jinja if check to see if the recipe is created by matches the 

@@ -273,11 +273,7 @@ During my testing I found a few minor bugs that were fixed very easily.
 
 One bug that I found was in the base.html in the contact modal section dropdown list validation. Since materialize do not validate dropdown lists and The Code Institute in the MongoDB Mini Project allowed us to user their JavaScript code to validate dropdown lists. Since I added the class validate to the dropdown list attribute there was a conflict, so to fix the issue I remove the class validate.
 
-Another bug that I encountered during test was within the account.html and it was to do with the recipe cards position for the created recipes by that specific user. I had on larger screens set the div col class to xl3, but this caused and issue with the fifth recipe cards position. So to fix this bug all I had to do was change the div col class from xl3 to xl2. 
-
-Another bug that I encountered during my testing was with the recipe cards height. In the CSS the height was set to 100% but if a user added in a long recipe title and it went onto a new line it would cause the recipe card underneath to shift down a whole card. 
-
-To overcome this issue, in the CSS I changed the height to min-height and set it at 50vh and this sorted the issue out. This was also added to the responsive CSS for the different device screen sizes. For 1440px the min-height is 56vh, for 1024px and 768px the min-height is 55vh and for 425px the min-height is 50vh. 
+Another bug that I encountered during my testing was with the recipe cards height. In the CSS the height was set to 100% but if a user added in a long recipe title and it went onto a new line it would cause the recipe card underneath to shift down a whole card. The short solution I found for this was to reduce the max characters allowed for the recipe card name, within the add, edit HTML forms.
 
 A known issue that I have is with located within my add_recipe.html and edit_recipe.html ingredient and cooking instruction list. The issue is when a user is adding the ingredient to the text area or cooking instruction text area, they cannot leave an intentional blank line to separate the text. The reason for this is within the view_recipe.html I will think that the blank line is an ingredient or instruction because I have in the HTML displayed the ingredient list as a list element and the cooking instructions as an order list element.
 
