@@ -44,12 +44,29 @@
                 <tr>
                     <!--Cuisine type attribute-->
                     <td><i class="fas fa-globe-americas"></i> Cuisine</td>
-                    <td>{{ recipe_info.recipe_cuisine_type }}</td>
+                    <td>
+                        <!--Jinja if checking to see if not cuisine type found
+                        then display a dash, else if found then display cuisine type-->
+                        {% if not recipe_info.recipe_cuisine_type %}
+                        <span>-</span>
+                        {% else %}
+                        <p>{{ recipe_info.recipe_cuisine_type }}</p>
+                        {% endif %}
+                    </td>
                 </tr>
                 <tr>
                     <!--Diet type attribute-->
                     <td><i class="fas fa-seedling"></i> Diet</td>
-                    <td>{{ recipe_info.recipe_diet_type }}</td>
+                    <td>
+                        <!--Jinja if checking to see if not diet type found
+                        then display a dash, else if found then display diet type-->
+                        {% if not recipe_info.recipe_diet_type %}
+                        <span>-</span>
+                        {% else %}
+                        <p>{{ recipe_info.recipe_diet_type }}</p>
+                        {% endif %}
+                    </td>
+                    </td>
                 </tr>
                 <tr>
                     <!--Recipe cooking time attribute-->
