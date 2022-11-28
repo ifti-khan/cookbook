@@ -158,7 +158,7 @@ def account(username):
     # using the users session username
     user_recipes = mongo.db.recipes.find({'created_by': username})
     # This counts how many recipes the user has created
-    num_of_user_recipes = mongo.db.recipes.count_documents({'created_by': username})
+    num_of_user_recipes = user_recipes.count()
     # This is passing the varibles into the template, so
     # they can be used in the rendered page
     return render_template(
@@ -191,7 +191,7 @@ def all_recipes():
     '''
     # This will return a number of how many recipes
     # are in the recipe collection
-    num_of_recipes = mongo.db.recipes.count_documents({})
+    num_of_recipes = mongo.db.recipes.count()
     # How many recipe cards will display on the page
     cards_per_page = 8
     # This block of code here calculates using multiple
@@ -267,7 +267,7 @@ def search():
     within the all recpe page. This will allow a user to
     search any recipe with the database using any word.
     '''
-    num_of_recipes = mongo.db.recipes.count_documents({})
+    num_of_recipes = mongo.db.recipes.count()
     # This creates a wild card index for the search
     mongo.db.recipes.create_index([("$**", 'text')])
     # assign the var query to the search input
@@ -277,9 +277,9 @@ def search():
     # collection what the user is searching for
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     num_of_recipes_search = mongo.db.recipes.find(
-        {'$text': {'$search': query}})
+        {'$text': {'$search': query}}).count()
     # displaying a search result string to the user after there search
-    search_results = f"Search Results ({query})"
+    search_results = f"Search Results ({num_of_recipes_search})"
 
     # This is passing the varibles into the template, so
     # they can be used in the rendered page
@@ -379,7 +379,7 @@ def delete_recipe(recipe_id):
     # When a user clicks delete, it will delete that recipe using
     # the recipe ID and display a message to the user and redirect
     # them to there account page.
-    mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for("account", username=session['user']))
 
@@ -921,4 +921,4 @@ def internal_server_error(error):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
