@@ -1,6 +1,6 @@
 # Ifti Khan Milestone Project 3 - Data Centric Development Project
 
-[Click Here To Visit My Deployed Project Site](https://iftikhan-milestone-3-project.herokuapp.com/)
+[Click Here To Visit My Deployed Project Site](https://ifti-khan-cookbook.onrender.com)
 
 ![Image of Project](writeup_files/images/responsive-site-device.jpg)
 
