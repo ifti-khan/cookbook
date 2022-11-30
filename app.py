@@ -276,10 +276,9 @@ def search():
     # using the query and index it will find in the recipe
     # collection what the user is searching for
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    num_of_recipes_search = mongo.db.recipes.find(
-        {'$text': {'$search': query}})
+    num_of_recipes_search = mongo.db.recipes.count_documents({"$text": {"$search": query}})
     # displaying a search result string to the user after there search
-    search_results = f"Search Results ({query})"
+    search_results = f"Search Results - {query} ({num_of_recipes_search})"
 
     # This is passing the varibles into the template, so
     # they can be used in the rendered page
