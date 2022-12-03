@@ -1,6 +1,6 @@
 # Ifti Khan Milestone Project 3 - Data Centric Development Project
 
-[Click Here To Visit Site](https://ifti-khan-cookbook.onrender.com)
+[Click Here To Visit Site](https://iftikhan-cookbook.onrender.com/)
 
 ![Image of Project](static/img/cookbook-multi-device-img.png)
 
