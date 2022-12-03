@@ -1,8 +1,8 @@
 # Ifti Khan Milestone Project 3 - Data Centric Development Project
 
-[Click Here To Visit My Deployed Project Site](https://ifti-khan-cookbook.onrender.com)
+[Click Here To Visit Site](https://ifti-khan-cookbook.onrender.com)
 
-![Image of Project](writeup_files/images/responsive-site-device.jpg)
+![Image of Project](static/img/cookbook-multi-device-img.png)
 
 ## Project Title - Share, Cook, Enjoy Online Cookbook
 
